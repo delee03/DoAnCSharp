@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(698, 264);
+            this.label1.Location = new System.Drawing.Point(701, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 21);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(897, 506);
+            this.label2.Location = new System.Drawing.Point(836, 462);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 20);
             this.label2.TabIndex = 3;
@@ -74,20 +74,21 @@
             this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(636, 575);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(648, 512);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(412, 49);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(350, 49);
             this.guna2GradientButton1.TabIndex = 4;
             this.guna2GradientButton1.Text = "Login";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BackgroundImage = global::Garage_Management.Properties.Resources.login1;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2Panel1.Location = new System.Drawing.Point(23, 54);
+            this.guna2Panel1.Location = new System.Drawing.Point(23, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(560, 596);
+            this.guna2Panel1.Size = new System.Drawing.Size(560, 549);
             this.guna2Panel1.TabIndex = 5;
             // 
             // txtPassword
@@ -105,13 +106,13 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtPassword.IconLeft = global::Garage_Management.Properties.Resources.icons8_lock_50;
             this.txtPassword.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtPassword.Location = new System.Drawing.Point(635, 432);
+            this.txtPassword.Location = new System.Drawing.Point(648, 385);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(412, 53);
+            this.txtPassword.Size = new System.Drawing.Size(350, 46);
             this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextOffset = new System.Drawing.Point(10, 0);
@@ -133,13 +134,13 @@
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtUserName.IconLeft = global::Garage_Management.Properties.Resources.icons8_avatar_32;
             this.txtUserName.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtUserName.Location = new System.Drawing.Point(635, 329);
+            this.txtUserName.Location = new System.Drawing.Point(647, 297);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "Username";
             this.txtUserName.SelectedText = "";
-            this.txtUserName.Size = new System.Drawing.Size(412, 56);
+            this.txtUserName.Size = new System.Drawing.Size(351, 43);
             this.txtUserName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextOffset = new System.Drawing.Point(10, 0);
@@ -149,12 +150,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Garage_Management.Properties.Resources.user__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(730, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(721, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 181);
+            this.pictureBox1.Size = new System.Drawing.Size(193, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // guna2Elipse1
             // 
@@ -168,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 675);
+            this.ClientSize = new System.Drawing.Size(1047, 602);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.label2);
@@ -178,6 +180,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormLogincs";
             this.Text = "Login Form";
+            this.Load += new System.EventHandler(this.FormLogincs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
