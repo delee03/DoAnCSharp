@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Garage_Management.DAO;
 
 namespace Garage_Management
 {
@@ -50,6 +51,28 @@ namespace Garage_Management
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text;
+            string password = txtPassword.Text;
+            if (Login(userName,password))
+            {
+                FormTrangChu f = new FormTrangChu();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng !");
+            }
+        }
+
+        bool Login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
         }
     }
 }

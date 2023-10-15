@@ -52,11 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashBoard.Designer.cs">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogincs.cs">
       <SubType>Form</SubType>
@@ -75,27 +83,31 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDashBoard.resx">
+      <DependentUpon>FormDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogincs.resx">
       <DependentUpon>FormLogincs.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -106,34 +118,38 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\Font\user %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\roundedTXT.png" />
+    <None Include="Resources\Font\roundedTXT.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-avatar-32.png" />
+    <None Include="Resources\Font\icons8-avatar-32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-lock-50.png" />
+    <None Include="Resources\Font\icons8-lock-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-user-40.png" />
+    <None Include="Resources\Font\icons8-user-40.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-wave-96.png" />
+    <None Include="Resources\Font\icons8-wave-96.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\login.png" />
+    <None Include="Resources\Font\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\.jpg" />
+    <None Include="Resources\Font\.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.jpg" />
+    <None Include="Resources\Font\1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\login.jpg" />
+    <None Include="Resources\Font\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
