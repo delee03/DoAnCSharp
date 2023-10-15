@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace Garage_Management
 
         }
 
-        int cpt = 1;
+        
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
@@ -37,13 +38,14 @@ namespace Garage_Management
 
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
+            lbFm.Text = "Bảng điều khiển";
             dgvDashBoard.Rows.Add(4);
 
-            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\mycar\1.png");
-            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\mycar\2.png");
-            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\mycar\3.png");
-            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\mycar\4.png");
-            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\mycar\5.png");
+            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\1.png");
+            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\2.png");
+            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\3.png");
+            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\4.png");
+            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\5.png");
 
             dgvDashBoard.Rows[0].Cells[1].Value = "Mec C200";
             dgvDashBoard.Rows[1].Cells[1].Value = "911 Turbo";
@@ -85,11 +87,11 @@ namespace Garage_Management
                 return star -= 1;
             return star;
         }
-
+        int cpt = 1;
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
 
-            if (cpt <  dgvDashBoard.Rows.Count)//max count = 4
+            if (cpt <  dgvDashBoard.Rows.Count)//max count = 5
             {
                 cpt++;
                 labelNameCar.Text = dgvDashBoard.Rows[cpt - 1].Cells[1].Value.ToString();
@@ -98,19 +100,19 @@ namespace Garage_Management
                 ratingStar.Value = GetStar();
                 lbThongSo.Text = dgvDashBoard.Rows[cpt - 1].Cells[2].Value.ToString();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt - 1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"C:\Users\ACER\Desktop\mycar\"+cpt.ToString() + cpt.ToString() +".png");
-                guna2PictureBox_car2.Load(@"C:\Users\ACER\Desktop\mycar\" + cpt.ToString() +  cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car1.Load(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\" + cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car2.Load(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
-               
-            }
+                
+             }
             else
-                cpt = 1;
+                cpt = 0;
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
 
-            if (cpt >= 1)
+            if (cpt > 1)
             {
                 cpt--;
                 //kiem tra optimize code dong nay overload
@@ -121,8 +123,8 @@ namespace Garage_Management
                 lbApeal.Text = dgvDashBoard.Rows[cpt - 1].Cells[4].Value.ToString();
                 ratingStar.Value = GetStar();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt -1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"C:\Users\ACER\Desktop\mycar\" + (cpt).ToString()  + (cpt).ToString() + ".png");
-                guna2PictureBox_car2.Load(@"C:\Users\ACER\Desktop\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
+                guna2PictureBox_car1.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString()  + (cpt).ToString() + ".png");
+                guna2PictureBox_car2.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
                 
             }
@@ -145,24 +147,56 @@ namespace Garage_Management
             guna2PictureBox_Car.Image = guna2PictureBox_car3.Image;
         }
 
-        private void guna2CirclePictureBox6_Click(object sender, EventArgs e)
+
+        public Form currentForm;
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentForm != null)
+            {
+                currentForm.Opacity = 50;
+                currentForm.Close();
+            }
+            currentForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            guna2Panel3.Controls.Add(childForm);
+            guna2Panel3.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Opacity = 50;
+         //   childForm.AllowTransparency = true;
+           // childForm.TopMost = true;
+            childForm.Show();
+            childForm.Opacity = 100;
+          
+        }
+
+
+        private void btnOto_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QuanLyOto());
+            lbFm.Text = btnOto.Text;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (currentForm != null)
+            {
+                lbFm.Text = "Bảng điều khiển";
+                currentForm.Close();
+            }
+            
+        }
+
+        private void dgvDashBoard_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        private void btnNhanSu_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2ControlBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            OpenChildForm(new FormNhanSu());
+            lbFm.Text = btnNhanSu.Text;
         }
     }
 }

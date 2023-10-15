@@ -1,6 +1,6 @@
 ﻿namespace Garage_Management
 {
-    partial class Form1
+    partial class FormNhanSu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNhanSu));
             this.SuspendLayout();
             // 
-            // Form1
+            // FormNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 570);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1034, 477);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormNhanSu";
+            this.Text = "FormNhanSu";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +48,3 @@
         #endregion
     }
 }
-
