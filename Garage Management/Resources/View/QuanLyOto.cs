@@ -19,7 +19,7 @@ namespace Garage_Management
             InitializeComponent();
             LoadData(); 
         }
-        CarModel1 context = new CarModel1();
+        CarModel context = new CarModel();
         private void QuanLyOto_Load(object sender, EventArgs e)
         {
             
