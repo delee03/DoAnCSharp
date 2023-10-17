@@ -41,11 +41,11 @@ namespace Garage_Management
             lbFm.Text = "Bảng điều khiển";
             dgvDashBoard.Rows.Add(4);
 
-            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\1.png");
-            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\2.png");
-            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\3.png");
-            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\4.png");
-            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\5.png");
+            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\1.png");
+            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\2.png");
+            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\3.png");
+            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\4.png");
+            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\5.png");
 
             dgvDashBoard.Rows[0].Cells[1].Value = "Mec C200";
             dgvDashBoard.Rows[1].Cells[1].Value = "911 Turbo";
@@ -100,8 +100,8 @@ namespace Garage_Management
                 ratingStar.Value = GetStar();
                 lbThongSo.Text = dgvDashBoard.Rows[cpt - 1].Cells[2].Value.ToString();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt - 1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\" + cpt.ToString() + cpt.ToString() + ".png");
-                guna2PictureBox_car2.Load(@"C:\Users\ACER\Desktop\Project\Garage-Management\Garage Management\Resources\Image\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car1.Load(@"D:\Project\Garage-Management\mycar\" + cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car2.Load(@"D:\Project\Garage-Management\mycar\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
                 
              }
@@ -123,8 +123,8 @@ namespace Garage_Management
                 lbApeal.Text = dgvDashBoard.Rows[cpt - 1].Cells[4].Value.ToString();
                 ratingStar.Value = GetStar();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt -1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString()  + (cpt).ToString() + ".png");
-                guna2PictureBox_car2.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
+                guna2PictureBox_car1.Load(@"D:\Project\Garage-Management\mycar\" + (cpt).ToString()  + (cpt).ToString() + ".png");
+                guna2PictureBox_car2.Load(@"D:\Project\Garage-Management\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
                 
             }

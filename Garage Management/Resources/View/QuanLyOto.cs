@@ -35,11 +35,11 @@ namespace Garage_Management
                 FillCmbSuplier(listSup);
                 BindGrid(listCar);
                 cboNcc.SelectedIndex = 0;
-                dgvOto.Rows[0].Cells[2].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\1.png");
-                dgvOto.Rows[1].Cells[2].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\2.png");
-                dgvOto.Rows[2].Cells[2].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\3.png");
-                dgvOto.Rows[3].Cells[2].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\4.png");
-                dgvOto.Rows[4].Cells[2].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\5.png");
+                dgvOto.Rows[0].Cells[2].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\1.png");
+                dgvOto.Rows[1].Cells[2].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\2.png");
+                dgvOto.Rows[2].Cells[2].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\3.png");
+                dgvOto.Rows[3].Cells[2].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\4.png");
+                dgvOto.Rows[4].Cells[2].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\5.png");
             }
 
             catch (Exception ex)

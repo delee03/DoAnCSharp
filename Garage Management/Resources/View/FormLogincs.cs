@@ -39,7 +39,8 @@ namespace Garage_Management
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-
+            FormTrangChu f = new FormTrangChu();
+            f.ShowDialog();
         }
 
         private void FormLogincs_Load(object sender, EventArgs e)
