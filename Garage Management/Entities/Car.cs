@@ -9,6 +9,12 @@ namespace Garage_Management.Entities
     [Table("Car")]
     public partial class Car
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Car()
+        {
+            Bills = new HashSet<Bill>();
+        }
+
         [Key]
         [StringLength(10)]
         public string idCar { get; set; }
@@ -24,6 +30,9 @@ namespace Garage_Management.Entities
         public double price { get; set; }
 
         public int? idDatHang { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Bill> Bills { get; set; }
 
         public virtual DaDatHang DaDatHang { get; set; }
 

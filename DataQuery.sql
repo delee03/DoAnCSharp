@@ -1,9 +1,10 @@
-﻿CREATE DATABASE QuanLyGarage
+﻿﻿CREATE DATABASE QuanLyGarage
 GO
 
 USE QuanLyGarage
 GO
 
+drop database QuanLyGarage
 -- Car
 -- CarCategory
 -- Suplier
@@ -16,24 +17,26 @@ GO
 -- ReportExcel
 
 CREATE TABLE Car (
-	id INT IDENTITY PRIMARY KEY,
-	name NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN',
-	idCategory INT NOT NULL,
+	idCar NVARCHAR(10) PRIMARY KEY,
+	nameCar NVARCHAR(100) NOT NULL,
+--	imageCar IMAGE DEFAULT NULL,
+	idSup int Default null,
+	ngayNhap datetime,
 	price FLOAT NOT NULL DEFAULT 0,
-	status NVARCHAR(100) NOT NULL DEFAULT N'CHƯA BÁN',
-	FOREIGN KEY (idCategory) REFERENCES CarCategory(id)
+	idDatHang INT default NULL
 )
 GO
 
-CREATE TABLE CarCategory(
-	id INT IDENTITY PRIMARY KEY,
-	name NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN'
+
+CREATE TABLE DaDatHang(
+	idDat INT PRIMARY KEY,
+	info NVARCHAR(100) DEFAULT NULL
 )
 GO
 
 CREATE TABLE Suplier(
-	id INT IDENTITY PRIMARY KEY,
-	name NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN',
+	idSup INT PRIMARY KEY,
+	nameSup NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN',
 )
 GO
 
@@ -57,7 +60,6 @@ GO
 
 CREATE TABLE Inventory (
 	id INT IDENTITY PRIMARY KEY NOT NULL,
-
 )
 GO
 
@@ -68,7 +70,7 @@ CREATE TABLE Bill(
 	status INT NOT NULL DEFAULT 0, -- 1: ĐÃ THANH TOÁN && 0: CHƯA THANH TOÁN
 	-- TOTAL PRICE 
 
-	FOREIGN KEY (idCar) REFERENCES Car(id)
+	FOREIGN KEY (idCar) REFERENCES Car(idCar)
 )
 GO
 
@@ -93,13 +95,28 @@ CREATE TABLE Staff (
 )
 GO
 
+ALTER TABLE dbo.Car ADD CONSTRAINT FK_idDatHang FOREIGN KEY(idDatHang) REFERENCES dbo.DaDatHang(idDat)
+ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
+
+Insert into dbo.Car (idCar, nameCar, idSup, ngayNhap, price, idDatHang)
+values('car01', 'C200', 1, '2023-03-03', 1000000, 1),
+		('car02', '911 Turbo', 2,'2023-04-03', 8888888, null),
+		('car03', 'CamryHyrid', 3, '2023-05-03', 2000000, null),
+		('car04', 'Civic', 4, '2023-06-03', 800000, null),
+		('car05', 'CX5', 5, '2023-07-03', 750000, 2);
+
+insert into dbo.Suplier(idSup, nameSup)
+values(1,'Mercedes'),(2, 'Porsche'),(3,'Toyota'),(4, 'Honda'),(5, 'Mazda');
+
+insert into dbo.DaDatHang(idDat, info)
+values(1, 'Nguyen Van A 0987654321'),(2, 'Nguyen Van B 0123456789');
+
 INSERT INTO Account(
 	UserName,
 	DisplayName,
 	PassWord,
 	Type
 )
-
 VALUES (
 	N'viet' , -- UserName - nvarchar(100)
 	N'Việt', -- DisplayName - nvarchar(100)

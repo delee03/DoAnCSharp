@@ -66,26 +66,22 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDashBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDashBoard.Designer.cs">
-      <DependentUpon>FormDashBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogincs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogincs.Designer.cs">
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Bill.cs" />
+    <Compile Include="Entities\BillInfo.cs" />
     <Compile Include="Entities\Car.cs" />
-    <Compile Include="Entities\CarModel1.cs" />
+    <Compile Include="Entities\CarModel.cs" />
+    <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\DaDatHang.cs" />
+    <Compile Include="Entities\Inventory.cs" />
+    <Compile Include="Entities\Staff.cs" />
     <Compile Include="Entities\Suplier.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormLogincs.Designer.cs" />
     <Compile Include="Resources\View\FormLogincs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,13 +102,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDashBoard.resx">
-      <DependentUpon>FormDashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLogincs.resx">
     <Compile Include="Resources\View\QuanLyOto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,13 +121,8 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Resources\View\QuanLyOto.resx">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,11 +131,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>

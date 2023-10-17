@@ -73,8 +73,6 @@ namespace Garage_Management
             dgvDashBoard.Rows[3].Cells[2].Value = "D x R x C \t4.674 x 1.800 x 1.415\nChiều dài cơ sở\t 2735(mm)\nDung tích công tác 1494 (cc)\nMô - men xoắn cực đại\t 140 Nm tại 1700 - 4500 rpm\nCông suất 176hp / 6.000 rpm";
             dgvDashBoard.Rows[4].Cells[2].Value = "D x R x C \t4.590 x 1.845 x 1.680\nChiều dài cơ sở\t 2700 (mm)\nDung tích công tác 1998 (cc)\nMô-men xoắn cực đại\t 200 Nm tại 4000 rpm\nCông suất 154 hp / 6000 rpm";
         }
-
-        int cpt = 1;
         public float GetStar()
         {
             float star = 4;
@@ -88,6 +86,7 @@ namespace Garage_Management
                 return star -= 1;
             return star;
         }
+        int cpt = 1;
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
 
