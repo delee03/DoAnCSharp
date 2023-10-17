@@ -74,6 +74,7 @@ namespace Garage_Management
             dgvDashBoard.Rows[4].Cells[2].Value = "D x R x C \t4.590 x 1.845 x 1.680\nChiều dài cơ sở\t 2700 (mm)\nDung tích công tác 1998 (cc)\nMô-men xoắn cực đại\t 200 Nm tại 4000 rpm\nCông suất 154 hp / 6000 rpm";
         }
 
+        int cpt = 1;
         public float GetStar()
         {
             float star = 4;

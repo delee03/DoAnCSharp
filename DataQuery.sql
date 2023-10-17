@@ -52,7 +52,7 @@ CREATE TABLE Suplier(
 	nameSup NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN',
 )
 GO
-/*
+
 CREATE TABLE Customer (
 	id INT IDENTITY PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL DEFAULT N'CHƯA CÓ TÊN',
@@ -123,4 +123,24 @@ VALUES (
 	1 -- Type - int
 )
 
-select * from Account
+CREATE PROC USP_GetAccountByUserName
+@userName nvarchar(100)
+AS 
+BEGIN
+	SELECT * FROM Account WHERE UserName = @userName
+END
+GO
+
+select * from Account where UserName = N'viet' and PassWord = N'1'
+
+EXEC USP_GetAccountByUserName @userName = N'viet'
+GO
+
+CREATE PROC USP_Login
+@userName nvarchar(100) , @passWord nvarchar(100)
+AS
+BEGIN
+	SELECT * FROM Account WHERE UserName = @userName AND PassWord = @passWord
+END
+GO
+
