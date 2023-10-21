@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Garage_Management.Entities
+namespace Garage_Management.DAO
 {
     public partial class CarModel : DbContext
     {
         public CarModel()
-            : base("name=CarModel")
+            : base("name=CarModel3")
         {
         }
 

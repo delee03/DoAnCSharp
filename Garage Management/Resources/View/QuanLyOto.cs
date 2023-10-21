@@ -8,7 +8,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Garage_Management.Entities;
+using Garage_Management.DAO;
 
 namespace Garage_Management
 {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Garage_Management.DAO;
+using Guna.UI2.WinForms;
 
 namespace Garage_Management
 {
@@ -18,41 +19,6 @@ namespace Garage_Management
             InitializeComponent();
         }
 
-        private void txtUserName_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormLogincs_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userName = txtUserName.Text;
@@ -60,6 +26,7 @@ namespace Garage_Management
             if (Login(userName,password))
             {
                 FormTrangChu f = new FormTrangChu();
+                f.UserNameFromLogin = txtUserName.Text;
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
@@ -68,6 +35,8 @@ namespace Garage_Management
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng !");
             }
+            txtUserName.Text = "";
+            txtPassword.Text = "";
         }
 
         bool Login(string userName, string passWord)

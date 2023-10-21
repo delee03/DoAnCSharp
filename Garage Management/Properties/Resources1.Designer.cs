@@ -123,9 +123,29 @@ namespace Garage_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Oreki_houtarou {
+            get {
+                object obj = ResourceManager.GetObject("Oreki_houtarou", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap roundedTXT {
             get {
                 object obj = ResourceManager.GetObject("roundedTXT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trangchu {
+            get {
+                object obj = ResourceManager.GetObject("trangchu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

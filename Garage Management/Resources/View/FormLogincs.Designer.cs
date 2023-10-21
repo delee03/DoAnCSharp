@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogincs));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -110,8 +111,6 @@
             this.txtUserName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
-            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // guna2Elipse2
             // 
@@ -135,15 +134,14 @@
             this.txtPassword.Location = new System.Drawing.Point(648, 385);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(350, 46);
             this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // guna2Panel1
             // 
@@ -157,20 +155,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Garage_Management.Properties.Resources.user__1_;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(721, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormLogincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 602);
+            this.ClientSize = new System.Drawing.Size(1047, 572);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
@@ -181,7 +178,6 @@
             this.Name = "FormLogincs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.FormLogincs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

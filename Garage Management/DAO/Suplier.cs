@@ -1,4 +1,4 @@
-namespace Garage_Management.Entities
+namespace Garage_Management.DAO
 {
     using System;
     using System.Collections.Generic;
@@ -6,21 +6,26 @@ namespace Garage_Management.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DaDatHang")]
-    public partial class DaDatHang
+    [Table("Suplier")]
+    public partial class Suplier
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DaDatHang()
+        public Suplier()
         {
+            BillInfoes = new HashSet<BillInfo>();
             Cars = new HashSet<Car>();
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int idDat { get; set; }
+        public int idSup { get; set; }
 
+        [Required]
         [StringLength(100)]
-        public string info { get; set; }
+        public string nameSup { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BillInfo> BillInfoes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Car> Cars { get; set; }

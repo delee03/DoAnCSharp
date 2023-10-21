@@ -64,22 +64,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DataContext.cs" />
+    <Compile Include="BUS\DataQuery.cs" />
+    <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\Bill.cs" />
+    <Compile Include="DAO\BillInfo.cs" />
+    <Compile Include="DAO\Car.cs" />
+    <Compile Include="DAO\CarModel.cs" />
+    <Compile Include="DAO\Customer.cs" />
+    <Compile Include="DAO\DaDatHang.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\Bill.cs" />
-    <Compile Include="Entities\BillInfo.cs" />
-    <Compile Include="Entities\Car.cs" />
-    <Compile Include="Entities\CarModel.cs" />
-    <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\DaDatHang.cs" />
-    <Compile Include="Entities\Inventory.cs" />
-    <Compile Include="Entities\Staff.cs" />
-    <Compile Include="Entities\Suplier.cs" />
+    <Compile Include="DAO\Inventory.cs" />
+    <Compile Include="DAO\Staff.cs" />
+    <Compile Include="DAO\Suplier.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormEditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormEditPerson.Designer.cs">
+      <DependentUpon>FormEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormInfoPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormInfoPerson.Designer.cs">
+      <DependentUpon>FormInfoPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormLogincs.Designer.cs" />
     <Compile Include="Resources\View\FormLogincs.cs">
@@ -88,10 +102,16 @@
     <Compile Include="Resources\View\FormLogincs.Designer.cs">
       <DependentUpon>FormLogincs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\View\FormNhanSu.cs">
+    <Compile Include="Resources\View\Nhân sự\FormNhanSu1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\View\FormNhanSu.Designer.cs">
+    <Compile Include="Resources\View\Nhân sự\FormNhanSu1.Designer.cs">
+      <DependentUpon>FormNhanSu1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Nhân sự\FormNhanSu.Designer.cs">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormTrangChu.cs">
@@ -108,11 +128,20 @@
     <Compile Include="Resources\View\QuanLyOto.Designer.cs">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\View\Nhân sự\FormEditPerson.resx">
+      <DependentUpon>FormEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Nhân sự\FormInfoPerson.resx">
+      <DependentUpon>FormInfoPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormLogincs.resx">
       <DependentUpon>FormLogincs.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\View\FormNhanSu.resx">
+    <EmbeddedResource Include="Resources\View\Nhân sự\FormNhanSu1.resx">
+      <DependentUpon>FormNhanSu1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Nhân sự\FormNhanSu.resx">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormTrangChu.resx">
@@ -172,6 +201,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oreki_houtarou.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\trangchu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
