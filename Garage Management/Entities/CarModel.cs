@@ -13,11 +13,11 @@ namespace Garage_Management.Entities
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<BillInfo> BillInfoes { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<DaDatHang> DaDatHangs { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Suplier> Supliers { get; set; }
@@ -35,11 +35,6 @@ namespace Garage_Management.Entities
                 .WithRequired(e => e.Car)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<DaDatHang>()
-                .HasMany(e => e.Cars)
-                .WithOptional(e => e.DaDatHang)
-                .HasForeignKey(e => e.idDatHang);
-
             modelBuilder.Entity<Staff>()
                 .Property(e => e.phone)
                 .IsFixedLength()
@@ -48,7 +43,6 @@ namespace Garage_Management.Entities
             modelBuilder.Entity<Suplier>()
                 .HasMany(e => e.BillInfoes)
                 .WithRequired(e => e.Suplier)
-                .HasForeignKey(e => e.idCarSuplier)
                 .WillCascadeOnDelete(false);
         }
     }

@@ -23,19 +23,20 @@ namespace Garage_Management.Entities
         [StringLength(100)]
         public string nameCar { get; set; }
 
+        [Column(TypeName = "image")]
+        public byte[] imageCar { get; set; }
+
         public int? idSup { get; set; }
 
         public DateTime? ngayNhap { get; set; }
 
         public double price { get; set; }
 
-        public int? idDatHang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }
 
-        public virtual DaDatHang DaDatHang { get; set; }
-
+       
         public virtual Suplier Suplier { get; set; }
     }
 }

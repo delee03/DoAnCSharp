@@ -8,72 +8,57 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Garage_Management.DAO;
+using System.IO;
 
 namespace Garage_Management
 {
     public partial class FormLogincs : Form
     {
+
         public FormLogincs()
         {
             InitializeComponent();
-        }
-
-        private void txtUserName_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            FormTrangChu f = new FormTrangChu();
-            f.ShowDialog();
         }
 
         private void FormLogincs_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userName = txtUserName.Text;
+            string userName = txtUserName.Text; 
             string password = txtPassword.Text;
             if (Login(userName,password))
             {
                 FormTrangChu f = new FormTrangChu();
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                f.lbAcount.Text = userName;
+                this.Hide();               
+                if (MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    f.ShowDialog();
+
+                    this.Show();
+                         
+                }
             }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng !");
             }
+            txtPassword.Text = "";
+            
         }
 
         bool Login(string userName, string passWord)
         {
             return AccountDAO.Instance.Login(userName, passWord);
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

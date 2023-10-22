@@ -1,11 +1,13 @@
-﻿
+﻿create database QuanLyGarage
+go
 
-USE QLGarage
+USE QuanLyGarage
 GO
 
-drop database QuanLyGarage
 -- Car
--- CarCategory
+-- OrderForm
+-- OrderDetails
+
 -- Suplier
 -- Customer
 -- Staff
@@ -18,20 +20,16 @@ drop database QuanLyGarage
 CREATE TABLE Car (
 	idCar NVARCHAR(10) PRIMARY KEY,
 	nameCar NVARCHAR(100) NOT NULL,
---	imageCar IMAGE DEFAULT NULL,
+	imageCar IMAGE,
 	idSup int Default null,
 	ngayNhap datetime,
 	price FLOAT NOT NULL DEFAULT 0,
-	idDatHang INT default NULL
+	
 )
 GO
+alter table Car drop idDatHang;
 
 
-CREATE TABLE DaDatHang(
-	idDat INT PRIMARY KEY,
-	info NVARCHAR(100) DEFAULT NULL
-)
-GO
 
 CREATE TABLE Suplier(
 	idSup INT PRIMARY KEY,
@@ -61,26 +59,41 @@ CREATE TABLE Inventory (
 	id INT IDENTITY PRIMARY KEY NOT NULL,
 )
 GO
+Create table HoaDon(
+	idHoaDon nvarchar(10) primary key,
+	tenKH nvarchar(100) not null,
+	sdt char(11) not null,
+	tenNV nvarchar(50) not null,
+	idCar nvarchar(10) not null,
+	imageCar image default null,
+	ngayLap datetime,
+	FOREIGN KEY (idCar) REFERENCES Car(idCar)
+)
+go
+
+
 
 CREATE TABLE Bill(
 	id INT IDENTITY PRIMARY KEY,
 	DataCheckIn DATE NOT NULL DEFAULT GETDATE(),
-	idCar INT NOT NULL,
+	idCar nvarchar(10) NOT NULL,
 	status INT NOT NULL DEFAULT 0, -- 1: ĐÃ THANH TOÁN && 0: CHƯA THANH TOÁN
 	-- TOTAL PRICE 
 
 	FOREIGN KEY (idCar) REFERENCES Car(idCar)
 )
 GO
+ALTER TABLE dbo.BillInfo drop CONSTRAINT FK_idBill;
+
 
 CREATE TABLE BillInfo (
 	id INT IDENTITY PRIMARY KEY,
 	idBill INT NOT NULL,
-	idCarCategory INT NOT NULL,
+	idSup INT NOT NULL,
 	count INT NOT NULL DEFAULT 0,
 
 	FOREIGN KEY (idBill) REFERENCES Bill(id),
-	FOREIGN KEY (idCarCategory) REFERENCES CarCategory(id)
+	FOREIGN KEY (idSup) REFERENCES Suplier(idSup)
 )
 GO
 
@@ -94,21 +107,23 @@ CREATE TABLE Staff (
 )
 GO
 
-ALTER TABLE dbo.Car ADD CONSTRAINT FK_idDatHang FOREIGN KEY(idDatHang) REFERENCES dbo.DaDatHang(idDat)
-ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
 
-Insert into dbo.Car (idCar, nameCar, idSup, ngayNhap, price, idDatHang)
-values('car01', 'C200', 1, '2023-03-03', 1000000, 1),
-		('car02', '911 Turbo', 2,'2023-04-03', 8888888, null),
-		('car03', 'CamryHyrid', 3, '2023-05-03', 2000000, null),
-		('car04', 'Civic', 4, '2023-06-03', 800000, null),
-		('car05', 'CX5', 5, '2023-07-03', 750000, 2);
+
+ALTER TABLE dbo.Car drop CONSTRAINT FK_idDatHang;
+ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
 
 insert into dbo.Suplier(idSup, nameSup)
 values(1,'Mercedes'),(2, 'Porsche'),(3,'Toyota'),(4, 'Honda'),(5, 'Mazda');
 
-insert into dbo.DaDatHang(idDat, info)
-values(1, 'Nguyen Van A 0987654321'),(2, 'Nguyen Van B 0123456789');
+
+Insert into dbo.Car (idCar, nameCar,imageCar, idSup, ngayNhap, price, idDatHang)
+values('car01', 'C200', null,1, '2023-03-03', 1000000, 1),
+		('car02', '911 Turbo',null, 2,'2023-04-03', 8888888, 0),
+		('car03', 'CamryHyrid',null, 3, '2023-05-03', 2000000, 0),
+		('car04', 'Civic', null,4, '2023-06-03', 800000, 0),
+		('car05', 'CX5', null, 5, '2023-07-03', 750000, 2);
+Insert into dbo.HoaDon(idHoaDon, tenKH,sdt , tenNV, idCar, imageCar, ngayLap)
+values('hd1', 'NGuyen Van A', '0987654321', N'Viet', 'car01', NULL , 10/20/2023)
 
 INSERT INTO Account(
 	UserName,
@@ -117,11 +132,24 @@ INSERT INTO Account(
 	Type
 )
 VALUES (
-	N'viet' , -- UserName - nvarchar(100)
-	N'Việt', -- DisplayName - nvarchar(100)
-	N'1', -- PassWord - nvarchar(1000)
+	N'hoangviet' , -- UserName - nvarchar(100)
+	N'Hoàng Việt', -- DisplayName - nvarchar(100)
+	N'123', -- PassWord - nvarchar(1000)
+	1 -- Type - int
+),
+ (
+	N'thuanphat' , -- UserName - nvarchar(100)
+	N'Thuận Phát', -- DisplayName - nvarchar(100)
+	N'123', -- PassWord - nvarchar(1000)
+	1 -- Type - int
+),
+(
+	N'tiendat' , -- UserName - nvarchar(100)
+	N'Tiến Đạt', -- DisplayName - nvarchar(100)
+	N'123', -- PassWord - nvarchar(1000)
 	1 -- Type - int
 )
+delete Account;
 
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
@@ -143,4 +171,4 @@ BEGIN
 	SELECT * FROM Account WHERE UserName = @userName AND PassWord = @passWord
 END
 GO
-
+select * from Account
