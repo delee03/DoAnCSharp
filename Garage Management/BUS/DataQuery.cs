@@ -64,9 +64,9 @@ namespace Garage_Management.BUS
             }
         }
 
-        public bool UpdateStaff(Staff staff, out string err)
+        public bool UpdateStaff(Staff staff)
         {
-            err = string.Empty;
+            string err = string.Empty;
             try
             {
                 using (var dbcontext = new CarModel())
@@ -77,6 +77,7 @@ namespace Garage_Management.BUS
                         err = "Không tìm thấy nhân viên này !";
                         return false;
                     }
+                    if (updateStaff.Avartar_image != staff.Avartar_image) updateStaff.Avartar_image = staff.Avartar_image;
                     if (updateStaff.name != staff.name) updateStaff.name = staff.name;
                     if (updateStaff.phone != staff.phone) updateStaff.phone = staff.phone;
                     if (updateStaff.address != staff.address) updateStaff.address = staff.address;

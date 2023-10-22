@@ -44,9 +44,9 @@
             this.guna2ContainerControl4 = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnThem = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnChonAnh = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnChonAnhEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2ContainerControl1.SuspendLayout();
@@ -300,61 +300,64 @@
             this.guna2HtmlLabel4.TabIndex = 0;
             this.guna2HtmlLabel4.Text = "Địa Chỉ";
             // 
-            // btnThem
+            // btnDelete
             // 
-            this.btnThem.BackColor = System.Drawing.Color.Transparent;
-            this.btnThem.BorderRadius = 20;
-            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btnThem.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(192, 503);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(125, 55);
-            this.btnThem.TabIndex = 9;
-            this.btnThem.Text = "Xóa";
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btnDelete.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(192, 503);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 55);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnChonAnh
+            // btnChonAnhEdit
             // 
-            this.btnChonAnh.BackColor = System.Drawing.Color.Transparent;
-            this.btnChonAnh.BorderRadius = 15;
-            this.btnChonAnh.BorderThickness = 1;
-            this.btnChonAnh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChonAnh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChonAnh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChonAnh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChonAnh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChonAnh.ForeColor = System.Drawing.Color.White;
-            this.btnChonAnh.Location = new System.Drawing.Point(106, 420);
-            this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(129, 52);
-            this.btnChonAnh.TabIndex = 10;
-            this.btnChonAnh.Text = "Chọn Ảnh";
+            this.btnChonAnhEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnChonAnhEdit.BorderRadius = 15;
+            this.btnChonAnhEdit.BorderThickness = 1;
+            this.btnChonAnhEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChonAnhEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChonAnhEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChonAnhEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChonAnhEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnChonAnhEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChonAnhEdit.ForeColor = System.Drawing.Color.White;
+            this.btnChonAnhEdit.Location = new System.Drawing.Point(106, 420);
+            this.btnChonAnhEdit.Name = "btnChonAnhEdit";
+            this.btnChonAnhEdit.Size = new System.Drawing.Size(129, 52);
+            this.btnChonAnhEdit.TabIndex = 10;
+            this.btnChonAnhEdit.Text = "Chọn Ảnh";
+            this.btnChonAnhEdit.Click += new System.EventHandler(this.btnChonAnhEdit_Click);
             // 
-            // guna2GradientButton1
+            // btnEdit
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(22, 503);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(132, 55);
-            this.guna2GradientButton1.TabIndex = 9;
-            this.guna2GradientButton1.Text = "Cập nhật";
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BorderRadius = 20;
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
+            this.btnEdit.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(22, 503);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(132, 55);
+            this.btnEdit.TabIndex = 9;
+            this.btnEdit.Text = "Cập nhật";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FormEditPerson
             // 
@@ -363,9 +366,9 @@
             this.BackColor = System.Drawing.Color.LightCoral;
             this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu;
             this.ClientSize = new System.Drawing.Size(822, 641);
-            this.Controls.Add(this.btnChonAnh);
-            this.Controls.Add(this.guna2GradientButton1);
-            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnChonAnhEdit);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.guna2ContainerControl4);
             this.Controls.Add(this.guna2ContainerControl3);
             this.Controls.Add(this.guna2ContainerControl2);
@@ -379,6 +382,7 @@
             this.Name = "FormEditPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInfoPerson";
+            this.Load += new System.EventHandler(this.FormEditPerson_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2ContainerControl1.ResumeLayout(false);
@@ -411,8 +415,8 @@
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl4;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2GradientButton btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnChonAnh;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnChonAnhEdit;
+        private Guna.UI2.WinForms.Guna2GradientButton btnEdit;
     }
 }

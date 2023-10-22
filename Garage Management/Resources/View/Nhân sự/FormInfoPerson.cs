@@ -21,7 +21,6 @@ namespace Garage_Management.Resources.View
         private readonly DataQuery dataQuery = new DataQuery();
         private readonly DataContext dataContext = new DataContext();
         private bool has_img = false;
-        FormNhanSu FormNhanSu = new FormNhanSu();
 
         public FormInfoPerson()
         {
@@ -86,36 +85,7 @@ namespace Garage_Management.Resources.View
         {
             try
             {
-                if (string.IsNullOrEmpty(txtMS.Text) || string.IsNullOrEmpty(txtHoVaTen.Text) ||
-                string.IsNullOrEmpty(txtSĐT.Text) || string.IsNullOrEmpty(txtDiaChi.Text))
-                {
-                    throw new Exception("Vui lòng nhập đầy đủ thông tin !");
-                }
-
-                if (dataQuery.GetStaffByID(txtMS.Text) != null)
-                {
-                    throw new Exception("Mã số nhân viên tồn tại!");
-                }
-
-                if (txtMS.Text.Length > 10)
-                {
-                    txtMS.Focus();
-                    throw new Exception("Mã số nhân viên phải bé hơn 10 !");
-                }
-
-                if (Regex.IsMatch(txtHoVaTen.Text, "^[0-9]*$"))
-                {
-                    txtHoVaTen.Focus();
-                    throw new Exception("Tên nhân viên chỉ gồm các ký tự chữ cái !");
-                }
-
-                if (Regex.IsMatch(txtSĐT.Text, "^[a-z]*$"))
-                {
-                    txtSĐT.Focus();
-                    throw new Exception("Số điện thoại không được bao gồm ký tự chữ cái !");
-                }
-
-                else
+                if(DataBinding())
                 {
                     using (var dbcontext = new CarModel())
                     {
@@ -146,6 +116,45 @@ namespace Garage_Management.Resources.View
         private void txtHoVaTen_TextChanged(object sender, EventArgs e)
         {
             //txtHoVaTen.Text = Regex.Replace(txtHoVaTen.Text, "^[0-9]+", "");
+        }
+
+        public bool DataBinding()
+        {
+            if (string.IsNullOrEmpty(txtMS.Text) || string.IsNullOrEmpty(txtHoVaTen.Text) ||
+                string.IsNullOrEmpty(txtSĐT.Text) || string.IsNullOrEmpty(txtDiaChi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                return false;
+            }
+
+            if (dataQuery.GetStaffByID(txtMS.Text) != null)
+            {
+                txtMS.Focus();
+                MessageBox.Show("Mã số nhân viên tồn tại!");
+                return false;
+            }
+
+            if (txtMS.Text.Length > 10)
+            {
+                txtMS.Focus();
+                MessageBox.Show("Mã số nhân viên phải bé hơn 10 !");
+                return false;
+            }
+
+            if (Regex.IsMatch(txtHoVaTen.Text, "^[0-9]*$"))
+            {
+                txtHoVaTen.Focus();
+                MessageBox.Show("Tên nhân viên chỉ gồm các ký tự chữ cái !");
+                return false;
+            }
+
+            if (Regex.IsMatch(txtSĐT.Text, "^[a-z]*$"))
+            {
+                txtSĐT.Focus();
+                MessageBox.Show("Số điện thoại không được bao gồm ký tự chữ cái !");
+                return false;
+            }
+            return true;
         }
     }
 }

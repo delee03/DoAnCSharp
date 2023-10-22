@@ -18,10 +18,13 @@ namespace Garage_Management.Resources.View
     {
         private readonly DataQuery query = new DataQuery();
         private readonly DataContext context = new DataContext();
+        FormEditPerson fEdit;
 
         public FormNhanSu()
         {
             InitializeComponent();
+
+            fEdit = new FormEditPerson(this);
         }
 
         public void FormNhanSu_Load(object sender, EventArgs e)
@@ -99,10 +102,9 @@ namespace Garage_Management.Resources.View
             }
         }
 
-        FormEditPerson fEdit = new FormEditPerson();
         private void dgvStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 6)
+            if (e.ColumnIndex == 6)
             {
                 dgvStaff_CellClick(sender, e);
                 fEdit.ShowDialog();
@@ -111,16 +113,13 @@ namespace Garage_Management.Resources.View
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvStaff.Rows[e.RowIndex];
-                byte[] img = (byte[])row.Cells[1].Value;
-                Image value1 = context.ByteArrayToImage(img);
-                string value2 = row.Cells[2].Value.ToString();
-                string value3 = row.Cells[3].Value.ToString();
-                string value4 = row.Cells[4].Value.ToString();
-                string value5 = row.Cells[5].Value.ToString();
-                fEdit.SetTextBoxValues(value1, value2, value3, value4, value5);
+                DataGridViewRow row = dgvStaff.Rows[e.RowIndex];
+                //byte[] img = (byte[])row.Cells[1].Value;
+                //Image value1 = context.ByteArrayToImage(img);
+                string valueId = row.Cells[3].Value.ToString();
+                fEdit.SetTextBoxValues(valueId);
             }
         }
     }

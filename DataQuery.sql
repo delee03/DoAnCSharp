@@ -110,7 +110,7 @@ values('car01', 'C200', 1, '2023-03-03', 1000000, 1),
 		('car05', 'CX5', 5, '2023-07-03', 750000, 2);
 
 -- INSERT TABLE STAFF
-INSERT INTO Staff(id,Avartar_image, name,phone,address)
+/*INSERT INTO Staff(id,Avartar_image, name,phone,address)
 VALUES ('NV001',null, N'Bùi Hoàng Việt', '0339405697', N'Thủ Đức')
 INSERT INTO Staff(id,Avartar_image,name,phone,address)
 VALUES ('NV002',null, N'Nguyễn Bình Minh', '0169405656', N'Bình Thạnh')
@@ -118,7 +118,7 @@ INSERT INTO Staff(id,Avartar_image,name,phone,address)
 VALUES ('NV003',null, N'Nguyễn Trường An', '0569405687', N'Gò Vấp')
 INSERT INTO Staff(id,Avartar_image,name,phone,address)
 VALUES ('NV004',null, N'Bùi Hồng Thiên', '0889405617', N'Bình Chánh')
-GO 
+GO */
 
 select * from Staff
 

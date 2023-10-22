@@ -41,8 +41,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
@@ -180,46 +178,6 @@
             this.colEdit.ReadOnly = true;
             this.colEdit.Width = 125;
             // 
-            // btnSua
-            // 
-            this.btnSua.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.BorderRadius = 5;
-            this.btnSua.BorderThickness = 1;
-            this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSua.FillColor = System.Drawing.Color.Transparent;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(828, 26);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(102, 38);
-            this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.BorderRadius = 5;
-            this.btnXoa.BorderThickness = 1;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.Transparent;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(948, 27);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(102, 38);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.Transparent;
@@ -256,7 +214,7 @@
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(527, 30);
+            this.btnThem.Location = new System.Drawing.Point(925, 30);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(126, 45);
             this.btnThem.TabIndex = 7;
@@ -271,8 +229,6 @@
             this.ClientSize = new System.Drawing.Size(1063, 550);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnSua);
             this.Controls.Add(this.dgvStaff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNhanSu";
@@ -286,8 +242,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvStaff;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

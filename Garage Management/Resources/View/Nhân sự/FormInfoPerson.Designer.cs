@@ -73,11 +73,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(200, 45);
+            this.label1.Location = new System.Drawing.Point(215, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 38);
+            this.label1.Size = new System.Drawing.Size(360, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "THÔNG TIN NHÂN VIÊN";
+            this.label1.Text = "THÊM NHÂN VIÊN MỚI";
             // 
             // pbAvatar
             // 
