@@ -1,4 +1,4 @@
-namespace Garage_Management.DAO
+namespace Garage_Management.DAO.Entities
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using Garage_Management.DAO;
+﻿using Garage_Management.DAO.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

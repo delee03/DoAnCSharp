@@ -190,6 +190,7 @@
             this.txtHoVaTen.SelectedText = "";
             this.txtHoVaTen.Size = new System.Drawing.Size(338, 34);
             this.txtHoVaTen.TabIndex = 2;
+            this.txtHoVaTen.TextChanged += new System.EventHandler(this.txtHoVaTen_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -239,6 +240,7 @@
             this.txtSĐT.SelectedText = "";
             this.txtSĐT.Size = new System.Drawing.Size(338, 34);
             this.txtSĐT.TabIndex = 3;
+            this.txtSĐT.TextChanged += new System.EventHandler(this.txtSĐT_TextChanged);
             // 
             // guna2HtmlLabel3
             // 

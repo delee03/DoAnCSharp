@@ -66,18 +66,18 @@
   <ItemGroup>
     <Compile Include="BUS\DataContext.cs" />
     <Compile Include="BUS\DataQuery.cs" />
-    <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\Bill.cs" />
-    <Compile Include="DAO\BillInfo.cs" />
-    <Compile Include="DAO\Car.cs" />
-    <Compile Include="DAO\CarModel.cs" />
-    <Compile Include="DAO\Customer.cs" />
-    <Compile Include="DAO\DaDatHang.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\Inventory.cs" />
-    <Compile Include="DAO\Staff.cs" />
-    <Compile Include="DAO\Suplier.cs" />
+    <Compile Include="DAO\Entities\Account.cs" />
+    <Compile Include="DAO\Entities\Bill.cs" />
+    <Compile Include="DAO\Entities\BillInfo.cs" />
+    <Compile Include="DAO\Entities\Car.cs" />
+    <Compile Include="DAO\Entities\CarModel.cs" />
+    <Compile Include="DAO\Entities\Customer.cs" />
+    <Compile Include="DAO\Entities\DaDatHang.cs" />
+    <Compile Include="DAO\Entities\Inventory.cs" />
+    <Compile Include="DAO\Entities\Staff.cs" />
+    <Compile Include="DAO\Entities\Suplier.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

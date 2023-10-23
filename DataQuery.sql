@@ -88,10 +88,10 @@ CREATE TABLE Staff (
 	id NVARCHAR(10) PRIMARY KEY,
 	Avartar_image image null,
 	name NVARCHAR(100) NOT NULL,
-	phone CHAR(11) NOT NULL, -- RÀNG BUỘC
+	phone NVARCHAR(11) NOT NULL, -- RÀNG BUỘC
 	address NVARCHAR(100) NOT NULL, 
 )
-GO 
+GO
 
 ALTER TABLE dbo.Car ADD CONSTRAINT FK_idDatHang FOREIGN KEY(idDatHang) REFERENCES dbo.DaDatHang(idDat)
 ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)

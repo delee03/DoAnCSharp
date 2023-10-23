@@ -1,5 +1,5 @@
 ﻿using Garage_Management.BUS;
-using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +85,7 @@ namespace Garage_Management.Resources.View
         {
             try
             {
-                if(DataBinding())
+                if (DataBinding())
                 {
                     using (var dbcontext = new CarModel())
                     {
@@ -95,7 +95,7 @@ namespace Garage_Management.Resources.View
                             //Avartar_image = null,
                             Avartar_image = has_img ? dataContext.ImageToByteArrary(pbAvatar) : dataContext.ImageToByteArrary(this.pbAvatar),
                             name = txtHoVaTen.Text,
-                            phone = txtSĐT.Text,
+                            phone = txtSĐT.Text.Trim(),
                             address = txtDiaChi.Text,
                         };
                         dbcontext.Staffs.Add(staff);

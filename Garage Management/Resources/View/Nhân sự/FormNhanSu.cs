@@ -1,10 +1,11 @@
 ﻿using Garage_Management.BUS;
-using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using Garage_Management.Resources.View.Nhân_sự;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -122,5 +123,51 @@ namespace Garage_Management.Resources.View
                 fEdit.SetTextBoxValues(valueId);
             }
         }
+
+        //public void btnLaylaimatkhau_click(object sender, EventArgs e)
+        //{
+        //    string email = txtemailquenmatkhau.Text;
+        //    if(email.Trim() == "")
+        //    {
+        //        MessageBox.Show("vui long dang ky");
+        //    }
+        //    else
+        //    {
+        //        string query = "select * from Account where Email = '" + email + "'";
+        //        if(modify.Account(query).Count != 0)
+        //        {
+        //            lblketqua.Text = "Mat khau: " + modify.Account(query)[0].PassWord;
+        //        }
+        //        else
+        //        {
+        //            lblketqua.Text = "Email chua dang ky";
+        //        }
+        //    }
+        //}
+
+        //public Modify()
+        //{
+
+        //}
+
+        //SqlCommand sqlCommand;
+        //SqlDataReader dataReader;
+
+        //public List<Account> Account(String query)
+        //{
+        //    List<Account> accounts = new List<Account>();
+        //    using(SqlConnection sqlConnection = Connection.GetSqlConnection())
+        //    {
+        //        sqlConnection.Open();
+        //        this.sqlCommand = new SqlCommand(query, sqlConnection);
+        //        this.dataReader = sqlCommand.ExecuteReader();
+        //        while(dataReader.Read())
+        //        {
+        //            accounts.Add(new DAO.Account(dataReader.GetString(0)));
+        //        }
+        //        SqlConnection.Close();
+        //    }
+        //    return accounts;
+        //}
     }
 }

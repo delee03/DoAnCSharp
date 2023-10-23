@@ -1,5 +1,5 @@
 ﻿using Garage_Management.BUS;
-using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,11 +16,9 @@ namespace Garage_Management.Resources.View.Nhân_sự
 {
     public partial class FormEditPerson : Form
     {
-        DataQuery query = new DataQuery();
+        private readonly DataQuery query = new DataQuery();
 
-        DataContext context = new DataContext();
-
-        //FormEditPerson fedit = new FormEditPerson();
+        private readonly DataContext context = new DataContext();
 
         Staff staff = new Staff();
 
@@ -72,17 +71,20 @@ namespace Garage_Management.Resources.View.Nhân_sự
 
         public void btnEdit_Click(object sender, EventArgs e)
         {
-            staff.Avartar_image = has_img ? context.ImageToByteArrary(pbAvatar) : context.ImageToByteArrary(this.pbAvatar);
-            staff.name = txtHoVaTen.Text;
-            staff.phone = txtSĐT.Text;
-            staff.address = txtDiaChi.Text;
+            if(DataBinding())
+            {
+                staff.Avartar_image = has_img ? context.ImageToByteArrary(this.pbAvatar) : staff.Avartar_image;
+                staff.name = txtHoVaTen.Text;
+                staff.phone = txtSĐT.Text;
+                staff.address = txtDiaChi.Text;
 
-            query.UpdateStaff(staff);
-            MessageBox.Show("Cập nhật thông tin nhân viên thành công !", "Thông báo",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            List<Staff> updateListStaff = query.GetStaff();
-            mainForm.BindGridStaff(updateListStaff);
-            this.Close();
+                query.UpdateStaff(staff);
+                MessageBox.Show("Cập nhật thông tin nhân viên thành công !", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                List<Staff> updateListStaff = query.GetStaff();
+                mainForm.BindGridStaff(updateListStaff);
+                this.Close();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -97,6 +99,33 @@ namespace Garage_Management.Resources.View.Nhân_sự
                 mainForm.BindGridStaff(deleteStaff);
                 this.Close();
             }
+        }
+
+        public bool DataBinding()
+        {
+            if (string.IsNullOrEmpty(txtMS.Text) || string.IsNullOrEmpty(txtHoVaTen.Text) ||
+                string.IsNullOrEmpty(txtSĐT.Text) || string.IsNullOrEmpty(txtDiaChi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                return false;
+            }
+            if (txtMS.Text.Length > 10)
+            {
+                txtMS.Focus();
+                MessageBox.Show("Mã số nhân viên phải bé hơn 10 !");
+                return false;
+            }
+            return true;
+        }
+
+        private void txtSĐT_TextChanged(object sender, EventArgs e)
+        {
+            txtSĐT.Text = Regex.Replace(txtSĐT.Text, "[^0-9]+", "");
+        }
+
+        private void txtHoVaTen_TextChanged(object sender, EventArgs e)
+        {
+            txtHoVaTen.Text = Regex.Replace(txtHoVaTen.Text, "[^a-z]+", "");
         }
     }
 }
