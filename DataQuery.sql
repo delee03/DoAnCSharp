@@ -54,7 +54,8 @@ CREATE TABLE Account (
 	UserName NVARCHAR(100) NOT NULL PRIMARY KEY,
 	DisplayName NVARCHAR(100) NOT NULL DEFAULT N'VIỆT',
 	PassWord NVARCHAR(1000) NOT NULL DEFAULT 0, -- PASSWORD && MÃ HÓA PASS
-	Type INT NOT NULL DEFAULT 1 -- DEFAULT ADMIN
+	Type INT NOT NULL DEFAULT 1, -- DEFAULT ADMIN
+	Email NVARCHAR(100) NULL
 )
 GO
 
@@ -66,7 +67,7 @@ GO
 CREATE TABLE Bill(
 	id INT IDENTITY PRIMARY KEY,
 	DataCheckIn DATE NOT NULL DEFAULT GETDATE(),
-	idCar INT NOT NULL,
+	idCar NVARCHAR(10) NOT NULL,
 	status INT NOT NULL DEFAULT 0, -- 1: ĐÃ THANH TOÁN && 0: CHƯA THANH TOÁN
 	-- TOTAL PRICE 
 
@@ -77,13 +78,14 @@ GO
 CREATE TABLE BillInfo (
 	id INT IDENTITY PRIMARY KEY,
 	idBill INT NOT NULL,
-	idCarCategory INT NOT NULL,
+	idCarSuplier INT NOT NULL,
 	count INT NOT NULL DEFAULT 0,
 
 	FOREIGN KEY (idBill) REFERENCES Bill(id),
-	FOREIGN KEY (idCarCategory) REFERENCES CarCategory(id)
+	FOREIGN KEY (idCarSuplier) REFERENCES Suplier(idSup)
 )
 GO
+
 
 CREATE TABLE Staff (
 	id INT IDENTITY PRIMARY KEY,
@@ -109,12 +111,13 @@ insert into dbo.Suplier(idSup, nameSup)
 values(1,'Mercedes'),(2, 'Porsche'),(3,'Toyota'),(4, 'Honda'),(5, 'Mazda');
 
 insert into dbo.DaDatHang(idDat, info)
-values(1, 'Nguyen Van A 0987654321'),(2, 'Nguyen Van B 0123456789');
+values(0, N'Trống'),(1, 'Nguyen Van A 0987654321'),(2, 'Nguyen Van B 0123456789');
 
 INSERT INTO Account(
 	UserName,
 	DisplayName,
 	PassWord,
+	Email,
 	Type
 )
 VALUES (
@@ -123,6 +126,7 @@ VALUES (
 	N'1', -- PassWord - nvarchar(1000)
 	1 -- Type - int
 )
+
 
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -71,15 +71,23 @@
     <Compile Include="Entities\BillInfo.cs" />
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarModel.cs" />
+    <Compile Include="Entities\Connection.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\DaDatHang.cs" />
     <Compile Include="Entities\Inventory.cs" />
+    <Compile Include="Entities\Modify.cs" />
     <Compile Include="Entities\Staff.cs" />
     <Compile Include="Entities\Suplier.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormDangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormDangKi.Designer.cs">
+      <DependentUpon>FormDangKi.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormLogincs.Designer.cs" />
     <Compile Include="Resources\View\FormLogincs.cs">
@@ -93,6 +101,18 @@
     </Compile>
     <Compile Include="Resources\View\FormNhanSu.Designer.cs">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormPhuTung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormPhuTung.Designer.cs">
+      <DependentUpon>FormPhuTung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormQuenMatKhau.Designer.cs">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormTrangChu.cs">
       <SubType>Form</SubType>
@@ -108,12 +128,21 @@
     <Compile Include="Resources\View\QuanLyOto.Designer.cs">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\View\FormDangKi.resx">
+      <DependentUpon>FormDangKi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormLogincs.resx">
       <DependentUpon>FormLogincs.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormNhanSu.resx">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormPhuTung.resx">
+      <DependentUpon>FormPhuTung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormQuenMatKhau.resx">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>

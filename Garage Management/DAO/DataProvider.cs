@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -19,7 +19,7 @@ namespace Garage_Management.DAO
 
         private DataProvider() { } // không cho phép truy cập từ bên ngoài
 
-        private string connectionSTR = "Data Source=.\\sqlexpress;Initial Catalog=QuanLyGarage;Integrated Security=True";
+        private string connectionSTR = "Data Source=LAPTOP-2MHF57KV;Initial Catalog=QuanLyGarage;Integrated Security=True";
 
         // hàm trả về dòng kết quả 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
