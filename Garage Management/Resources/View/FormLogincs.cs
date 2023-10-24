@@ -22,7 +22,9 @@ namespace Garage_Management
 
         private void FormLogincs_Load(object sender, EventArgs e)
         {
-
+            //  guna2Panel2.BackColor = Color.FromArgb(0, 0, 0, 0);// Màu trong suốt (ARGB)
+            //  pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
+          //  btnLogin.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
      
 
@@ -60,5 +62,13 @@ namespace Garage_Management
         {
           
         }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+         
+        }
+
+       
+       
     }
 }
