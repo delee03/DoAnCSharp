@@ -1,4 +1,4 @@
-namespace Garage_Management.Entities
+namespace Garage_Management.DAO.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -9,15 +9,15 @@ namespace Garage_Management.Entities
     [Table("Staff")]
     public partial class Staff
     {
-        public int id { get; set; }
+        [StringLength(10)]
+        public string id { get; set; }
+
+        [Column(TypeName = "image")]
+        public byte[] Avartar_image { get; set; }
 
         [Required]
         [StringLength(100)]
         public string name { get; set; }
-
-        public int age { get; set; }
-
-        public bool sex { get; set; }
 
         [Required]
         [StringLength(11)]
@@ -25,6 +25,6 @@ namespace Garage_Management.Entities
 
         [Required]
         [StringLength(100)]
-        public string position { get; set; }
+        public string address { get; set; }
     }
 }

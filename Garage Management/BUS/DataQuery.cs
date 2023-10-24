@@ -42,6 +42,61 @@ namespace Garage_Management.BUS
 
 
         public bool UpdateBill(HoaDon hd)
+        public List<Staff> GetStaff()
+        {
+            using (CarModel context = new CarModel())
+            {
+                return context.Staffs.ToList();
+            }
+        }
+
+        public Staff GetStaffByID(string id)
+        {
+            using (CarModel dbcontext = new CarModel())
+            {
+                return dbcontext.Staffs.FirstOrDefault(f => f.id == id);
+            }
+        }
+
+        public List<Staff> GetStaff(string seacrh = "")
+        {
+            using(var dbcontext = new CarModel())
+            {
+                if (string.IsNullOrEmpty(seacrh)) return dbcontext.Staffs.ToList();
+                else return dbcontext.Staffs.Where(s => s.name.ToLower().Contains(seacrh.ToLower())).ToList();
+            }
+        }
+ 
+        //public bool UpdateCar(Car car, out string err)
+        //{
+        //    err = string.Empty;
+        //    try
+        //    {
+        //        using (var dbcontext = new CarModel())
+        //        {
+        //            var updateCar = dbcontext.Cars.SingleOrDefault(s => s.idCar == car.idCar);
+        //            if (updateCar == null)
+        //            {
+        //                err = "Không tìm thấy sản phẩm này !";
+        //                return false;
+        //            }
+        //            if (updateCar.nameCar != car.nameCar) updateCar.nameCar = car.nameCar;
+        //            if (updateCar.idSup != car.idSup) updateCar.idSup = car.idSup;
+        //            if (updateCar.ngayNhap != car.ngayNhap) updateCar.ngayNhap = car.ngayNhap;
+        //            if (updateCar.price != car.price) updateCar.price = car.price;
+        //            if (updateCar.idDatHang != car.idDatHang) updateCar.idDatHang = car.idDatHang;
+        //            dbcontext.SaveChanges();
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        err = ex.Message;
+        //        return false;
+        //    }
+        //}
+
+        public bool UpdateStaff(Staff staff)
         {
             string err = string.Empty;
             try
@@ -58,6 +113,16 @@ namespace Garage_Management.BUS
                     if (capnhathd.tenKH != hd.tenKH) capnhathd.tenKH = hd.tenKH;
                     if (capnhathd.sdt != hd.sdt) capnhathd.sdt = hd.sdt;
                     if (capnhathd.ngayLap != hd.ngayLap) capnhathd.ngayLap = hd.ngayLap;
+                    var updateStaff = dbcontext.Staffs.SingleOrDefault(s => s.id == staff.id);
+                    if (updateStaff == null)
+                    {
+                        err = "Không tìm thấy nhân viên này !";
+                        return false;
+                    }
+                    if (updateStaff.Avartar_image != staff.Avartar_image) updateStaff.Avartar_image = staff.Avartar_image;
+                    if (updateStaff.name != staff.name) updateStaff.name = staff.name;
+                    if (updateStaff.phone != staff.phone) updateStaff.phone = staff.phone;
+                    if (updateStaff.address != staff.address) updateStaff.address = staff.address;
                     dbcontext.SaveChanges();
                     return true;
                 }
@@ -70,4 +135,22 @@ namespace Garage_Management.BUS
         }
 
     }
+        public bool DeleteStaff(string staff_id)
+        {
+            using (var dbcontext = new CarModel())
+            {
+                var staff = dbcontext.Staffs.SingleOrDefault(s => s.id == staff_id);
+                if (staff != null)
+                {
+                    dbcontext.Staffs.Remove(staff);
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+
+    }
+
 }
