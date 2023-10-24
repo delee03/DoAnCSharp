@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Garage_Management.DAO
+namespace Garage_Management.DAO.Entities
 {
     public partial class CarModel : DbContext
     {
         public CarModel()
-            : base("name=CarModel1")
+            : base("name=CarModel")
         {
         }
 
@@ -45,14 +45,10 @@ namespace Garage_Management.DAO
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Staff>()
-                .Property(e => e.phone)
-                .IsFixedLength()
-                .IsUnicode(false);
-
             modelBuilder.Entity<Suplier>()
                 .HasMany(e => e.BillInfoes)
                 .WithRequired(e => e.Suplier)
+                .HasForeignKey(e => e.idCarSuplier)
                 .WillCascadeOnDelete(false);
         }
     }

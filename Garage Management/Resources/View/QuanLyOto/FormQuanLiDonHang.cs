@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using System.Xml.Linq;
 using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 
 namespace Garage_Management.Resources.View.QuanLyOto
 {

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Garage_Management.BUS;
 using Garage_Management.DAO;
-
+using Garage_Management.DAO.Entities;
 using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace Garage_Management.Resources.View.QuanLyOto
@@ -42,13 +42,13 @@ namespace Garage_Management.Resources.View.QuanLyOto
         }
         public void FormLapDonHang_Load(object sender, EventArgs e)
         {
-            newHD = query.FindByID(txtIDHoaDon.Text);
-            txtTenKH.Text = newHD.tenKH;
-            txtSDT.Text = newHD.sdt;
-            txtTenNV.Text = newHD.tenNV;    
-            txtIdCar.Text = newHD.idCar;
-            picCar.Image = ByteArrayToImage(newHD.imageCar);
-            dtPicker.Text = newHD.ngayLap.ToString();
+            //newHD = query.FindByID(txtIDHoaDon.Text);
+            //txtTenKH.Text = newHD.tenKH;
+            //txtSDT.Text = newHD.sdt;
+            //txtTenNV.Text = newHD.tenNV;    
+            //txtIdCar.Text = newHD.idCar;
+            //picCar.Image = ByteArrayToImage(newHD.imageCar);
+            //dtPicker.Text = newHD.ngayLap.ToString();
         }
         public Image ByteArrayToImage(byte[] bytes)
         {

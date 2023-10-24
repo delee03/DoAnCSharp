@@ -1,4 +1,4 @@
-namespace Garage_Management.DAO
+namespace Garage_Management.DAO.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -12,16 +12,13 @@ namespace Garage_Management.DAO
         [StringLength(10)]
         public string id { get; set; }
 
-        
         [Column(TypeName = "image")]
-        public byte[] Avatar_image { get; set; }
-      
+        public byte[] Avartar_image { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string name { get; set; }   
+        public string name { get; set; }
 
-    
         [Required]
         [StringLength(11)]
         public string phone { get; set; }

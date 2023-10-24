@@ -1,4 +1,4 @@
-namespace Garage_Management.DAO
+namespace Garage_Management.DAO.Entities
 {
     using System;
     using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace Garage_Management.DAO
 
         public int idBill { get; set; }
 
-        public int idSup { get; set; }
+        public int idCarSuplier { get; set; }
 
         public int count { get; set; }
 

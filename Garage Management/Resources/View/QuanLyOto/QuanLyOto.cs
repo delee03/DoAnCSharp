@@ -21,7 +21,7 @@ using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Garage_Management.DAO;
-
+using Garage_Management.DAO.Entities;
 using Garage_Management.Resources.View.QuanLyOto;
 using Guna.UI2.WinForms;
 using Image = System.Drawing.Image;
@@ -107,7 +107,6 @@ namespace Garage_Management
                 throw new Exception("Vui lòng nhập số tiền !\n Bạn đang nhập chữ !");
             if (txtGia.Text.Length < 8)
                 throw new Exception("Oto có giá tối thiểu từ 10 triệu\n Vui lòng nhập thêm số 0 !");
-
         }
 
 

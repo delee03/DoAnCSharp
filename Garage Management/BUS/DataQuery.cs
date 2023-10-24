@@ -1,5 +1,5 @@
 ﻿﻿using Garage_Management.DAO;
-
+using Garage_Management.DAO.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +37,7 @@ namespace Garage_Management.BUS
                 context.HoaDons.Remove(hd);
                 context.SaveChanges();
             }
-                
         }
-
 
         public bool UpdateBill(HoaDon hd)
         {
@@ -111,7 +109,7 @@ namespace Garage_Management.BUS
                         err = "Không tìm thấy nhân viên này !";
                         return false;
                     }
-                    if (updateStaff.Avatar_image != staff.Avatar_image) updateStaff.Avatar_image = staff.Avatar_image;
+                    if (updateStaff.Avartar_image != staff.Avartar_image) updateStaff.Avartar_image = staff.Avartar_image;
                     if (updateStaff.name != staff.name) updateStaff.name = staff.name;
                     if (updateStaff.phone != staff.phone) updateStaff.phone = staff.phone;
                     if (updateStaff.address != staff.address) updateStaff.address = staff.address;

@@ -1,5 +1,6 @@
 ﻿using Garage_Management.BUS;
 using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,7 @@ namespace Garage_Management.Resources.View.Nhân_sự
         {
             staff = query.GetStaffByID(txtMS.Text);
 
-            pbAvatar.Image = context.ByteArrayToImage(staff.Avatar_image);
+            pbAvatar.Image = context.ByteArrayToImage(staff.Avartar_image);
             txtHoVaTen.Text = staff.name;
             txtSĐT.Text = staff.phone;
             txtDiaChi.Text = staff.address;
@@ -73,7 +74,7 @@ namespace Garage_Management.Resources.View.Nhân_sự
         {
             if(DataBinding())
             {
-                staff.Avatar_image   = has_img ? context.ImageToByteArrary(this.pbAvatar) : staff.Avatar_image;
+                staff.Avartar_image   = has_img ? context.ImageToByteArrary(this.pbAvatar) : staff.Avartar_image;
                 staff.name = txtHoVaTen.Text;
                 staff.phone = txtSĐT.Text;
                 staff.address = txtDiaChi.Text;

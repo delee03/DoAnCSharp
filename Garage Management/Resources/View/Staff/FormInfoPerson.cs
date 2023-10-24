@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Data.Entity.Migrations;
 using System.Data.Entity;
 using System.Runtime.Remoting.Contexts;
+using Garage_Management.DAO.Entities;
 
 namespace Garage_Management.Resources.View
 {
@@ -93,7 +94,7 @@ namespace Garage_Management.Resources.View
                         {
                             id = txtMS.Text,
                             //Avartar_image = null,
-                            Avatar_image = has_img ? dataContext.ImageToByteArrary(pbAvatar) : dataContext.ImageToByteArrary(this.pbAvatar),
+                            Avartar_image = has_img ? dataContext.ImageToByteArrary(pbAvatar) : dataContext.ImageToByteArrary(this.pbAvatar),
                             name = txtHoVaTen.Text,
                             phone = txtSĐT.Text.Trim(),
                             address = txtDiaChi.Text,

@@ -102,8 +102,6 @@ CREATE TABLE Staff (
 )
 GO
 
-
-
 ALTER TABLE dbo.Car drop CONSTRAINT FK_idDatHang;
 ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
 
