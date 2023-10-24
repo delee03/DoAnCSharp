@@ -35,34 +35,34 @@ namespace Garage_Management.BUS
             }
         }
  
-        public bool UpdateCar(Car car, out string err)
-        {
-            err = string.Empty;
-            try
-            {
-                using (var dbcontext = new CarModel())
-                {
-                    var updateCar = dbcontext.Cars.SingleOrDefault(s => s.idCar == car.idCar);
-                    if (updateCar == null)
-                    {
-                        err = "Không tìm thấy sản phẩm này !";
-                        return false;
-                    }
-                    if (updateCar.nameCar != car.nameCar) updateCar.nameCar = car.nameCar;
-                    if (updateCar.idSup != car.idSup) updateCar.idSup = car.idSup;
-                    if (updateCar.ngayNhap != car.ngayNhap) updateCar.ngayNhap = car.ngayNhap;
-                    if (updateCar.price != car.price) updateCar.price = car.price;
-                    if (updateCar.idDatHang != car.idDatHang) updateCar.idDatHang = car.idDatHang;
-                    dbcontext.SaveChanges();
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                err = ex.Message;
-                return false;
-            }
-        }
+        //public bool UpdateCar(Car car, out string err)
+        //{
+        //    err = string.Empty;
+        //    try
+        //    {
+        //        using (var dbcontext = new CarModel())
+        //        {
+        //            var updateCar = dbcontext.Cars.SingleOrDefault(s => s.idCar == car.idCar);
+        //            if (updateCar == null)
+        //            {
+        //                err = "Không tìm thấy sản phẩm này !";
+        //                return false;
+        //            }
+        //            if (updateCar.nameCar != car.nameCar) updateCar.nameCar = car.nameCar;
+        //            if (updateCar.idSup != car.idSup) updateCar.idSup = car.idSup;
+        //            if (updateCar.ngayNhap != car.ngayNhap) updateCar.ngayNhap = car.ngayNhap;
+        //            if (updateCar.price != car.price) updateCar.price = car.price;
+        //            if (updateCar.idDatHang != car.idDatHang) updateCar.idDatHang = car.idDatHang;
+        //            dbcontext.SaveChanges();
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        err = ex.Message;
+        //        return false;
+        //    }
+        //}
 
         public bool UpdateStaff(Staff staff)
         {

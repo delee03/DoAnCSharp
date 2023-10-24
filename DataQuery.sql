@@ -18,20 +18,12 @@ GO
 CREATE TABLE Car (
 	idCar NVARCHAR(10) PRIMARY KEY,
 	nameCar NVARCHAR(100) NOT NULL,
---	imageCar IMAGE DEFAULT NULL,
+	imageCar IMAGE,
 	idSup int Default null,
 	ngayNhap datetime,
 	price FLOAT NOT NULL DEFAULT 0,
-	idDatHang INT default NULL
 )
-GO
-
-
-CREATE TABLE DaDatHang(
-	idDat INT PRIMARY KEY,
-	info NVARCHAR(100) DEFAULT NULL
-)
-GO
+GO 
 
 CREATE TABLE Suplier(
 	idSup INT PRIMARY KEY,
@@ -84,6 +76,18 @@ CREATE TABLE BillInfo (
 )
 GO
 
+Create table HoaDon(
+	idHoaDon nvarchar(10) primary key,
+	tenKH nvarchar(100) not null,
+	sdt char(11) not null,
+	tenNV nvarchar(50) not null,
+	idCar nvarchar(10) not null,
+	imageCar image default null,
+	ngayLap datetime,
+	FOREIGN KEY (idCar) REFERENCES Car(idCar)
+)
+GO
+
 CREATE TABLE Staff (
 	id NVARCHAR(10) PRIMARY KEY,
 	Avartar_image image null,
@@ -93,34 +97,22 @@ CREATE TABLE Staff (
 )
 GO
 
-ALTER TABLE dbo.Car ADD CONSTRAINT FK_idDatHang FOREIGN KEY(idDatHang) REFERENCES dbo.DaDatHang(idDat)
 ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
 
 insert into dbo.Suplier(idSup, nameSup)
 values(1,'Mercedes'),(2, 'Porsche'),(3,'Toyota'),(4, 'Honda'),(5, 'Mazda');
+GO
 
-insert into dbo.DaDatHang(idDat, info)
-values(0, N'Trống'),(1, N'Nguyen Văn A 0987654321'),(2, N'Nguyen Văn B 0123456789');
+Insert into dbo.Car (idCar, nameCar, idSup, ngayNhap, price)
+values('car01', 'C200', 1, '2023-03-03', 1000000),
+		('car02', '911 Turbo', 2,'2023-04-03', 8888888),
+		('car03', 'CamryHyrid', 3, '2023-05-03', 2000000),
+		('car04', 'Civic', 4, '2023-06-03', 800000),
+		('car05', 'CX5', 5, '2023-07-03', 750000);
+GO
 
-Insert into dbo.Car (idCar, nameCar, idSup, ngayNhap, price, idDatHang)
-values('car01', 'C200', 1, '2023-03-03', 1000000, 1),
-		('car02', '911 Turbo', 2,'2023-04-03', 8888888, 0),
-		('car03', 'CamryHyrid', 3, '2023-05-03', 2000000, 0),
-		('car04', 'Civic', 4, '2023-06-03', 800000, 0),
-		('car05', 'CX5', 5, '2023-07-03', 750000, 2);
-
--- INSERT TABLE STAFF
-/*INSERT INTO Staff(id,Avartar_image, name,phone,address)
-VALUES ('NV001',null, N'Bùi Hoàng Việt', '0339405697', N'Thủ Đức')
-INSERT INTO Staff(id,Avartar_image,name,phone,address)
-VALUES ('NV002',null, N'Nguyễn Bình Minh', '0169405656', N'Bình Thạnh')
-INSERT INTO Staff(id,Avartar_image,name,phone,address)
-VALUES ('NV003',null, N'Nguyễn Trường An', '0569405687', N'Gò Vấp')
-INSERT INTO Staff(id,Avartar_image,name,phone,address)
-VALUES ('NV004',null, N'Bùi Hồng Thiên', '0889405617', N'Bình Chánh')
-GO */
-
-select * from Staff
+Insert into dbo.HoaDon(idHoaDon, tenKH,sdt , tenNV, idCar, imageCar, ngayLap)
+values('hd1', 'NGuyen Van A', '0987654321', N'Viet', 'car01', NULL , 10/20/2023)
 
 INSERT INTO Account(
 	UserName,
