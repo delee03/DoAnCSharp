@@ -29,17 +29,12 @@ namespace Garage_Management
 {
     public partial class QuanLyOto : Form
     {
-        public FormQuanLiDonHang datatransfer;
+       
         public QuanLyOto()
         {
             InitializeComponent();
-
         }
-        public QuanLyOto(FormQuanLiDonHang data)
-        {
-            InitializeComponent();
-            this.datatransfer = data;
-        }
+        private bool isCreateBill = false;
         CarModel context = new CarModel();
         private void QuanLyOto_Load(object sender, EventArgs e)
         {
@@ -239,18 +234,7 @@ namespace Garage_Management
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text;
-            for (int i = 0; i < dgvOto.Rows.Count - 1; i++)
-            {
-                if (dgvOto.Rows[i].Cells[3].Value.ToString().ToLower().Contains(keyword.ToLower()))
-                {
-                    dgvOto.Rows[i].Visible = true;
-                }
-                else
-                {
-                    dgvOto.Rows[i].Visible = false;
-                }
-            }
+           
         }
 
         private void btnSearch_Click_1(object sender, EventArgs e)
@@ -277,6 +261,7 @@ namespace Garage_Management
 
         private void dgvOto_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            isCreateBill = true;
             if (dgvOto.Rows.Count > 0)
             {
                 DataGridViewRow row = dgvOto.SelectedRows[0];
@@ -337,11 +322,28 @@ namespace Garage_Management
 
         private void btnLapHoaDon_Click_1(object sender, EventArgs e)
         {
-            FormLapDonHang f = new FormLapDonHang();
-            f.txtTenXe.Text = txtTen.Text;
-            f.txtGiaXe.Text = txtGia.Text;
-            f.picCar.Image = picImage.Image;
-            f.Show();
+            if (isCreateBill)
+            {
+                FormLapDonHang f = new FormLapDonHang();
+                f.txtIdCar.Text = txtID.Text;
+                f.picCar.Image = picImage.Image;
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn oto nào để lập hóa đơn !!");
+            }
+           
+        }
+
+        private void txtSearch_MouseHover(object sender, EventArgs e)
+        {
+            txtSearch.Text = "Nhập tên xe";
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

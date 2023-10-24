@@ -71,6 +71,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,18 +83,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\DataQuery.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\Bill.cs" />
-    <Compile Include="Entities\BillInfo.cs" />
-    <Compile Include="Entities\Car.cs" />
-    <Compile Include="Entities\CarModel.cs" />
-    <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\HoaDon.cs" />
-    <Compile Include="Entities\Inventory.cs" />
-    <Compile Include="Entities\Staff.cs" />
-    <Compile Include="Entities\Suplier.cs" />
+    <Compile Include="DAO\Entities\Account.cs" />
+    <Compile Include="DAO\Entities\Bill.cs" />
+    <Compile Include="DAO\Entities\BillInfo.cs" />
+    <Compile Include="DAO\Entities\Car.cs" />
+    <Compile Include="DAO\Entities\CarModel.cs" />
+    <Compile Include="DAO\Entities\Customer.cs" />
+    <Compile Include="DAO\Entities\HoaDon.cs" />
+    <Compile Include="DAO\Entities\Inventory.cs" />
+    <Compile Include="DAO\Entities\Staff.cs" />
+    <Compile Include="DAO\Entities\Suplier.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,17 +124,17 @@
     <Compile Include="Resources\View\FormNhanSu.Designer.cs">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\View\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.Designer.cs">
       <DependentUpon>FormLapDonHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\View\QuanLyOto\FormNhapHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\View\QuanLyOto\FormNhapHang.Designer.cs">
-      <DependentUpon>FormNhapHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormTrangChu.cs">
       <SubType>Form</SubType>
@@ -148,12 +150,6 @@
     <Compile Include="Resources\View\QuanLyOto\FormQuanLiDonHang.Designer.cs">
       <DependentUpon>FormQuanLiDonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\View\QuanLyOto\FormQuanLiNhapHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\View\QuanLyOto\FormQuanLiNhapHang.Designer.cs">
-      <DependentUpon>FormQuanLiNhapHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\View\QuanLyOto\QuanLyOto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,11 +163,11 @@
     <EmbeddedResource Include="Resources\View\FormNhanSu.resx">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\FormLapDonHang.resx">
       <DependentUpon>FormLapDonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\View\QuanLyOto\FormNhapHang.resx">
-      <DependentUpon>FormNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormTrangChu.resx">
       <DependentUpon>FormTrangChu.cs</DependentUpon>
@@ -183,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\FormQuanLiDonHang.resx">
       <DependentUpon>FormQuanLiDonHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\View\QuanLyOto\FormQuanLiNhapHang.resx">
-      <DependentUpon>FormQuanLiNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\QuanLyOto.resx">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
@@ -211,13 +204,14 @@
     <None Include="QuanLyGarageDataSet.xss">
       <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Resources\Image\RobotoMono-Italic-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

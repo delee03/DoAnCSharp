@@ -43,15 +43,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTenXe = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.dtPicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtGiaXe = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txtIdCar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.picCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +102,7 @@
             this.txtIDHoaDon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDHoaDon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIDHoaDon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDHoaDon.Location = new System.Drawing.Point(143, 97);
+            this.txtIDHoaDon.Location = new System.Drawing.Point(146, 121);
             this.txtIDHoaDon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIDHoaDon.Name = "txtIDHoaDon";
             this.txtIDHoaDon.PasswordChar = '\0';
@@ -123,7 +122,7 @@
             this.txtSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSDT.Location = new System.Drawing.Point(143, 196);
+            this.txtSDT.Location = new System.Drawing.Point(146, 229);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -143,7 +142,7 @@
             this.txtTenKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(143, 146);
+            this.txtTenKH.Location = new System.Drawing.Point(146, 173);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -151,7 +150,6 @@
             this.txtTenKH.SelectedText = "";
             this.txtTenKH.Size = new System.Drawing.Size(229, 30);
             this.txtTenKH.TabIndex = 10;
-            this.txtTenKH.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // txtTenNV
             // 
@@ -164,7 +162,7 @@
             this.txtTenNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenNV.Location = new System.Drawing.Point(143, 247);
+            this.txtTenNV.Location = new System.Drawing.Point(146, 286);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.PasswordChar = '\0';
@@ -175,20 +173,23 @@
             // 
             // picCar
             // 
+            this.picCar.Enabled = false;
+            this.picCar.FillColor = System.Drawing.Color.Silver;
             this.picCar.ImageRotate = 0F;
-            this.picCar.Location = new System.Drawing.Point(535, 160);
+            this.picCar.Location = new System.Drawing.Point(538, 184);
             this.picCar.Name = "picCar";
-            this.picCar.Size = new System.Drawing.Size(260, 216);
+            this.picCar.Size = new System.Drawing.Size(248, 192);
             this.picCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCar.TabIndex = 11;
             this.picCar.TabStop = false;
+            this.picCar.Click += new System.EventHandler(this.picCar_Click);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 97);
+            this.label2.Location = new System.Drawing.Point(15, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 30);
             this.label2.TabIndex = 12;
@@ -199,7 +200,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 146);
+            this.label3.Location = new System.Drawing.Point(15, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 30);
             this.label3.TabIndex = 12;
@@ -210,7 +211,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 196);
+            this.label4.Location = new System.Drawing.Point(15, 239);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 30);
             this.label4.TabIndex = 12;
@@ -221,43 +222,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 247);
+            this.label5.Location = new System.Drawing.Point(15, 296);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 30);
             this.label5.TabIndex = 13;
             this.label5.Text = "Tên Nhân viên";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 297);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 30);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Thương hiệu ";
-            // 
-            // txtTenXe
-            // 
-            this.txtTenXe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenXe.DefaultText = "";
-            this.txtTenXe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenXe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenXe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenXe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenXe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTenXe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenXe.Location = new System.Drawing.Point(143, 297);
-            this.txtTenXe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTenXe.Name = "txtTenXe";
-            this.txtTenXe.PasswordChar = '\0';
-            this.txtTenXe.PlaceholderText = "";
-            this.txtTenXe.SelectedText = "";
-            this.txtTenXe.Size = new System.Drawing.Size(229, 30);
-            this.txtTenXe.TabIndex = 14;
             // 
             // btnAdd
             // 
@@ -295,7 +264,7 @@
             this.dtPicker.Checked = true;
             this.dtPicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtPicker.Location = new System.Drawing.Point(535, 91);
+            this.dtPicker.Location = new System.Drawing.Point(538, 115);
             this.dtPicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtPicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtPicker.Name = "dtPicker";
@@ -308,7 +277,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(437, 97);
+            this.label7.Location = new System.Drawing.Point(440, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 30);
             this.label7.TabIndex = 18;
@@ -319,61 +288,81 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(437, 160);
+            this.label8.Location = new System.Drawing.Point(440, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 30);
             this.label8.TabIndex = 19;
             this.label8.Text = "Hình ảnh";
             // 
-            // txtGiaXe
+            // txtIdCar
             // 
-            this.txtGiaXe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGiaXe.DefaultText = "";
-            this.txtGiaXe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtGiaXe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtGiaXe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaXe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtGiaXe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaXe.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtGiaXe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaXe.Location = new System.Drawing.Point(143, 346);
-            this.txtGiaXe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtGiaXe.Name = "txtGiaXe";
-            this.txtGiaXe.PasswordChar = '\0';
-            this.txtGiaXe.PlaceholderText = "";
-            this.txtGiaXe.SelectedText = "";
-            this.txtGiaXe.Size = new System.Drawing.Size(229, 30);
-            this.txtGiaXe.TabIndex = 20;
+            this.txtIdCar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtIdCar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIdCar.DefaultText = "";
+            this.txtIdCar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIdCar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIdCar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdCar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIdCar.Enabled = false;
+            this.txtIdCar.FillColor = System.Drawing.Color.Silver;
+            this.txtIdCar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIdCar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIdCar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIdCar.Location = new System.Drawing.Point(146, 351);
+            this.txtIdCar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIdCar.Name = "txtIdCar";
+            this.txtIdCar.PasswordChar = '\0';
+            this.txtIdCar.PlaceholderText = "";
+            this.txtIdCar.SelectedText = "";
+            this.txtIdCar.Size = new System.Drawing.Size(229, 30);
+            this.txtIdCar.TabIndex = 22;
             // 
-            // label9
+            // label10
             // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 355);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 30);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Giá";
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(15, 351);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 30);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "ID Xe";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(683, 24);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnUpdate.Size = new System.Drawing.Size(87, 76);
+            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FormLapDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(869, 560);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtGiaXe);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtIdCar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtTenXe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.picCar);
@@ -386,6 +375,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLapDonHang";
             this.Text = "FormLapDonHang";
+            this.Load += new System.EventHandler(this.FormLapDonHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picCar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -402,10 +392,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
-        public Guna.UI2.WinForms.Guna2TextBox txtTenXe;
         public Guna.UI2.WinForms.Guna2TextBox txtIDHoaDon;
         public Guna.UI2.WinForms.Guna2TextBox txtSDT;
         public Guna.UI2.WinForms.Guna2TextBox txtTenKH;
@@ -414,7 +402,8 @@
         public Guna.UI2.WinForms.Guna2PictureBox picCar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        public Guna.UI2.WinForms.Guna2TextBox txtGiaXe;
-        private System.Windows.Forms.Label label9;
+        public Guna.UI2.WinForms.Guna2TextBox txtIdCar;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2CircleButton btnUpdate;
     }
 }

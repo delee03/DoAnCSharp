@@ -64,7 +64,6 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cHỨCNĂNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuanLyDonHang = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLiDonHang = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíĐơnHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2NotificationPaint1 = new Guna.UI2.WinForms.Guna2NotificationPaint(this.components);
@@ -127,7 +126,7 @@
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID.ForeColor = System.Drawing.Color.Black;
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(676, 134);
+            this.txtID.Location = new System.Drawing.Point(690, 134);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
@@ -146,7 +145,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(90)))), ((int)(((byte)(211)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(90)))), ((int)(((byte)(211)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -176,7 +175,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Azure;
             this.dgvOto.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvOto.RowTemplate.Height = 45;
-            this.dgvOto.Size = new System.Drawing.Size(636, 300);
+            this.dgvOto.Size = new System.Drawing.Size(657, 300);
             this.dgvOto.TabIndex = 65;
             this.dgvOto.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Turquoise;
             this.dgvOto.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(179)))), ((int)(((byte)(241)))));
@@ -275,18 +274,19 @@
             this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Transparent;
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(235, 30);
+            this.txtSearch.Size = new System.Drawing.Size(235, 28);
             this.txtSearch.TabIndex = 62;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.MouseHover += new System.EventHandler(this.txtSearch_MouseHover);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(909, 280);
+            this.label2.Location = new System.Drawing.Point(923, 280);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 23);
+            this.label2.Size = new System.Drawing.Size(156, 23);
             this.label2.TabIndex = 72;
             this.label2.Text = "Thương hiệu";
             // 
@@ -316,7 +316,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(909, 383);
+            this.label5.Location = new System.Drawing.Point(923, 383);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 75;
@@ -327,7 +327,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(909, 355);
+            this.label6.Location = new System.Drawing.Point(923, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 73;
@@ -345,7 +345,7 @@
             this.txtTen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTen.ForeColor = System.Drawing.Color.Black;
             this.txtTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTen.Location = new System.Drawing.Point(676, 279);
+            this.txtTen.Location = new System.Drawing.Point(690, 279);
             this.txtTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
@@ -358,7 +358,7 @@
             // 
             this.cboNcc.ForeColor = System.Drawing.Color.Black;
             this.cboNcc.FormattingEnabled = true;
-            this.cboNcc.Location = new System.Drawing.Point(676, 320);
+            this.cboNcc.Location = new System.Drawing.Point(690, 320);
             this.cboNcc.Name = "cboNcc";
             this.cboNcc.Size = new System.Drawing.Size(212, 24);
             this.cboNcc.TabIndex = 76;
@@ -368,7 +368,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(909, 320);
+            this.label4.Location = new System.Drawing.Point(923, 320);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 23);
             this.label4.TabIndex = 74;
@@ -379,7 +379,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(909, 134);
+            this.label3.Location = new System.Drawing.Point(923, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 23);
             this.label3.TabIndex = 71;
@@ -397,7 +397,7 @@
             this.txtGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGia.ForeColor = System.Drawing.Color.Black;
             this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGia.Location = new System.Drawing.Point(676, 386);
+            this.txtGia.Location = new System.Drawing.Point(690, 386);
             this.txtGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGia.Name = "txtGia";
             this.txtGia.PasswordChar = '\0';
@@ -409,23 +409,23 @@
             // btnImage
             // 
             this.btnImage.Animated = true;
-            this.btnImage.BackColor = System.Drawing.Color.Transparent;
             this.btnImage.BorderRadius = 10;
             this.btnImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnImage.FillColor = System.Drawing.Color.Transparent;
             this.btnImage.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnImage.ForeColor = System.Drawing.Color.White;
             this.btnImage.HoverState.FillColor = System.Drawing.Color.Black;
             this.btnImage.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImage.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnImage.Location = new System.Drawing.Point(913, 212);
+            this.btnImage.Location = new System.Drawing.Point(909, 221);
             this.btnImage.Name = "btnImage";
-            this.btnImage.Size = new System.Drawing.Size(124, 35);
+            this.btnImage.Size = new System.Drawing.Size(114, 27);
             this.btnImage.TabIndex = 79;
             this.btnImage.Text = "Chọn ảnh";
+            this.btnImage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnImage.Click += new System.EventHandler(this.btnImage_Click_1);
             // 
             // btnAdd
@@ -441,7 +441,7 @@
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.HoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(676, 432);
+            this.btnAdd.Location = new System.Drawing.Point(690, 432);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAdd.Size = new System.Drawing.Size(134, 55);
@@ -452,7 +452,7 @@
             // picImage
             // 
             this.picImage.BackColor = System.Drawing.Color.White;
-            this.picImage.Location = new System.Drawing.Point(676, 177);
+            this.picImage.Location = new System.Drawing.Point(690, 177);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(212, 95);
             this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -484,7 +484,7 @@
             // btnLapHoaDon
             // 
             this.btnLapHoaDon.BackColor = System.Drawing.Color.Transparent;
-            this.btnLapHoaDon.BorderRadius = 17;
+            this.btnLapHoaDon.BorderRadius = 13;
             this.btnLapHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLapHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLapHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -531,7 +531,7 @@
             this.dtPicker.FillColor = System.Drawing.Color.DarkViolet;
             this.dtPicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtPicker.Location = new System.Drawing.Point(676, 355);
+            this.dtPicker.Location = new System.Drawing.Point(690, 355);
             this.dtPicker.MaxDate = new System.DateTime(2023, 11, 30, 0, 0, 0, 0);
             this.dtPicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtPicker.Name = "dtPicker";
@@ -553,18 +553,11 @@
             // 
             // cHỨCNĂNGToolStripMenuItem
             // 
-            this.cHỨCNĂNGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnQuanLyDonHang});
             this.cHỨCNĂNGToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cHỨCNĂNGToolStripMenuItem.Name = "cHỨCNĂNGToolStripMenuItem";
             this.cHỨCNĂNGToolStripMenuItem.Size = new System.Drawing.Size(147, 21);
             this.cHỨCNĂNGToolStripMenuItem.Text = "Danh mục sản phẩm";
             this.cHỨCNĂNGToolStripMenuItem.Click += new System.EventHandler(this.cHỨCNĂNGToolStripMenuItem_Click);
-            // 
-            // btnQuanLyDonHang
-            // 
-            this.btnQuanLyDonHang.Name = "btnQuanLyDonHang";
-            this.btnQuanLyDonHang.Size = new System.Drawing.Size(82, 26);
             // 
             // btnQuanLiDonHang
             // 
@@ -661,7 +654,6 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cHỨCNĂNGToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnQuanLyDonHang;
         private System.Windows.Forms.ToolStripMenuItem quảnLíĐơnHàngToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2NotificationPaint guna2NotificationPaint1;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
