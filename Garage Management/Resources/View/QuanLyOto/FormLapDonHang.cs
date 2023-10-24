@@ -13,7 +13,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Garage_Management.BUS;
-using Garage_Management.Entities;
+using Garage_Management.DAO;
+
 using static TheArtOfDevHtmlRenderer.Adapters.RGraphicsPath;
 
 namespace Garage_Management.Resources.View.QuanLyOto

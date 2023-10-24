@@ -1,5 +1,5 @@
-﻿using Garage_Management.DAO;
-using Garage_Management.Entities;
+﻿﻿using Garage_Management.DAO;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +42,35 @@ namespace Garage_Management.BUS
 
 
         public bool UpdateBill(HoaDon hd)
+        {
+            string err = string.Empty;
+            try
+            {
+                using (var dbcontext = new CarModel())
+                {
+                    var capnhathd = context.HoaDons.SingleOrDefault(p=>p.idHoaDon == hd.idHoaDon);
+                    if (capnhathd == null)
+                    {
+                        err = "Không tìm thấy hóa đơn này !";
+                        return false;
+                    }
+                    if (capnhathd.tenNV != hd.tenNV) capnhathd.tenNV = hd.tenNV;
+                    if (capnhathd.tenKH != hd.tenKH) capnhathd.tenKH = hd.tenKH;
+                    if (capnhathd.sdt != hd.sdt) capnhathd.sdt = hd.sdt;
+                    if (capnhathd.ngayLap != hd.ngayLap) capnhathd.ngayLap = hd.ngayLap;
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                err = ex.Message;
+                return false;
+            }
+
+
+        }
+
         public List<Staff> GetStaff()
         {
             using (CarModel context = new CarModel())
@@ -60,41 +89,14 @@ namespace Garage_Management.BUS
 
         public List<Staff> GetStaff(string seacrh = "")
         {
-            using(var dbcontext = new CarModel())
+            using (var dbcontext = new CarModel())
             {
                 if (string.IsNullOrEmpty(seacrh)) return dbcontext.Staffs.ToList();
                 else return dbcontext.Staffs.Where(s => s.name.ToLower().Contains(seacrh.ToLower())).ToList();
             }
         }
- 
-        //public bool UpdateCar(Car car, out string err)
-        //{
-        //    err = string.Empty;
-        //    try
-        //    {
-        //        using (var dbcontext = new CarModel())
-        //        {
-        //            var updateCar = dbcontext.Cars.SingleOrDefault(s => s.idCar == car.idCar);
-        //            if (updateCar == null)
-        //            {
-        //                err = "Không tìm thấy sản phẩm này !";
-        //                return false;
-        //            }
-        //            if (updateCar.nameCar != car.nameCar) updateCar.nameCar = car.nameCar;
-        //            if (updateCar.idSup != car.idSup) updateCar.idSup = car.idSup;
-        //            if (updateCar.ngayNhap != car.ngayNhap) updateCar.ngayNhap = car.ngayNhap;
-        //            if (updateCar.price != car.price) updateCar.price = car.price;
-        //            if (updateCar.idDatHang != car.idDatHang) updateCar.idDatHang = car.idDatHang;
-        //            dbcontext.SaveChanges();
-        //            return true;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        err = ex.Message;
-        //        return false;
-        //    }
-        //}
+
+      
 
         public bool UpdateStaff(Staff staff)
         {
@@ -103,23 +105,13 @@ namespace Garage_Management.BUS
             {
                 using (var dbcontext = new CarModel())
                 {
-                    var capnhathd = context.HoaDons.SingleOrDefault(p=>p.idHoaDon == hd.idHoaDon);
-                    if (capnhathd == null)
-                    {
-                        err = "Không tìm thấy hóa đơn này !";
-                        return false;
-                    }
-                    if (capnhathd.tenNV != hd.tenNV) capnhathd.tenNV = hd.tenNV;
-                    if (capnhathd.tenKH != hd.tenKH) capnhathd.tenKH = hd.tenKH;
-                    if (capnhathd.sdt != hd.sdt) capnhathd.sdt = hd.sdt;
-                    if (capnhathd.ngayLap != hd.ngayLap) capnhathd.ngayLap = hd.ngayLap;
                     var updateStaff = dbcontext.Staffs.SingleOrDefault(s => s.id == staff.id);
                     if (updateStaff == null)
                     {
                         err = "Không tìm thấy nhân viên này !";
                         return false;
                     }
-                    if (updateStaff.Avartar_image != staff.Avartar_image) updateStaff.Avartar_image = staff.Avartar_image;
+                    if (updateStaff.Avatar_image != staff.Avatar_image) updateStaff.Avatar_image = staff.Avatar_image;
                     if (updateStaff.name != staff.name) updateStaff.name = staff.name;
                     if (updateStaff.phone != staff.phone) updateStaff.phone = staff.phone;
                     if (updateStaff.address != staff.address) updateStaff.address = staff.address;
@@ -134,7 +126,6 @@ namespace Garage_Management.BUS
             }
         }
 
-    }
         public bool DeleteStaff(string staff_id)
         {
             using (var dbcontext = new CarModel())
@@ -150,7 +141,5 @@ namespace Garage_Management.BUS
             }
         }
 
-
     }
-
 }

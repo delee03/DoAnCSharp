@@ -1,4 +1,4 @@
-namespace Garage_Management.DAO.Entities
+namespace Garage_Management.DAO
 {
     using System;
     using System.Collections.Generic;
@@ -13,6 +13,7 @@ namespace Garage_Management.DAO.Entities
         public Car()
         {
             Bills = new HashSet<Bill>();
+            HoaDons = new HashSet<HoaDon>();
         }
 
         [Key]
@@ -32,11 +33,12 @@ namespace Garage_Management.DAO.Entities
 
         public double price { get; set; }
 
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }
 
-       
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
+
         public virtual Suplier Suplier { get; set; }
     }
 }

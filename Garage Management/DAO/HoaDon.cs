@@ -1,4 +1,4 @@
-﻿namespace Garage_Management.Entities
+namespace Garage_Management.DAO
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,6 @@
     public partial class HoaDon
     {
         [Key]
-        [Required]
         [StringLength(10)]
         public string idHoaDon { get; set; }
 
@@ -21,19 +20,19 @@
         [Required]
         [StringLength(11)]
         public string sdt { get; set; }
-       
 
         [Required]
         [StringLength(50)]
         public string tenNV { get; set; }
-   
+
         [Required]
+        [StringLength(10)]
         public string idCar { get; set; }
 
+        [Column(TypeName = "image")]
         public byte[] imageCar { get; set; }
 
-        [Required]
-        public DateTime ngayLap { get; set; }   
+        public DateTime? ngayLap { get; set; }
 
         public virtual Car Car { get; set; }
     }

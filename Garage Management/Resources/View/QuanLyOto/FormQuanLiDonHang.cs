@@ -8,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Garage_Management.Entities;
+
 using Guna.UI2.WinForms;
 using System.Xml.Linq;
+using Garage_Management.DAO;
 
 namespace Garage_Management.Resources.View.QuanLyOto
 {

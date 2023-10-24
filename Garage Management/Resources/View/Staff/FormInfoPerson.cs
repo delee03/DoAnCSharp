@@ -1,5 +1,5 @@
 ﻿using Garage_Management.BUS;
-using Garage_Management.DAO.Entities;
+using Garage_Management.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,7 +93,7 @@ namespace Garage_Management.Resources.View
                         {
                             id = txtMS.Text,
                             //Avartar_image = null,
-                            Avartar_image = has_img ? dataContext.ImageToByteArrary(pbAvatar) : dataContext.ImageToByteArrary(this.pbAvatar),
+                            Avatar_image = has_img ? dataContext.ImageToByteArrary(pbAvatar) : dataContext.ImageToByteArrary(this.pbAvatar),
                             name = txtHoVaTen.Text,
                             phone = txtSĐT.Text.Trim(),
                             address = txtDiaChi.Text,

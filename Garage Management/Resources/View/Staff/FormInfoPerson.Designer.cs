@@ -144,12 +144,13 @@
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(15, 13);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(61, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(98, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Mã Số";
             // 
@@ -194,12 +195,13 @@
             // 
             // guna2HtmlLabel2
             // 
+            this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.GrayText;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(15, 13);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(98, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(147, 27);
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "Họ Và Tên";
             // 
@@ -243,12 +245,13 @@
             // 
             // guna2HtmlLabel3
             // 
+            this.guna2HtmlLabel3.AutoSize = false;
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.GrayText;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(15, 13);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(128, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(204, 27);
             this.guna2HtmlLabel3.TabIndex = 0;
             this.guna2HtmlLabel3.Text = "Số Điện Thoại";
             // 
@@ -292,12 +295,13 @@
             // 
             // guna2HtmlLabel4
             // 
+            this.guna2HtmlLabel4.AutoSize = false;
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.GrayText;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(15, 13);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(67, 27);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(147, 27);
             this.guna2HtmlLabel4.TabIndex = 0;
             this.guna2HtmlLabel4.Text = "Địa Chỉ";
             // 
@@ -364,13 +368,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2ContainerControl1.ResumeLayout(false);
-            this.guna2ContainerControl1.PerformLayout();
             this.guna2ContainerControl2.ResumeLayout(false);
-            this.guna2ContainerControl2.PerformLayout();
             this.guna2ContainerControl3.ResumeLayout(false);
-            this.guna2ContainerControl3.PerformLayout();
             this.guna2ContainerControl4.ResumeLayout(false);
-            this.guna2ContainerControl4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

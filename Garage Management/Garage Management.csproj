@@ -85,28 +85,23 @@
   <ItemGroup>
     <Compile Include="BUS\DataContext.cs" />
     <Compile Include="BUS\DataQuery.cs" />
+    <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\Bill.cs" />
+    <Compile Include="DAO\BillInfo.cs" />
+    <Compile Include="DAO\Car.cs" />
+    <Compile Include="DAO\CarModel.cs" />
+    <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\Entities\Account.cs" />
-    <Compile Include="DAO\Entities\Bill.cs" />
-    <Compile Include="DAO\Entities\BillInfo.cs" />
-    <Compile Include="DAO\Entities\Car.cs" />
-    <Compile Include="DAO\Entities\CarModel.cs" />
-    <Compile Include="DAO\Entities\Customer.cs" />
-    <Compile Include="DAO\Entities\HoaDon.cs" />
-    <Compile Include="DAO\Entities\DaDatHang.cs" />
-    <Compile Include="DAO\Entities\Inventory.cs" />
-    <Compile Include="DAO\Entities\Staff.cs" />
-    <Compile Include="DAO\Entities\Suplier.cs" />
+    <Compile Include="DAO\HoaDon.cs" />
+    <Compile Include="DAO\Inventory.cs" />
+    <Compile Include="DAO\Staff.cs" />
+    <Compile Include="DAO\Suplier.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyGarageDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
     <Compile Include="Resources\View\Staff\FormEditPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,7 +126,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FormLogincs.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\View\FormNhanSu.cs">
     <Compile Include="Resources\View\Staff\FormNhanSu1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,22 +234,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\accounts.gif" />
+  </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Oreki_houtarou.png" />
   </ItemGroup>

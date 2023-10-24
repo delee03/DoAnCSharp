@@ -20,7 +20,8 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Garage_Management.Entities;
+using Garage_Management.DAO;
+
 using Garage_Management.Resources.View.QuanLyOto;
 using Guna.UI2.WinForms;
 using Image = System.Drawing.Image;

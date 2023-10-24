@@ -9,9 +9,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Garage_Management.Entities;
-using Garage_Management.Resources.View;
 using Guna.UI2.WinForms;
+using Garage_Management.DAO;
+using Garage_Management.Resources.View;
 
 namespace Garage_Management
 {
@@ -24,16 +24,16 @@ namespace Garage_Management
             InitializeComponent();
         }      
         CarModel context = new CarModel();
-
-        }
         private void guna2Button7_Click(object sender, EventArgs e)
         {
             
             if(MessageDialog.Show("Bạn có muốn đăng xuất không", "Thông báo", MessageDialogButtons.YesNo) == DialogResult.OK)
             {
                 this.Hide();
-            }
-        }
+            } 
+        }  
+       // public string info { get; set; }
+
         private void FormTrangChu_Load(object sender, EventArgs e)
         {
             lbFm.Text = "Bảng điều khiển";
@@ -72,7 +72,7 @@ namespace Garage_Management
             dgvDashBoard.Rows[3].Cells[2].Value = "D x R x C \t4.674 x 1.800 x 1.415\nChiều dài cơ sở\t 2735(mm)\nDung tích công tác 1494 (cc)\nMô - men xoắn cực đại\t 140 Nm tại 1700 - 4500 rpm\nCông suất 176hp / 6.000 rpm";
             dgvDashBoard.Rows[4].Cells[2].Value = "D x R x C \t4.590 x 1.845 x 1.680\nChiều dài cơ sở\t 2700 (mm)\nDung tích công tác 1998 (cc)\nMô-men xoắn cực đại\t 200 Nm tại 4000 rpm\nCông suất 154 hp / 6000 rpm";
 
-            lblTrangChu.Text = UserNameFromLogin;
+          //  lblTrangChu.Text = UserNameFromLogin;
         }
         public float GetStar()
         {
@@ -193,8 +193,8 @@ namespace Garage_Management
         {
             OpenChildForm(new FormNhanSu());
             lbFm.Text = btnNhanSu.Text;
-        }
+        }      
 
-       
+
     }
 }
