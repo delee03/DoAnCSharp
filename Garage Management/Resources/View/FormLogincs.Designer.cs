@@ -38,7 +38,10 @@
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(701, 243);
+            this.label1.Location = new System.Drawing.Point(56, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 21);
             this.label1.TabIndex = 1;
@@ -57,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(836, 462);
+            this.label2.Location = new System.Drawing.Point(537, 435);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 20);
             this.label2.TabIndex = 3;
@@ -100,7 +103,7 @@
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtUserName.IconLeft = global::Garage_Management.Properties.Resources.icons8_avatar_32;
             this.txtUserName.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtUserName.Location = new System.Drawing.Point(647, 297);
+            this.txtUserName.Location = new System.Drawing.Point(22, 192);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -131,7 +134,7 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtPassword.IconLeft = global::Garage_Management.Properties.Resources.icons8_lock_50;
             this.txtPassword.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtPassword.Location = new System.Drawing.Point(648, 385);
+            this.txtPassword.Location = new System.Drawing.Point(22, 279);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -148,6 +151,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BackgroundImage = global::Garage_Management.Properties.Resources.login1;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Location = new System.Drawing.Point(23, 12);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(560, 549);
@@ -156,32 +160,46 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Garage_Management.Properties.Resources.accounts;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 64);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.pictureBox1);
+            this.guna2Panel2.Controls.Add(this.txtUserName);
+            this.guna2Panel2.Controls.Add(this.txtPassword);
+            this.guna2Panel2.Location = new System.Drawing.Point(623, 85);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(411, 398);
+            this.guna2Panel2.TabIndex = 6;
+            this.guna2Panel2.UseTransparentBackground = true;
+            // 
             // FormLogincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu;
             this.ClientSize = new System.Drawing.Size(1047, 572);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.label1);
             this.Name = "FormLogincs";
+            this.Opacity = 0.3D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
             this.Load += new System.EventHandler(this.FormLogincs_Load);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -195,5 +213,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         public Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

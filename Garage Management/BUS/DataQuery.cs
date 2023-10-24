@@ -1,4 +1,4 @@
-﻿﻿using Garage_Management.DAO;
+﻿﻿using Garage_Management.DAO.Entities;
 
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,33 @@ namespace Garage_Management.BUS
     public class DataQuery
     {
         CarModel context = new CarModel();
+        public Car FindByIDCar(string id)
+        {
+            using (CarModel dbcontext = new CarModel())
+            {
+                return dbcontext.Cars.FirstOrDefault(f => f.idCar == id);
+            }
+        }
+
+        public void DeleteByIDCar(string id)
+        {
+            Car car = context.Cars.SingleOrDefault(p => p.idCar == id);
+            if (car != null)
+            {
+                context.Cars.Remove(car);
+                context.SaveChanges(); 
+            }
+            else
+            {
+                throw new Exception("Không tìm thấy xe!");
+            }
+
+        }
+
+        public List<Car> GetCar()
+        {
+            return context.Cars.ToList();
+        }
         public List<HoaDon> GetHoaDons()
         {
             return context.HoaDons.ToList();
@@ -39,7 +66,14 @@ namespace Garage_Management.BUS
             }
                 
         }
-
+        public void AddBill(HoaDon hd)
+        {
+            using (CarModel context = new CarModel())
+            {
+                context.HoaDons.Add(hd);
+                context.SaveChanges();
+            };
+        }
 
         public bool UpdateBill(HoaDon hd)
         {

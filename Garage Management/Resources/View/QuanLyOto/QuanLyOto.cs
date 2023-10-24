@@ -1,42 +1,33 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Diagnostics;
-using System.Drawing;
+using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Messaging;
-using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using Garage_Management.DAO;
+using Garage_Management.BUS;
+using Garage_Management.DAO.Entities;
 
 using Garage_Management.Resources.View.QuanLyOto;
-using Guna.UI2.WinForms;
 using Image = System.Drawing.Image;
 
 namespace Garage_Management
 {
     public partial class QuanLyOto : Form
     {
-       
+        FormLapDonHang fLap;
         public QuanLyOto()
         {
             InitializeComponent();
+            fLap = new FormLapDonHang(this);
         }
+
+
         private bool isCreateBill = false;
         CarModel context = new CarModel();
+        DataQuery query = new DataQuery();
         private void QuanLyOto_Load(object sender, EventArgs e)
         {
             try
@@ -100,13 +91,13 @@ namespace Garage_Management
         private void isValidInputData()
         {
             if (!isNotNullValue())
-                throw new Exception("Vui lòng nhập đầy đủ thông tin !.");
+               MessageBox.Show("Vui lòng nhập đầy đủ thông tin !.");
             if (txtID.Text.Length != 5)
-                throw new Exception("ID Oto phải có 5 kí tự !.");
+                MessageBox.Show("ID Oto phải có 5 kí tự !.");
             if (!isNumeric(txtGia.Text))
-                throw new Exception("Vui lòng nhập số tiền !\n Bạn đang nhập chữ !");
+                MessageBox.Show("Vui lòng nhập số tiền !\n Bạn đang nhập chữ !");
             if (txtGia.Text.Length < 8)
-                throw new Exception("Oto có giá tối thiểu từ 10 triệu\n Vui lòng nhập thêm số 0 !");
+                MessageBox.Show("Oto có giá tối thiểu từ 10 triệu\n Vui lòng nhập thêm số 0 !");
 
         }
 
@@ -212,6 +203,34 @@ namespace Garage_Management
             }
         }
 
+        public void DeleteCarAfterAddBill(string idCar)
+        {
+            try
+            {
+                query.DeleteByIDCar(idCar);
+
+                Car car = query.FindByIDCar(idCar);
+                if (car == null)
+                {
+                    MessageBox.Show("Xe đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK);
+                    List<Car> list = query.GetCar();
+                    BindGrid(list);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xóa xe có ID: " + idCar, "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Lỗi khi truy vấn cơ sở dữ liệu: " + ex.Message, "Thông báo", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi không xác định: " + ex.Message, "Thông báo", MessageBoxButtons.OK);
+            }
+        }
+
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
@@ -231,11 +250,13 @@ namespace Garage_Management
             {
                 MessageBox.Show("Không tồn tại oto nào" + ex.Message);
             }
+
+
         }
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnSearch_Click_1(object sender, EventArgs e)
@@ -305,7 +326,7 @@ namespace Garage_Management
 
         }
 
-     
+
 
         private void cHỨCNĂNGToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -329,12 +350,14 @@ namespace Garage_Management
                 f.txtIdCar.Text = txtID.Text;
                 f.picCar.Image = picImage.Image;
                 f.Show();
+                f.btnLoad.Visible = false;
+                f.btnUpdate.Visible = false;
             }
             else
             {
                 MessageBox.Show("Bạn chưa chọn oto nào để lập hóa đơn !!");
             }
-           
+
         }
 
         private void txtSearch_MouseHover(object sender, EventArgs e)

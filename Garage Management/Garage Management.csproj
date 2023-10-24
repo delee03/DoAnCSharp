@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -59,6 +62,9 @@
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
@@ -85,19 +91,19 @@
   <ItemGroup>
     <Compile Include="BUS\DataContext.cs" />
     <Compile Include="BUS\DataQuery.cs" />
-    <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\Bill.cs" />
-    <Compile Include="DAO\BillInfo.cs" />
-    <Compile Include="DAO\Car.cs" />
-    <Compile Include="DAO\CarModel.cs" />
-    <Compile Include="DAO\Customer.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\HoaDon.cs" />
-    <Compile Include="DAO\Inventory.cs" />
-    <Compile Include="DAO\Staff.cs" />
-    <Compile Include="DAO\Suplier.cs" />
-    <Compile Include="Properties\Resources1.Designer.cs">
+    <Compile Include="DAO\Entities\Account.cs" />
+    <Compile Include="DAO\Entities\Bill.cs" />
+    <Compile Include="DAO\Entities\BillInfo.cs" />
+    <Compile Include="DAO\Entities\Car.cs" />
+    <Compile Include="DAO\Entities\CarModel.cs" />
+    <Compile Include="DAO\Entities\Customer.cs" />
+    <Compile Include="DAO\Entities\HoaDon.cs" />
+    <Compile Include="DAO\Entities\Inventory.cs" />
+    <Compile Include="DAO\Entities\Staff.cs" />
+    <Compile Include="DAO\Entities\Suplier.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -198,7 +204,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\FormQuanLiDonHang.resx">
       <DependentUpon>FormQuanLiDonHang.cs</DependentUpon>
@@ -230,6 +236,9 @@
     <None Include="Resources\Image\RobotoMono-Italic-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\Template\template.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -237,12 +246,17 @@
   <ItemGroup>
     <None Include="Resources\Font\accounts.gif" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Oreki_houtarou.png" />
+    <None Include="Resources\Font\trash.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Font\trangchu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\trash %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\printer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

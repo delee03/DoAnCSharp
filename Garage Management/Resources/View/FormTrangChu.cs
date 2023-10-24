@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
-using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using Garage_Management.Resources.View;
 
 namespace Garage_Management

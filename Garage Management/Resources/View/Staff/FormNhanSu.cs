@@ -1,5 +1,5 @@
 ﻿using Garage_Management.BUS;
-using Garage_Management.DAO;
+using Garage_Management.DAO.Entities;
 using Garage_Management.Resources.View.Nhân_sự;
 using System;
 using System.Collections.Generic;
