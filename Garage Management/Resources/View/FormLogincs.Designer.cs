@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblForgotPassWord = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDangKi = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,16 +53,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Get Started From Login Below";
             // 
-            // label2
+            // lblForgotPassWord
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(836, 462);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Forgot Password ?";
+            this.lblForgotPassWord.AutoSize = true;
+            this.lblForgotPassWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblForgotPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassWord.Location = new System.Drawing.Point(836, 462);
+            this.lblForgotPassWord.Name = "lblForgotPassWord";
+            this.lblForgotPassWord.Size = new System.Drawing.Size(125, 20);
+            this.lblForgotPassWord.TabIndex = 3;
+            this.lblForgotPassWord.Text = "Quên Mật Khẩu";
+            this.lblForgotPassWord.Click += new System.EventHandler(this.lblForgotPassWord_Click);
             // 
             // btnLogin
             // 
@@ -143,6 +145,19 @@
             this.txtPassword.TextOffset = new System.Drawing.Point(10, 0);
             this.txtPassword.UseSystemPasswordChar = true;
             // 
+            // lblDangKi
+            // 
+            this.lblDangKi.AutoSize = false;
+            this.lblDangKi.BackColor = System.Drawing.Color.Transparent;
+            this.lblDangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKi.Location = new System.Drawing.Point(678, 462);
+            this.lblDangKi.Name = "lblDangKi";
+            this.lblDangKi.Size = new System.Drawing.Size(121, 29);
+            this.lblDangKi.TabIndex = 6;
+            this.lblDangKi.Text = "Đăng Ký";
+            this.lblDangKi.LinkClicked += new System.EventHandler<TheArtOfDevHtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs>(this.lblDangKi_LinkClicked);
+            this.lblDangKi.Click += new System.EventHandler(this.lblDangKi_Click);
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
@@ -169,9 +184,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 572);
             this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1047, 602);
+            this.Controls.Add(this.lblDangKi);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblForgotPassWord);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
@@ -188,12 +205,13 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblForgotPassWord;
         private Guna.UI2.WinForms.Guna2GradientButton btnLogin;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         public Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDangKi;
     }
 }
