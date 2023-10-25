@@ -45,7 +45,7 @@
             this.btnNhanSu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMucKhac = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnBuy = new Guna.UI2.WinForms.Guna2Button();
@@ -213,7 +213,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnNhanSu);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button4);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button5);
-            this.flowLayoutPanel1.Controls.Add(this.guna2Button6);
+            this.flowLayoutPanel1.Controls.Add(this.btnMucKhac);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-9, 177);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -346,29 +346,30 @@
             this.guna2Button5.TabIndex = 4;
             this.guna2Button5.Text = "    Thống kê";
             // 
-            // guna2Button6
+            // btnMucKhac
             // 
-            this.guna2Button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button6.Animated = true;
-            this.guna2Button6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button6.BorderColor = System.Drawing.Color.Empty;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.Empty;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
-            this.guna2Button6.ImageOffset = new System.Drawing.Point(-11, 0);
-            this.guna2Button6.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button6.Location = new System.Drawing.Point(7, 326);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(248, 60);
-            this.guna2Button6.TabIndex = 5;
-            this.guna2Button6.Text = "    Mục khác";
+            this.btnMucKhac.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMucKhac.Animated = true;
+            this.btnMucKhac.BackColor = System.Drawing.Color.Transparent;
+            this.btnMucKhac.BorderColor = System.Drawing.Color.Empty;
+            this.btnMucKhac.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMucKhac.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMucKhac.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMucKhac.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMucKhac.FillColor = System.Drawing.Color.Empty;
+            this.btnMucKhac.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMucKhac.ForeColor = System.Drawing.Color.White;
+            this.btnMucKhac.HoverState.FillColor = System.Drawing.Color.Silver;
+            this.btnMucKhac.Image = ((System.Drawing.Image)(resources.GetObject("btnMucKhac.Image")));
+            this.btnMucKhac.ImageOffset = new System.Drawing.Point(-11, 0);
+            this.btnMucKhac.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnMucKhac.Location = new System.Drawing.Point(7, 326);
+            this.btnMucKhac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMucKhac.Name = "btnMucKhac";
+            this.btnMucKhac.Size = new System.Drawing.Size(248, 60);
+            this.btnMucKhac.TabIndex = 5;
+            this.btnMucKhac.Text = "    Mục khác";
+            this.btnMucKhac.Click += new System.EventHandler(this.btnMucKhac_Click);
             // 
             // guna2Panel2
             // 
@@ -1144,7 +1145,7 @@
         private Guna.UI2.WinForms.Guna2Button btnOto;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button btnMucKhac;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

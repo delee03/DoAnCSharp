@@ -40,9 +40,7 @@ namespace Garage_Management
                 if (MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     f.ShowDialog();
-
                     this.Show();
-                         
                 }
             }
             else
@@ -50,7 +48,6 @@ namespace Garage_Management
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng !");
             }
             txtPassword.Text = "";
-            
         }
 
         bool Login(string userName, string passWord)
@@ -66,11 +63,6 @@ namespace Garage_Management
         {
             return Regex.IsMatch(ac,"^[a-zA-Z0-9]{6,24}$");
         }
-        private void lblDangKi_Click(object sender, EventArgs e)
-        {
-            FormDangKi formDangKi = new FormDangKi();
-            formDangKi.ShowDialog();
-        }
 
         private void lblDangKi_LinkClicked(object sender, TheArtOfDevHtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs e)
         {
@@ -83,5 +75,10 @@ namespace Garage_Management
             formDoiMatKhau.ShowDialog();
         }
 
+        private void lblDangKi_Click_1(object sender, EventArgs e)
+        {
+            FormDangKi formDangKi = new FormDangKi();
+            formDangKi.ShowDialog();
+        }
     }
 }

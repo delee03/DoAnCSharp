@@ -329,9 +329,9 @@
             // 
             // Column7
             // 
-            this.Column7.HeaderText = "Đặt trước";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
+            //this.Column7.HeaderText = "Đặt trước";
+            //this.Column7.MinimumWidth = 6;
+            //this.Column7.Name = "Column7";
             // 
             // btnUpdate
             // 

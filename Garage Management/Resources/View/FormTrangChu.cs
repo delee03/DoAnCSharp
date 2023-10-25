@@ -194,8 +194,12 @@ namespace Garage_Management
         {
             OpenChildForm(new FormNhanSu());
             lbFm.Text = btnNhanSu.Text;
-        }      
+        }
 
-
+        private void btnMucKhac_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormDoiMatKhau());
+            lbFm.Text = btnMucKhac.Text;
+        }
     }
 }

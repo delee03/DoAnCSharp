@@ -1,11 +1,11 @@
 ﻿using Garage_Management.DAO;
-using Garage_Management.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -34,49 +34,48 @@ namespace Garage_Management.Resources.View
         }
         Modify modify = new Modify();
 
-        private void btnDangKi_Click(object sender, EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
-            string disPlayName = txtDisplayName.Text;
-            string userName = txtDangKiUserName.Text;
-            string passWord = txtDangKiPassWord.Text;
+            string UserName = txtDangKiUserName.Text;
+            string DisPlayName = txtDisplayName.Text;
+            string PassWord = txtDangKiPassWord.Text;
+            string Email = txtTenEmailDangKi.Text;
             string xNpassWord = txtXacNhanPassWord.Text;
-            string email = txtTenEmailDangKi.Text;
-            string type = txtType.Text;
-            if (!CheckAccount(userName))
+            if (!CheckAccount(UserName))
             {
                 MessageBox.Show("Vui lòng nhập tên tài khoản có 6 đến 24 ký tự, với các ký tự chữ và số, chữ in hoa và in thường~");
                 return;
             }
-            if (disPlayName == null)
+            if (DisPlayName == null)
             {
                 MessageBox.Show("Vui lòng nhập tên người dùng!");
                 return;
             }
-            if (!CheckAccount(passWord))
+            if (!CheckAccount(PassWord))
             {
-                MessageBox.Show("Vui lòng nhập tên mật khẩu có 6 đến 24 ký tự, với các ký tự chữ và số, chữ in hoa và in thường~");
+                MessageBox.Show("Vui lòng nhập mật khẩu có 6 đến 24 ký tự, với các ký tự chữ và số, chữ in hoa và in thường~");
                 return;
             }
-            if(xNpassWord != passWord)
+            if (xNpassWord != PassWord)
             {
                 MessageBox.Show("Vui lòng xác nhận đúng mật khẩu~");
                 return;
             }
-            if (!CheckEmail(email))
+            if (!CheckEmail(Email))
             {
                 MessageBox.Show("Vui lòng cập nhật đúng định dạng email~");
                 return;
             }
-            if(modify.Accounts("Select * from Account where Email = '"+ email +"'").Count != 0)
+            if (modify.Accounts("Select * from Account where Email = '" + Email + "'").Count != 0)
             {
                 MessageBox.Show("Email này đã được sử dụng, vui lòng liên kết email khác~");
                 return;
             }
             try
             {
-                string query = "Insert Into Account values ('" + userName + "','"+disPlayName+"','" + passWord + "','"+type+"','" + email + "')";
+                string query = "Insert Into Account values ('" + UserName + "','" + DisPlayName + "','" + PassWord + "','" + Email + "')";
                 modify.Accounts(query);
-                if (MessageBox.Show("Đăng kí tài khoản thành công!Bạn có muốn đăng nhập?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("Đăng kí tài khoản thành công ! Bạn có muốn đăng nhập?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     this.Close();
                 }
@@ -87,7 +86,5 @@ namespace Garage_Management.Resources.View
                 return;
             }
         }
-
-       
     }
 }

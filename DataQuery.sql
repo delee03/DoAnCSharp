@@ -47,8 +47,7 @@ CREATE TABLE Account (
 	UserName NVARCHAR(100) NOT NULL PRIMARY KEY,
 	DisplayName NVARCHAR(100) NOT NULL DEFAULT N'VIỆT',
 	PassWord NVARCHAR(1000) NOT NULL DEFAULT 0, -- PASSWORD && MÃ HÓA PASS
-	Type INT NOT NULL DEFAULT 1, -- DEFAULT ADMIN
-	Email NVARCHAR(100) NULL
+	Email NVARCHAR(100) NULL,
 )
 GO
 
@@ -94,7 +93,6 @@ CREATE TABLE BillInfo (
 )
 GO
 
-
 CREATE TABLE Staff (
 	id NVARCHAR(10) PRIMARY KEY,
 	Avartar_image image null,
@@ -127,7 +125,6 @@ INSERT INTO Account(
 	DisplayName,
 	PassWord,
 	Email,
-	Type
 )
 VALUES (
 	N'hoangviet' , -- UserName - nvarchar(100)
@@ -147,8 +144,6 @@ VALUES (
 	N'123', -- PassWord - nvarchar(1000)
 	1 -- Type - int
 )
-delete Account;
-
 
 CREATE PROC USP_GetAccountByUserName
 @userName nvarchar(100)
@@ -173,3 +168,5 @@ GO
 select * from Account
 
 EXEC USP_Login @username = N'viet', @passWord = N'1'
+
+select * from Account where Email = 'viet@gmail.com'

@@ -86,6 +86,7 @@
     <Compile Include="BUS\DataContext.cs" />
     <Compile Include="BUS\DataQuery.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\Connection.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\Entities\Account.cs" />
     <Compile Include="DAO\Entities\Bill.cs" />
@@ -97,10 +98,17 @@
     <Compile Include="DAO\Entities\Inventory.cs" />
     <Compile Include="DAO\Entities\Staff.cs" />
     <Compile Include="DAO\Entities\Suplier.cs" />
+    <Compile Include="DAO\Modify.cs" />
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\Staff\FormEditPerson.cs">
       <SubType>Form</SubType>
@@ -113,6 +121,7 @@
     </Compile>
     <Compile Include="Resources\View\Staff\FormInfoPerson.Designer.cs">
       <DependentUpon>FormInfoPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\View\FormDangKi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,12 +140,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FormLogincs.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\View\Staff\FormNhanSu1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\View\Staff\FormNhanSu1.Designer.cs">
-      <DependentUpon>FormNhanSu1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\View\Staff\FormNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +157,6 @@
     </Compile>
     <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.Designer.cs">
       <DependentUpon>FormLapDonHang.cs</DependentUpon>
-    <Compile Include="Resources\View\FormPhuTung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\View\FormPhuTung.Designer.cs">
-      <DependentUpon>FormPhuTung.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\View\FormQuenMatKhau.cs">
       <SubType>Form</SubType>
@@ -186,8 +184,12 @@
     <Compile Include="Resources\View\QuanLyOto\QuanLyOto.Designer.cs">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\View\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\Staff\FormEditPerson.resx">
       <DependentUpon>FormEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormDangKi.resx">
       <DependentUpon>FormDangKi.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,9 +204,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>FormLogincs1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\View\Staff\FormNhanSu1.resx">
-      <DependentUpon>FormNhanSu1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\Staff\FormNhanSu.resx">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,8 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\FormLapDonHang.resx">
       <DependentUpon>FormLapDonHang.cs</DependentUpon>
-    <EmbeddedResource Include="Resources\View\FormPhuTung.resx">
-      <DependentUpon>FormPhuTung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\FormQuenMatKhau.resx">
       <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
@@ -264,7 +261,9 @@
   <ItemGroup>
     <None Include="Resources\Font\accounts.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Font\car.gif" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Oreki_houtarou.png" />
   </ItemGroup>

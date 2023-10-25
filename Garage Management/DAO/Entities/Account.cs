@@ -15,12 +15,10 @@ namespace Garage_Management.DAO.Entities
         {
         }
 
-        public Account(string userName, string displayName, string passWord, int type)
+        public Account(string userName, string passWord)
         {
             this.UserName = userName;
-            this.DisplayName = displayName;
             this.PassWord = passWord;
-            this.Type = type;
         }
 
         [Key]
@@ -35,6 +33,8 @@ namespace Garage_Management.DAO.Entities
         [StringLength(1000)]
         public string PassWord { get; set; }
 
-        public int Type { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Email { get; set; }
     }
 }

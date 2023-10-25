@@ -33,13 +33,16 @@
             this.lblForgotPassWord = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblDangKi = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblDangKi = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(701, 243);
+            this.label1.Location = new System.Drawing.Point(176, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(269, 21);
             this.label1.TabIndex = 1;
@@ -57,12 +60,12 @@
             // 
             this.lblForgotPassWord.AutoSize = true;
             this.lblForgotPassWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblForgotPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblForgotPassWord.Location = new System.Drawing.Point(836, 462);
+            this.lblForgotPassWord.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPassWord.Location = new System.Drawing.Point(317, 411);
             this.lblForgotPassWord.Name = "lblForgotPassWord";
-            this.lblForgotPassWord.Size = new System.Drawing.Size(125, 20);
+            this.lblForgotPassWord.Size = new System.Drawing.Size(176, 28);
             this.lblForgotPassWord.TabIndex = 3;
-            this.lblForgotPassWord.Text = "Quên Mật Khẩu";
+            this.lblForgotPassWord.Text = "Forgot PassWord ?";
             this.lblForgotPassWord.Click += new System.EventHandler(this.lblForgotPassWord_Click);
             // 
             // btnLogin
@@ -76,7 +79,7 @@
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(623, 512);
+            this.btnLogin.Location = new System.Drawing.Point(111, 466);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(412, 49);
             this.btnLogin.TabIndex = 4;
@@ -86,6 +89,48 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this.txtUserName;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.txtPassword;
+            // 
+            // lblDangKi
+            // 
+            this.lblDangKi.AutoSize = true;
+            this.lblDangKi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKi.Location = new System.Drawing.Point(147, 411);
+            this.lblDangKi.Name = "lblDangKi";
+            this.lblDangKi.Size = new System.Drawing.Size(82, 28);
+            this.lblDangKi.TabIndex = 7;
+            this.lblDangKi.Text = "Register";
+            this.lblDangKi.Click += new System.EventHandler(this.lblDangKi_Click_1);
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Panel1.Controls.Add(this.pictureBox1);
+            this.guna2Panel1.Controls.Add(this.btnLogin);
+            this.guna2Panel1.Controls.Add(this.lblDangKi);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.txtUserName);
+            this.guna2Panel1.Controls.Add(this.txtPassword);
+            this.guna2Panel1.Controls.Add(this.lblForgotPassWord);
+            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Location = new System.Drawing.Point(220, 24);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(618, 537);
+            this.guna2Panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Garage_Management.Properties.Resources.accounts;
+            this.pictureBox1.Location = new System.Drawing.Point(177, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(265, 208);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // txtUserName
             // 
@@ -102,7 +147,7 @@
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtUserName.IconLeft = global::Garage_Management.Properties.Resources.icons8_avatar_32;
             this.txtUserName.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtUserName.Location = new System.Drawing.Point(647, 297);
+            this.txtUserName.Location = new System.Drawing.Point(142, 260);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
@@ -113,10 +158,6 @@
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextOffset = new System.Drawing.Point(10, 0);
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this.txtPassword;
             // 
             // txtPassword
             // 
@@ -133,7 +174,7 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtPassword.IconLeft = global::Garage_Management.Properties.Resources.icons8_lock_50;
             this.txtPassword.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtPassword.Location = new System.Drawing.Point(648, 385);
+            this.txtPassword.Location = new System.Drawing.Point(143, 346);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
@@ -145,60 +186,36 @@
             this.txtPassword.TextOffset = new System.Drawing.Point(10, 0);
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // lblDangKi
+            // guna2PictureBox1
             // 
-            this.lblDangKi.AutoSize = false;
-            this.lblDangKi.BackColor = System.Drawing.Color.Transparent;
-            this.lblDangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDangKi.Location = new System.Drawing.Point(678, 462);
-            this.lblDangKi.Name = "lblDangKi";
-            this.lblDangKi.Size = new System.Drawing.Size(121, 29);
-            this.lblDangKi.TabIndex = 6;
-            this.lblDangKi.Text = "Đăng Ký";
-            this.lblDangKi.LinkClicked += new System.EventHandler<TheArtOfDevHtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs>(this.lblDangKi_LinkClicked);
-            this.lblDangKi.Click += new System.EventHandler(this.lblDangKi_Click);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BackgroundImage = global::Garage_Management.Properties.Resources.login1;
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.guna2Panel1.Location = new System.Drawing.Point(23, 12);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(560, 549);
-            this.guna2Panel1.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Garage_Management.Properties.Resources.accounts;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 154);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.guna2PictureBox1.BackgroundImage = global::Garage_Management.Properties.Resources.car1;
+            this.guna2PictureBox1.Image = global::Garage_Management.Properties.Resources.car2;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, 1);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1050, 591);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // FormLogincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 572);
-            this.Controls.Add(this.pictureBox1);
-            this.ClientSize = new System.Drawing.Size(1047, 602);
-            this.Controls.Add(this.lblDangKi);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1048, 591);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.lblForgotPassWord);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUserName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.DoubleBuffered = true;
             this.Name = "FormLogincs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
             this.Load += new System.EventHandler(this.FormLogincs_Load);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -207,11 +224,12 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private System.Windows.Forms.Label lblForgotPassWord;
         private Guna.UI2.WinForms.Guna2GradientButton btnLogin;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         public Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblDangKi;
+        private System.Windows.Forms.Label lblDangKi;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

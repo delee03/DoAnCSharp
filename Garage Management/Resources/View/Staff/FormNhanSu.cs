@@ -31,13 +31,6 @@ namespace Garage_Management.Resources.View
 
         public void FormNhanSu_Load(object sender, EventArgs e)
         {
-            //dgvStaff.Rows.Add(7);
-            //dgvStaff.Rows[0].Cells[1].Value = Image.FromFile(@"C:\Users\bhvie\OneDrive\Pictures\Acer\Oreki_houtarou.png");
-            //dgvStaff.Rows[0].Cells[2].Value = "việt";
-            //dgvStaff.Rows[0].Cells[3].Value = "NV001";
-            //dgvStaff.Rows[0].Cells[4].Value = "000";
-            //dgvStaff.Rows[0].Cells[5].Value = "Bình thạnh";
-
             var listStaff = query.GetStaff();
             BindGridStaff(listStaff);
         }
@@ -124,51 +117,5 @@ namespace Garage_Management.Resources.View
                 fEdit.SetTextBoxValues(valueId);
             }
         }
-
-        //public void btnLaylaimatkhau_click(object sender, EventArgs e)
-        //{
-        //    string email = txtemailquenmatkhau.Text;
-        //    if(email.Trim() == "")
-        //    {
-        //        MessageBox.Show("vui long dang ky");
-        //    }
-        //    else
-        //    {
-        //        string query = "select * from Account where Email = '" + email + "'";
-        //        if(modify.Account(query).Count != 0)
-        //        {
-        //            lblketqua.Text = "Mat khau: " + modify.Account(query)[0].PassWord;
-        //        }
-        //        else
-        //        {
-        //            lblketqua.Text = "Email chua dang ky";
-        //        }
-        //    }
-        //}
-
-        //public Modify()
-        //{
-
-        //}
-
-        //SqlCommand sqlCommand;
-        //SqlDataReader dataReader;
-
-        //public List<Account> Account(String query)
-        //{
-        //    List<Account> accounts = new List<Account>();
-        //    using(SqlConnection sqlConnection = Connection.GetSqlConnection())
-        //    {
-        //        sqlConnection.Open();
-        //        this.sqlCommand = new SqlCommand(query, sqlConnection);
-        //        this.dataReader = sqlCommand.ExecuteReader();
-        //        while(dataReader.Read())
-        //        {
-        //            accounts.Add(new DAO.Account(dataReader.GetString(0)));
-        //        }
-        //        SqlConnection.Close();
-        //    }
-        //    return accounts;
-        //}
     }
 }

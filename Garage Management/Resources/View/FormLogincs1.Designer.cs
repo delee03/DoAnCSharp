@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Garage_Management.Resources.View {
+namespace Garage_Management.Resources.View.Login {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Garage_Management.Resources.View {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Garage_Management.Resources.View.FormLogincs", typeof(FormLogincs).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Garage_Management.Resources.View.Login.FormLogincs", typeof(FormLogincs).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
