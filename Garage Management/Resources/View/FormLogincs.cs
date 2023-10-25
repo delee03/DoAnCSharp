@@ -24,7 +24,9 @@ namespace Garage_Management
 
         private void FormLogincs_Load(object sender, EventArgs e)
         {
-
+            //  guna2Panel2.BackColor = Color.FromArgb(0, 0, 0, 0);// Màu trong suốt (ARGB)
+            //  pictureBox1.BackColor = Color.FromArgb(0, 0, 0, 0);
+          //  btnLogin.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
      
 
@@ -64,18 +66,13 @@ namespace Garage_Management
             return Regex.IsMatch(ac,"^[a-zA-Z0-9]{6,24}$");
         }
 
-        private void lblDangKi_LinkClicked(object sender, TheArtOfDevHtmlRenderer.Core.Entities.HtmlLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void lblForgotPassWord_Click(object sender, EventArgs e)
+        private void btnQuenMK_Click(object sender, EventArgs e)
         {
             FormQuenMatKhau formDoiMatKhau = new FormQuenMatKhau();
             formDoiMatKhau.ShowDialog();
         }
 
-        private void lblDangKi_Click_1(object sender, EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
             FormDangKi formDangKi = new FormDangKi();
             formDangKi.ShowDialog();

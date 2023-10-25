@@ -51,6 +51,8 @@
             this.txtIdCar = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnLoad = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.lbThongBao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +184,6 @@
             this.picCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCar.TabIndex = 11;
             this.picCar.TabStop = false;
-            this.picCar.Click += new System.EventHandler(this.picCar_Click);
             // 
             // label2
             // 
@@ -258,6 +259,7 @@
             this.btnCancel.Size = new System.Drawing.Size(180, 45);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dtPicker
             // 
@@ -316,6 +318,7 @@
             this.txtIdCar.SelectedText = "";
             this.txtIdCar.Size = new System.Drawing.Size(229, 30);
             this.txtIdCar.TabIndex = 22;
+            this.txtIdCar.TextChanged += new System.EventHandler(this.txtIdCar_TextChanged);
             // 
             // label10
             // 
@@ -335,15 +338,46 @@
             this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.Color.DarkOrange;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(683, 24);
+            this.btnUpdate.Location = new System.Drawing.Point(535, 407);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnUpdate.Size = new System.Drawing.Size(87, 76);
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoad.FillColor = System.Drawing.Color.LimeGreen;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Location = new System.Drawing.Point(246, 407);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnLoad.Size = new System.Drawing.Size(87, 76);
+            this.btnLoad.TabIndex = 25;
+            this.btnLoad.Text = "Xem";
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // lbThongBao
+            // 
+            this.lbThongBao.BackColor = System.Drawing.Color.Transparent;
+            this.lbThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lbThongBao.Location = new System.Drawing.Point(12, 72);
+            this.lbThongBao.Name = "lbThongBao";
+            this.lbThongBao.Size = new System.Drawing.Size(330, 23);
+            this.lbThongBao.TabIndex = 26;
+            this.lbThongBao.Text = "Bạn nhớ nhấn cập nhật để lưu nhé !";
+            this.lbThongBao.Visible = false;
             // 
             // FormLapDonHang
             // 
@@ -353,6 +387,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(869, 560);
+            this.Controls.Add(this.lbThongBao);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtIdCar);
@@ -392,8 +428,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnCancel;
         public Guna.UI2.WinForms.Guna2TextBox txtIDHoaDon;
         public Guna.UI2.WinForms.Guna2TextBox txtSDT;
         public Guna.UI2.WinForms.Guna2TextBox txtTenKH;
@@ -404,6 +438,10 @@
         private System.Windows.Forms.Label label8;
         public Guna.UI2.WinForms.Guna2TextBox txtIdCar;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2CircleButton btnUpdate;
+        public Guna.UI2.WinForms.Guna2CircleButton btnUpdate;
+        public Guna.UI2.WinForms.Guna2CircleButton btnLoad;
+        public Guna.UI2.WinForms.Guna2Button btnAdd;
+        public Guna.UI2.WinForms.Guna2Button btnCancel;
+        private System.Windows.Forms.Label lbThongBao;
     }
 }

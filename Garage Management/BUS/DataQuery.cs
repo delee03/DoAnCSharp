@@ -1,17 +1,77 @@
 ﻿﻿using Garage_Management.DAO;
 using Garage_Management.DAO.Entities;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Garage_Management.BUS
 {
     public class DataQuery
     {
         CarModel context = new CarModel();
+        public Car FindByIDCar(string id)
+        {
+            using (CarModel dbcontext = new CarModel())
+            {
+                return dbcontext.Cars.FirstOrDefault(f => f.idCar == id);
+            }
+        }
+        public Car FindByNameCar(string id)
+        {
+            using (CarModel dbcontext = new CarModel())
+            {
+                return dbcontext.Cars.FirstOrDefault(p => p.nameCar == id);
+            }
+        }
+        public void DeleteByNameCar(string name)
+        {
+            Car car = context.Cars.SingleOrDefault(p => p.idCar == name);
+            if (car != null)
+            {
+                context.Cars.Remove(car);
+                context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Không tìm thấy xe!");
+            }
+
+        }
+        public void DeleteByIDCar(string id)
+        {
+            Car car = context.Cars.SingleOrDefault(p => p.idCar == id);
+            if (car != null)
+            {
+                context.Cars.Remove(car);
+                context.SaveChanges(); 
+            }
+            else
+            {
+                throw new Exception("Không tìm thấy xe!");
+            }
+
+        }
+        public void DeleteByIDCarBill(Car car, Guna2TextBox text)
+        {
+            using(CarModel dbcontext = new CarModel())
+            {
+                car = context.Cars.SingleOrDefault(p => p.idCar == text.Text);
+                context.Cars.Remove(car);
+                context.SaveChanges();
+            };           
+
+        }
+
+        public List<Car> GetCar()
+        {
+            return context.Cars.ToList();
+        }
         public List<HoaDon> GetHoaDons()
         {
             return context.HoaDons.ToList();
@@ -24,6 +84,7 @@ namespace Garage_Management.BUS
                 return dbcontext.HoaDons.FirstOrDefault(f => f.idHoaDon == id);
              }
         }
+       
 
         public void DeleteByID(string id)
         {
@@ -37,6 +98,18 @@ namespace Garage_Management.BUS
                 context.HoaDons.Remove(hd);
                 context.SaveChanges();
             }
+        }
+        public void AddBill(HoaDon hd)
+        {
+            using (CarModel context = new CarModel())
+            {
+                if (hd != null)
+                {
+                   context.HoaDons.Add(hd);                 
+                   context.SaveChanges();               
+                }                                                        
+            };   
+                    
         }
 
         public bool UpdateBill(HoaDon hd)

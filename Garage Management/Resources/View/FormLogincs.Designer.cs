@@ -29,32 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblForgotPassWord = new System.Windows.Forms.Label();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblDangKi = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picBG = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnDangKy = new System.Windows.Forms.Label();
+            this.btnQuenMK = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBG)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(176, 223);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Get Started From Login Below";
             // 
             // lblForgotPassWord
             // 
@@ -66,10 +58,11 @@
             this.lblForgotPassWord.Size = new System.Drawing.Size(176, 28);
             this.lblForgotPassWord.TabIndex = 3;
             this.lblForgotPassWord.Text = "Forgot PassWord ?";
-            this.lblForgotPassWord.Click += new System.EventHandler(this.lblForgotPassWord_Click);
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BorderColor = System.Drawing.Color.Empty;
             this.btnLogin.BorderRadius = 20;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -79,58 +72,17 @@
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(111, 466);
+            this.btnLogin.Location = new System.Drawing.Point(257, 450);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(412, 49);
+            this.btnLogin.Size = new System.Drawing.Size(386, 49);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
+            this.btnLogin.UseTransparentBackground = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this.txtUserName;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.TargetControl = this.txtPassword;
-            // 
-            // lblDangKi
-            // 
-            this.lblDangKi.AutoSize = true;
-            this.lblDangKi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDangKi.Location = new System.Drawing.Point(147, 411);
-            this.lblDangKi.Name = "lblDangKi";
-            this.lblDangKi.Size = new System.Drawing.Size(82, 28);
-            this.lblDangKi.TabIndex = 7;
-            this.lblDangKi.Text = "Register";
-            this.lblDangKi.Click += new System.EventHandler(this.lblDangKi_Click_1);
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Controls.Add(this.btnLogin);
-            this.guna2Panel1.Controls.Add(this.lblDangKi);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.txtUserName);
-            this.guna2Panel1.Controls.Add(this.txtPassword);
-            this.guna2Panel1.Controls.Add(this.lblForgotPassWord);
-            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(220, 24);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(618, 537);
-            this.guna2Panel1.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Garage_Management.Properties.Resources.accounts;
-            this.pictureBox1.Location = new System.Drawing.Point(177, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 208);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // txtUserName
             // 
@@ -147,17 +99,21 @@
             this.txtUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtUserName.IconLeft = global::Garage_Management.Properties.Resources.icons8_avatar_32;
             this.txtUserName.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtUserName.Location = new System.Drawing.Point(142, 260);
+            this.txtUserName.Location = new System.Drawing.Point(286, 292);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "Username";
             this.txtUserName.SelectedText = "";
-            this.txtUserName.Size = new System.Drawing.Size(351, 43);
+            this.txtUserName.Size = new System.Drawing.Size(329, 43);
             this.txtUserName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUserName.TabIndex = 1;
             this.txtUserName.TextOffset = new System.Drawing.Point(10, 0);
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.TargetControl = this.txtPassword;
             // 
             // txtPassword
             // 
@@ -174,39 +130,114 @@
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.txtPassword.IconLeft = global::Garage_Management.Properties.Resources.icons8_lock_50;
             this.txtPassword.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtPassword.Location = new System.Drawing.Point(143, 346);
+            this.txtPassword.Location = new System.Drawing.Point(286, 358);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(350, 46);
+            this.txtPassword.Size = new System.Drawing.Size(329, 46);
             this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextOffset = new System.Drawing.Point(10, 0);
             this.txtPassword.UseSystemPasswordChar = true;
             // 
+            // lblDangKi
+            // 
+            this.lblDangKi.AutoSize = true;
+            this.lblDangKi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDangKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKi.Location = new System.Drawing.Point(147, 411);
+            this.lblDangKi.Name = "lblDangKi";
+            this.lblDangKi.Size = new System.Drawing.Size(82, 28);
+            this.lblDangKi.TabIndex = 7;
+            this.lblDangKi.Text = "Register";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2Panel1.Controls.Add(this.lblDangKi);
+            this.guna2Panel1.Controls.Add(this.lblForgotPassWord);
+            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Location = new System.Drawing.Point(220, 24);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(618, 537);
+            this.guna2Panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox1.Image = global::Garage_Management.Properties.Resources.accounts;
+            this.pictureBox1.Location = new System.Drawing.Point(370, 68);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
+            // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BackgroundImage = global::Garage_Management.Properties.Resources.car1;
-            this.guna2PictureBox1.Image = global::Garage_Management.Properties.Resources.car2;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-1, 1);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1050, 591);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 200);
+            this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
+            // 
+            // picBG
+            // 
+            this.picBG.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picBG.Image = global::Garage_Management.Properties.Resources.car;
+            this.picBG.ImageRotate = 0F;
+            this.picBG.Location = new System.Drawing.Point(0, 0);
+            this.picBG.Name = "picBG";
+            this.picBG.Size = new System.Drawing.Size(898, 617);
+            this.picBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBG.TabIndex = 7;
+            this.picBG.TabStop = false;
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.AutoSize = true;
+            this.btnDangKy.BackColor = System.Drawing.Color.Black;
+            this.btnDangKy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.Location = new System.Drawing.Point(293, 546);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(91, 28);
+            this.btnDangKy.TabIndex = 8;
+            this.btnDangKy.Text = "Đăng Ký";
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
+            // 
+            // btnQuenMK
+            // 
+            this.btnQuenMK.AutoSize = true;
+            this.btnQuenMK.BackColor = System.Drawing.Color.Black;
+            this.btnQuenMK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuenMK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuenMK.ForeColor = System.Drawing.Color.White;
+            this.btnQuenMK.Location = new System.Drawing.Point(440, 546);
+            this.btnQuenMK.Name = "btnQuenMK";
+            this.btnQuenMK.Size = new System.Drawing.Size(175, 28);
+            this.btnQuenMK.TabIndex = 8;
+            this.btnQuenMK.Text = "Quên Mật Khẩu ?";
+            this.btnQuenMK.Click += new System.EventHandler(this.btnQuenMK_Click);
             // 
             // FormLogincs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1048, 591);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2PictureBox1);
-            this.DoubleBuffered = true;
+            this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu;
+            this.ClientSize = new System.Drawing.Size(898, 617);
+            this.Controls.Add(this.btnQuenMK);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.picBG);
             this.Name = "FormLogincs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
@@ -215,12 +246,13 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBG)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private System.Windows.Forms.Label lblForgotPassWord;
         private Guna.UI2.WinForms.Guna2GradientButton btnLogin;
@@ -231,5 +263,8 @@
         private System.Windows.Forms.Label lblDangKi;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox picBG;
+        private System.Windows.Forms.Label btnDangKy;
+        private System.Windows.Forms.Label btnQuenMK;
     }
 }

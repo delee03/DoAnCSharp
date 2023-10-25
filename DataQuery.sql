@@ -24,8 +24,12 @@ CREATE TABLE Car (
 	idSup int Default null,
 	ngayNhap datetime,
 	price FLOAT NOT NULL DEFAULT 0,
+	
 )
-GO 
+GO
+alter table Car drop idDatHang;
+
+
 
 CREATE TABLE Suplier(
 	idSup INT PRIMARY KEY,
@@ -94,11 +98,11 @@ CREATE TABLE BillInfo (
 GO
 
 CREATE TABLE Staff (
-	id NVARCHAR(10) PRIMARY KEY,
-	Avartar_image image null,
+	id Nvarchar(10) PRIMARY KEY,
+   Avatar_image image null,
 	name NVARCHAR(100) NOT NULL,
-	phone NVARCHAR(11) NOT NULL, -- RÀNG BUỘC
-	address NVARCHAR(100) NOT NULL, 
+	phone CHAR(11) NOT NULL, 
+	address nvarchar(100) not null
 )
 GO
 
@@ -107,16 +111,14 @@ ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Su
 
 insert into dbo.Suplier(idSup, nameSup)
 values(1,'Mercedes'),(2, 'Porsche'),(3,'Toyota'),(4, 'Honda'),(5, 'Mazda');
-GO
 
-Insert into dbo.Car (idCar, nameCar, idSup, ngayNhap, price)
-values('car01', 'C200', 1, '2023-03-03', 1000000),
-		('car02', '911 Turbo', 2,'2023-04-03', 8888888),
-		('car03', 'CamryHyrid', 3, '2023-05-03', 2000000),
-		('car04', 'Civic', 4, '2023-06-03', 800000),
-		('car05', 'CX5', 5, '2023-07-03', 750000);
-GO
 
+Insert into dbo.Car (idCar, nameCar,imageCar, idSup, ngayNhap, price, idDatHang)
+values('car01', 'C200', null,1, '2023-03-03', 1000000, 1),
+		('car02', '911 Turbo',null, 2,'2023-04-03', 8888888, 0),
+		('car03', 'CamryHyrid',null, 3, '2023-05-03', 2000000, 0),
+		('car04', 'Civic', null,4, '2023-06-03', 800000, 0),
+		('car05', 'CX5', null, 5, '2023-07-03', 750000, 2);
 Insert into dbo.HoaDon(idHoaDon, tenKH,sdt , tenNV, idCar, imageCar, ngayLap)
 values('hd1', 'NGuyen Van A', '0987654321', N'Viet', 'car01', NULL , 10/20/2023)
 
