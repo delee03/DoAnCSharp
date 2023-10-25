@@ -261,6 +261,15 @@
   <ItemGroup>
     <None Include="Resources\Font\car.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image\1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

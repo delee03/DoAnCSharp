@@ -259,6 +259,7 @@
             this.btnCancel.Size = new System.Drawing.Size(180, 45);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Hủy";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dtPicker
             // 
@@ -317,6 +318,7 @@
             this.txtIdCar.SelectedText = "";
             this.txtIdCar.Size = new System.Drawing.Size(229, 30);
             this.txtIdCar.TabIndex = 22;
+            this.txtIdCar.TextChanged += new System.EventHandler(this.txtIdCar_TextChanged);
             // 
             // label10
             // 

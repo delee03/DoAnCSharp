@@ -27,9 +27,9 @@ namespace Garage_Management
         private void guna2Button7_Click(object sender, EventArgs e)
         {
             
-            if(MessageDialog.Show("Bạn có muốn đăng xuất không", "Thông báo", MessageDialogButtons.YesNo) == DialogResult.OK)
+            if(MessageDialog.Show("Bạn có muốn đăng xuất không", "Thông báo", MessageDialogButtons.YesNo) == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
             } 
         }  
        // public string info { get; set; }
@@ -193,8 +193,12 @@ namespace Garage_Management
         {
             OpenChildForm(new FormNhanSu());
             lbFm.Text = btnNhanSu.Text;
-        }      
+        }
 
-
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new QuanLyOto());
+            lbFm.Text = btnOto.Text;
+        }
     }
 }

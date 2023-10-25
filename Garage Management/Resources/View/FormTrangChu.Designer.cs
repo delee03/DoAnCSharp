@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lbAcount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnOto = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanSu = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -124,6 +124,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.guna2HtmlLabel1);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.lbAcount);
             this.panel1.Controls.Add(this.label1);
@@ -137,6 +138,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 701);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(101, 638);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(75, 22);
+            this.guna2HtmlLabel1.TabIndex = 15;
+            this.guna2HtmlLabel1.Text = "Đăng xuất";
             // 
             // pictureBox5
             // 
@@ -211,7 +224,6 @@
             this.flowLayoutPanel1.Controls.Add(this.guna2Button1);
             this.flowLayoutPanel1.Controls.Add(this.btnOto);
             this.flowLayoutPanel1.Controls.Add(this.btnNhanSu);
-            this.flowLayoutPanel1.Controls.Add(this.guna2Button4);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button5);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button6);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -219,7 +231,7 @@
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(4);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 429);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 412);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // guna2Button1
@@ -298,30 +310,6 @@
             this.btnNhanSu.Text = "   Nhân sự";
             this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
             // 
-            // guna2Button4
-            // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button4.Animated = true;
-            this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.BorderColor = System.Drawing.Color.Empty;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.Empty;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.guna2Button4.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button4.Location = new System.Drawing.Point(7, 198);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(248, 60);
-            this.guna2Button4.TabIndex = 3;
-            this.guna2Button4.Text = "  Phụ tùng";
-            // 
             // guna2Button5
             // 
             this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -339,7 +327,7 @@
             this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
             this.guna2Button5.ImageOffset = new System.Drawing.Point(-11, 0);
             this.guna2Button5.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button5.Location = new System.Drawing.Point(7, 262);
+            this.guna2Button5.Location = new System.Drawing.Point(7, 198);
             this.guna2Button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(248, 60);
@@ -363,7 +351,7 @@
             this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
             this.guna2Button6.ImageOffset = new System.Drawing.Point(-11, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button6.Location = new System.Drawing.Point(7, 326);
+            this.guna2Button6.Location = new System.Drawing.Point(7, 262);
             this.guna2Button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(248, 60);
@@ -414,7 +402,7 @@
             this.btnBuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBuy.FillColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuy.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnBuy.ForeColor = System.Drawing.Color.Black;
             this.btnBuy.HoverState.FillColor = System.Drawing.Color.Black;
             this.btnBuy.HoverState.ForeColor = System.Drawing.Color.White;
@@ -422,7 +410,8 @@
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(180, 45);
             this.btnBuy.TabIndex = 15;
-            this.btnBuy.Text = "MUA";
+            this.btnBuy.Text = "BÁN";
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // labelNameCar
             // 
@@ -510,7 +499,7 @@
             this.guna2CircleProgressBar1.FillThickness = 15;
             this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2CircleProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleProgressBar1.Image = global::Garage_Management.Properties.Resources.icons8_wave_96;
+            this.guna2CircleProgressBar1.Image = global::Garage_Management.Properties.Resources._11;
             this.guna2CircleProgressBar1.ImageSize = new System.Drawing.Size(36, 36);
             this.guna2CircleProgressBar1.Location = new System.Drawing.Point(910, 18);
             this.guna2CircleProgressBar1.Minimum = 0;
@@ -1142,7 +1131,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnNhanSu;
         private Guna.UI2.WinForms.Guna2Button btnOto;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
@@ -1202,5 +1190,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lbAcount;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

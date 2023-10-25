@@ -33,6 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLiDonHang));
             this.dgvDonHang = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTongTien = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnLoad = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +50,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTongTien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnXuatHD = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -123,96 +123,6 @@
             this.dgvDonHang.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonHang_CellClick);
             this.dgvDonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDonHang_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 80F;
-            this.Column1.HeaderText = "ID Hóa đơn";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 110F;
-            this.Column2.HeaderText = "Tên Khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Số điện thoại";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 90F;
-            this.Column4.HeaderText = "Nhân viên lập";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 90F;
-            this.Column5.HeaderText = "Thương hiệu";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 90F;
-            this.Column6.HeaderText = "Hình ảnh";
-            this.Column6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Giá";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 90F;
-            this.Column8.HeaderText = "Ngày lập";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 30F;
-            this.Column9.HeaderText = "";
-            this.Column9.Image = ((System.Drawing.Image)(resources.GetObject("Column9.Image")));
-            this.Column9.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column9.MinimumWidth = 30;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.FillWeight = 30F;
-            this.Column10.HeaderText = "";
-            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "";
-            this.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
             // 
             // guna2GradientPanel1
             // 
@@ -302,23 +212,115 @@
             this.txtTongTien.Size = new System.Drawing.Size(229, 35);
             this.txtTongTien.TabIndex = 7;
             // 
-            // btnXuatHD
+            // btnLoad
             // 
-            this.btnXuatHD.BackColor = System.Drawing.Color.Transparent;
-            this.btnXuatHD.BorderRadius = 14;
-            this.btnXuatHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuatHD.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuatHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXuatHD.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHD.ForeColor = System.Drawing.Color.White;
-            this.btnXuatHD.Location = new System.Drawing.Point(32, 472);
-            this.btnXuatHD.Name = "btnXuatHD";
-            this.btnXuatHD.Size = new System.Drawing.Size(164, 35);
-            this.btnXuatHD.TabIndex = 8;
-            this.btnXuatHD.Text = "Xuất Hóa Đơn";
-            this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
+            this.btnLoad.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoad.BorderRadius = 14;
+            this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoad.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoad.Font = new System.Drawing.Font("Cambria", 9F);
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Location = new System.Drawing.Point(32, 472);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(164, 35);
+            this.btnLoad.TabIndex = 8;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID Hóa đơn";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 120F;
+            this.Column2.HeaderText = "Tên Khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 120F;
+            this.Column3.HeaderText = "Số điện thoại";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 110F;
+            this.Column4.HeaderText = "Nhân viên lập";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 90F;
+            this.Column5.HeaderText = "Thương hiệu";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Hình ảnh";
+            this.Column6.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Giá";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 90F;
+            this.Column8.HeaderText = "Ngày lập";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 20F;
+            this.Column9.HeaderText = "";
+            this.Column9.Image = ((System.Drawing.Image)(resources.GetObject("Column9.Image")));
+            this.Column9.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column9.MinimumWidth = 30;
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.FillWeight = 25F;
+            this.Column10.HeaderText = "";
+            this.Column10.Image = global::Garage_Management.Properties.Resources.trash__1_1;
+            this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.FillWeight = 25F;
+            this.Column11.HeaderText = "";
+            this.Column11.Image = global::Garage_Management.Properties.Resources.printer__1_;
+            this.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
             // 
             // FormQuanLiDonHang
             // 
@@ -326,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1054, 532);
-            this.Controls.Add(this.btnXuatHD);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2GradientPanel1);
@@ -348,7 +350,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTongTien;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         public Guna.UI2.WinForms.Guna2DataGridView dgvDonHang;
-        private Guna.UI2.WinForms.Guna2GradientButton btnXuatHD;
+        private Guna.UI2.WinForms.Guna2GradientButton btnLoad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

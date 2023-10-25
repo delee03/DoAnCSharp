@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using Garage_Management.BUS;
 using Garage_Management.DAO.Entities;
@@ -10,7 +12,7 @@ namespace Garage_Management.Resources.View.QuanLyOto
 {
     public partial class FormQuanLiDonHang : Form
     {
-        // public QuanLyOto form;
+        
         CarModel context = new CarModel();
         DataQuery query = new DataQuery();
         private bool isUpdate = false;
@@ -18,16 +20,23 @@ namespace Garage_Management.Resources.View.QuanLyOto
         {
             InitializeComponent();
             fEdit = new FormLapDonHang(this);
+            dataform = new Garage_Management.QuanLyOto(this);
         }
         FormLapDonHang fEdit;
+
+        Garage_Management.QuanLyOto dataform;
+       
 
 
         public void FormQuanLiDonHang_Load(object sender, EventArgs e)
         {
             try
             {
+               
                 List<HoaDon> listBill = query.GetHoaDons();
-                BindGrid(listBill);
+                dgvDonHang.Rows.Clear();
+                BindGrid(listBill);             
+
             }
 
             catch (Exception ex)
@@ -36,18 +45,16 @@ namespace Garage_Management.Resources.View.QuanLyOto
             }
         }
 
+        public void SetTextBoxValues(string value)
+        {
+            txtSearch.Text = value;
+        }
+
         public void BindGrid(List<HoaDon> listBill)
         {
             dgvDonHang.Rows.Clear();
-            /* // Thêm HoaDon mới để truy xuất thuộc tính từ table Car bằng phương thức lazy load trong entiti
-             var hoadon = new HoaDon();
-             hoadon.idCar = Car.idCar;
-             // Lấy thông tin CAr          
-             var car = hoadon.Car;
-             // Truy xuất các property của Car
-             string thuonghieu = car.nameCar;
-             double gia = car.price;*/
-
+          
+            double Tong = 0;
 
             foreach (var item in listBill)
             {
@@ -60,8 +67,10 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 dgvDonHang.Rows[index].Cells[5].Value = item.imageCar;
                 dgvDonHang.Rows[index].Cells[6].Value = item.Car.price + "";
                 dgvDonHang.Rows[index].Cells[7].Value = item.ngayLap;
-
+                Tong += item.Car.price;
+ 
             }
+            txtTongTien.Text = Tong + "";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -113,6 +122,7 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 fEdit.ShowDialog();
 
             }
+           
             if (e.ColumnIndex == 9)
             {
 
@@ -133,6 +143,7 @@ namespace Garage_Management.Resources.View.QuanLyOto
             }
             if (e.ColumnIndex == 10)
             {
+               
                 using (var existingFileStream = new FileStream(@"Resources\Template\template.pdf", FileMode.Open))
                 using (var newFileStream = new FileStream("newFile.pdf", FileMode.Create))
                 {
@@ -179,48 +190,22 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 txtTongTien.Text = row.Cells[6].Value.ToString();
                 string valueId = row.Cells[0].Value.ToString();
                 fEdit.SetTextBoxValues(valueId);
+                
+                
             }
         }
-
+      
         private void txtSearch_Click(object sender, EventArgs e)
         {
             txtSearch.Text = "";
         }
 
-        private void btnXuatHD_Click(object sender, EventArgs e)
+        private void btnLoad_Click(object sender, EventArgs e)
         {
-            using (var existingFileStream = new FileStream("existingFile.pdf", FileMode.Open))
-            using (var newFileStream = new FileStream("newFile.pdf", FileMode.Create))
-            {
-                // Open existing PDF
-                var pdfReader = new PdfReader(existingFileStream);
-
-                // PdfStamper, which will create
-                var stamper = new PdfStamper(pdfReader, newFileStream);
-
-                var form = stamper.AcroFields;
-                var fieldKeys = form.Fields.Keys;
-
-                foreach (DataGridViewRow row in dgvDonHang.Rows)
-                {
-                    string txtTenKH = row.Cells["txtTenKH"].Value.ToString();
-                    string txtSDT = row.Cells["txtSDT"].Value.ToString();
-                    string txtTenNV = row.Cells["txtTenNV"].Value.ToString();
-                    string txtnameCar = row.Cells["txtnamCar"].Value.ToString();
-                    string txtGia = row.Cells["txtGIa"].Value.ToString();
-                    string txtTongTien = row.Cells["txtTongTien"].Value.ToString();
-
-                    // Fill the fields
-                    form.SetField("txtTenKH", txtTenKH);
-                    form.SetField("txtSDT", txtSDT);
-                    form.SetField("txtTenNV", txtTenNV);
-                    form.SetField("txtnameCar", txtnameCar);
-                    form.SetField("txtGia", txtGia);
-                    form.SetField("txtTongTien", txtTongTien);
-                }
-                stamper.Close();
-            }
-
+           // gán giá trị tên xe từ cloumn 4 truyền qua QuanLiOto để xóa trong btnLoad;
+            string name = dgvDonHang.SelectedCells[0].OwningRow.Cells["Column4"].Value.ToString();
+            dataform.SetNameValues(name);
+           
         }
     }
 }

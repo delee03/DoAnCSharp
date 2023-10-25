@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Garage_Management.BUS;
 using Garage_Management.DAO.Entities;
@@ -18,31 +19,40 @@ namespace Garage_Management
     public partial class QuanLyOto : Form
     {
         FormLapDonHang fLap;
+
+        FormQuanLiDonHang fDonHang;
+      
         public QuanLyOto()
         {
             InitializeComponent();
-            fLap = new FormLapDonHang(this);
+           fLap = new FormLapDonHang();
+          
         }
+        public QuanLyOto(FormQuanLiDonHang form)
+        {
+            InitializeComponent();
+            fDonHang = form;
 
+        }
 
         private bool isCreateBill = false;
         CarModel context = new CarModel();
         DataQuery query = new DataQuery();
-        private void QuanLyOto_Load(object sender, EventArgs e)
+        public void QuanLyOto_Load(object sender, EventArgs e)
         {
             try
-            {
+            {  
+               
                 List<Car> listCar = context.Cars.ToList();
                 List<Suplier> listSup = context.Supliers.ToList();
                 FillCmbSuplier(listSup);
-                BindGrid(listCar);
-
+                BindGrid(listCar);           
                 cboNcc.SelectedIndex = 0;
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Không load được" + ex.Message);
             }
         }
 
@@ -52,11 +62,9 @@ namespace Garage_Management
             cboNcc.DisplayMember = "nameSup";
             cboNcc.ValueMember = "idSup";
         }
-        private void BindGrid(List<Car> listCar)
+        public void BindGrid(List<Car> listCar)
         {
             dgvOto.Rows.Clear();
-
-
             foreach (var item in listCar)
             {
                 int index = dgvOto.Rows.Add();
@@ -68,17 +76,14 @@ namespace Garage_Management
                 dgvOto.Rows[index].Cells[5].Value = item.price + "";
             }
         }
-        private bool isNotNullValue()
+        public void SetNameValues(string value)
         {
-            if (txtID.Text == "")
-                return false;
-            if (txtTen.Text == "")
-                return false;
-            if (dtPicker.Text == "")
-                return false;
-            if (txtGia.Text == "")
-                return false;
-            return true;
+            txtTemp.Text = value;
+        }
+        //sau khi nhấn load xe nằm trong Form Quản lí đơn hàng và xóa nó ở QUản lí oto;
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            DeleteCarAfterAddBill(txtTemp.Text);
         }
 
         private bool isNumeric(string Nam)
@@ -88,20 +93,64 @@ namespace Garage_Management
                 return false;
             return checkNum;
         }
-        private void isValidInputData()
-        {
-            if (!isNotNullValue())
-               MessageBox.Show("Vui lòng nhập đầy đủ thông tin !.");
-            if (txtID.Text.Length != 5)
-                MessageBox.Show("ID Oto phải có 5 kí tự !.");
-            if (!isNumeric(txtGia.Text))
-                MessageBox.Show("Vui lòng nhập số tiền !\n Bạn đang nhập chữ !");
-            if (txtGia.Text.Length < 8)
-                MessageBox.Show("Oto có giá tối thiểu từ 10 triệu\n Vui lòng nhập thêm số 0 !");
 
+        public bool DataBinding()
+        {
+            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTen.Text) ||
+                string.IsNullOrEmpty(txtGia.Text) || string.IsNullOrEmpty(cboNcc.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                return false;
+            }
+
+            if (query.FindByIDCar(txtID.Text) != null)
+            {
+                txtID.Focus();
+                MessageBox.Show("ID Oto đã tồn tại!");
+                return false;
+            }
+
+            if (Regex.IsMatch(txtTen.Text, "^[0-9]*$"))
+            {
+                //txtTenKH.Focus();
+                MessageBox.Show("Tên Oto chỉ gồm các ký tự chữ cái !");
+                return false;
+            }
+          
+           
+            if (!isNumeric(txtGia.Text))
+            {
+                txtGia.Focus();
+                MessageBox.Show("Giá không bao gồm chữ !");
+                return false;
+            }
+            return true;
         }
 
+        public bool DataBindingUpdate()
+        {
+            if (string.IsNullOrEmpty(txtID.Text) || string.IsNullOrEmpty(txtTen.Text) ||
+                string.IsNullOrEmpty(txtGia.Text) || string.IsNullOrEmpty(cboNcc.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
+                return false;
+            }
 
+            if (Regex.IsMatch(txtTen.Text, "^[0-9]*$"))
+            {
+                //txtTenKH.Focus();
+                MessageBox.Show("Tên Oto chỉ gồm các ký tự chữ cái !");
+                return false;
+            }
+
+            if (!isNumeric(txtGia.Text))
+            {
+                txtGia.Focus();
+                MessageBox.Show("Giá không bao gồm chữ !");
+                return false;
+            }
+            return true;
+        }
 
         //hàm chuyển image sang byte[]
         public byte[] ImageToByteArray(PictureBox pic)
@@ -162,40 +211,46 @@ namespace Garage_Management
 
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            isValidInputData();
-            var id = dgvOto.SelectedCells[0].OwningRow.Cells["Column1"].Value;
-            Car car = context.Cars.Find(id);
-            context.Cars.Remove(car);
-            Car newcar = new Car();
-            newcar.idCar = txtID.Text;
-            newcar.nameCar = txtTen.Text;
-            newcar.imageCar = ImageToByteArray(picImage);
-            newcar.idSup = Convert.ToInt32(cboNcc.SelectedValue);
-            newcar.ngayNhap = Convert.ToDateTime(dtPicker.Text);
-            newcar.price = Convert.ToDouble(txtGia.Text);
-            context.Cars.Add(newcar);
-            context.SaveChanges();
-            QuanLyOto_Load(sender, e);
+            if (DataBindingUpdate())
+            {
+                var id = dgvOto.SelectedCells[0].OwningRow.Cells["Column1"].Value;
+                Car car = context.Cars.Find(id);
+                context.Cars.Remove(car);
+                Car newcar = new Car();
+                newcar.idCar = txtID.Text;
+                newcar.nameCar = txtTen.Text;
+                newcar.imageCar = ImageToByteArray(picImage);
+                newcar.idSup = Convert.ToInt32(cboNcc.SelectedValue);
+                newcar.ngayNhap = Convert.ToDateTime(dtPicker.Text);
+                newcar.price = Convert.ToDouble(txtGia.Text);
+                context.Cars.Add(newcar);
+                context.SaveChanges();
+                QuanLyOto_Load(sender, e);
+             }
+           
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             try
             {
-                isValidInputData();
-                Car car = new Car()
+               if(DataBinding())
                 {
-                    idCar = txtID.Text,
-                    nameCar = txtTen.Text,
-                    imageCar = ImageToByteArray(picImage),
-                    idSup = Convert.ToInt32(cboNcc.SelectedValue),
-                    ngayNhap = Convert.ToDateTime(dtPicker.Text),
-                    price = Convert.ToDouble(txtGia.Text),
+                    Car car = new Car()
+                    {
+                        idCar = txtID.Text,
+                        nameCar = txtTen.Text,
+                        imageCar = ImageToByteArray(picImage),
+                        idSup = Convert.ToInt32(cboNcc.SelectedValue),
+                        ngayNhap = Convert.ToDateTime(dtPicker.Text),
+                        price = Convert.ToDouble(txtGia.Text),
 
-                };
-                context.Cars.Add(car);
-                context.SaveChanges();
-                QuanLyOto_Load(sender, e);
+                    };
+                    context.Cars.Add(car);
+                    context.SaveChanges();
+                    QuanLyOto_Load(sender, e);
+                }
+              
             }
             catch (Exception ex)
             {
@@ -203,13 +258,13 @@ namespace Garage_Management
             }
         }
 
-        public void DeleteCarAfterAddBill(string idCar)
+        public void DeleteCarAfterAddBill(string nameCarr)
         {
             try
             {
-                query.DeleteByIDCar(idCar);
+                query.DeleteByIDCar(nameCarr);
 
-                Car car = query.FindByIDCar(idCar);
+                Car car = query.FindByNameCar(nameCarr);
                 if (car == null)
                 {
                     MessageBox.Show("Xe đã được xóa thành công.", "Thông báo", MessageBoxButtons.OK);
@@ -218,7 +273,7 @@ namespace Garage_Management
                 }
                 else
                 {
-                    MessageBox.Show("Không thể xóa xe có ID: " + idCar, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Không thể xóa xe có ID: " + nameCarr, "Thông báo", MessageBoxButtons.OK);
                 }
             }
             catch (SqlException ex)
@@ -231,7 +286,7 @@ namespace Garage_Management
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        public void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -352,11 +407,14 @@ namespace Garage_Management
                 f.Show();
                 f.btnLoad.Visible = false;
                 f.btnUpdate.Visible = false;
+                
             }
+            
             else
             {
                 MessageBox.Show("Bạn chưa chọn oto nào để lập hóa đơn !!");
             }
+            isCreateBill = false;
 
         }
 
@@ -369,6 +427,8 @@ namespace Garage_Management
         {
             txtSearch.Text = "";
         }
+
+      
     }
 }
 

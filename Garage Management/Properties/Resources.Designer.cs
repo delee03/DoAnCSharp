@@ -63,6 +63,26 @@ namespace Garage_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _11 {
+            get {
+                object obj = ResourceManager.GetObject("11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap accounts {
             get {
                 object obj = ResourceManager.GetObject("accounts", resourceCulture);
@@ -116,6 +136,16 @@ namespace Garage_Management.Properties {
         internal static System.Drawing.Bitmap car {
             get {
                 object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car1 {
+            get {
+                object obj = ResourceManager.GetObject("car1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +233,16 @@ namespace Garage_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer__1_ {
+            get {
+                object obj = ResourceManager.GetObject("printer (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap roundedTXT {
             get {
                 object obj = ResourceManager.GetObject("roundedTXT", resourceCulture);
@@ -236,6 +276,16 @@ namespace Garage_Management.Properties {
         internal static System.Drawing.Bitmap trash__1_ {
             get {
                 object obj = ResourceManager.GetObject("trash (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("trash (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
