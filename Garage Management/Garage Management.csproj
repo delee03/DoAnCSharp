@@ -60,6 +60,17 @@
     <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -72,6 +83,7 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +93,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\DataContext.cs" />
@@ -146,12 +160,6 @@
     <Compile Include="Resources\View\Staff\FormNhanSu.Designer.cs">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\View\FormThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\View\FormThongKe.Designer.cs">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +192,12 @@
     <Compile Include="Resources\View\QuanLyOto\QuanLyOto.Designer.cs">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\View\Statistical\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Statistical\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Resources\View\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,9 +221,6 @@
     <EmbeddedResource Include="Resources\View\Staff\FormNhanSu.resx">
       <DependentUpon>FormNhanSu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\View\FormThongKe.resx">
-      <DependentUpon>FormThongKe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\View\QuanLyOto\FormLapDonHang.resx">
       <DependentUpon>FormLapDonHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,7 +241,11 @@
     <EmbeddedResource Include="Resources\View\QuanLyOto\QuanLyOto.resx">
       <DependentUpon>QuanLyOto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Statistical\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Garage_Management.Resources.View.Statistical.FormThongKe.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -269,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Font\trangchu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

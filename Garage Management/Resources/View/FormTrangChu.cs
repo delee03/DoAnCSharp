@@ -13,6 +13,7 @@ using Guna.UI2.WinForms;
 using Garage_Management.DAO;
 using Garage_Management.Resources.View;
 using Garage_Management.DAO.Entities;
+using Garage_Management.Resources.View.Statistical;
 
 namespace Garage_Management
 {
@@ -200,6 +201,12 @@ namespace Garage_Management
         {
             OpenChildForm(new FormDoiMatKhau());
             lbFm.Text = btnMucKhac.Text;
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormThongKe());
+            lbFm.Text = btnThongKe.Text;
         }
     }
 }
