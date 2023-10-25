@@ -17,18 +17,15 @@ namespace Garage_Management.Resources.View.QuanLyOto
     {
         private readonly CarModel context = new CarModel();
         private readonly DataQuery query = new DataQuery();
+        Garage_Management.QuanLyOto data;
+        HoaDon newHD = new HoaDon();
+        FormQuanLiDonHang mainform;
 
         public FormLapDonHang()
         {
             InitializeComponent();
         }
-
-        
-        HoaDon newHD = new HoaDon();
-       
     
-        FormQuanLiDonHang mainform;
-        Garage_Management.QuanLyOto data;
         public FormLapDonHang(FormQuanLiDonHang form)
         {
             InitializeComponent();
@@ -92,9 +89,12 @@ namespace Garage_Management.Resources.View.QuanLyOto
                             imageCar = ImageToByteArray(picCar),
                             ngayLap = Convert.ToDateTime(dtPicker.Text)
                         };
-                        query.AddBill(hd);              
+                        query.AddBill(hd);
+                        query.DeleteByIDCar(txtIdCar.Text);
                         MessageBox.Show("Thêm hóa đơn thành công! Bạn vui lòng xem thông tin trong Quản lí đơn hàng nhé! !", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);             
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        List<HoaDon> listHoadon = query.GetHoaDons();
+                        mainform.BindGrid(listHoadon);
                         this.Close();
                     }
                 };

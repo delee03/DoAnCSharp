@@ -43,7 +43,6 @@ namespace Garage_Management
         {
             try
             {  
-               
                 List<Car> listCar = context.Cars.ToList();
                 List<Suplier> listSup = context.Supliers.ToList();
                 FillCmbSuplier(listSup);
@@ -407,9 +406,7 @@ namespace Garage_Management
                 f.picCar.Image = picImage.Image;
                 f.Show();
                 f.btnLoad.Visible = false;
-                f.btnUpdate.Visible = false;
-                
-            }
+                f.btnUpdate.Visible = false;            }
             
             else
             {

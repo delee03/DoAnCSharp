@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-
 using Guna.UI2.WinForms;
 using System.Xml.Linq;
 using Garage_Management.DAO;
@@ -36,11 +35,10 @@ namespace Garage_Management.Resources.View.QuanLyOto
         {
             try
             {
-               
+                
                 List<HoaDon> listBill = query.GetHoaDons();
                 dgvDonHang.Rows.Clear();
-                BindGrid(listBill);             
-
+                BindGrid(listBill);
             }
 
             catch (Exception ex)
@@ -129,7 +127,6 @@ namespace Garage_Management.Resources.View.QuanLyOto
            
             if (e.ColumnIndex == 9)
             {
-
                 try
                 {
                     DialogResult rs = MessageBox.Show("Bạn có chắc muốn xóa ", "Xóa", MessageBoxButtons.OKCancel);
@@ -194,8 +191,6 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 txtTongTien.Text = row.Cells[6].Value.ToString();
                 string valueId = row.Cells[0].Value.ToString();
                 fEdit.SetTextBoxValues(valueId);
-                
-                
             }
         }
       

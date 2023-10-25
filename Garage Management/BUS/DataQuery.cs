@@ -43,17 +43,18 @@ namespace Garage_Management.BUS
             }
 
         }
-        public void DeleteByIDCar(string id)
+        public bool DeleteByIDCar(string id_Car)
         {
-            Car car = context.Cars.SingleOrDefault(p => p.idCar == id);
-            if (car != null)
+            using(var dbcontext = new CarModel())
             {
-                context.Cars.Remove(car);
-                context.SaveChanges(); 
-            }
-            else
-            {
-                throw new Exception("Không tìm thấy xe!");
+                var car = dbcontext.Cars.SingleOrDefault(p => p.idCar == id_Car);
+                if (car != null)
+                {
+                    dbcontext.Cars.Remove(car);
+                    dbcontext.SaveChanges();
+                    return true;
+                }
+                return false;
             }
 
         }
@@ -64,13 +65,15 @@ namespace Garage_Management.BUS
                 car = context.Cars.SingleOrDefault(p => p.idCar == text.Text);
                 context.Cars.Remove(car);
                 context.SaveChanges();
-            };           
-
+            };
         }
 
         public List<Car> GetCar()
         {
-            return context.Cars.ToList();
+            using(CarModel context = new CarModel())
+            {
+                return context.Cars.ToList();
+            }
         }
         public List<HoaDon> GetHoaDons()
         {
@@ -108,8 +111,7 @@ namespace Garage_Management.BUS
                    context.HoaDons.Add(hd);                 
                    context.SaveChanges();               
                 }                                                        
-            };   
-                    
+            };     
         }
 
         public bool UpdateBill(HoaDon hd)
@@ -166,8 +168,6 @@ namespace Garage_Management.BUS
                 else return dbcontext.Staffs.Where(s => s.name.ToLower().Contains(seacrh.ToLower())).ToList();
             }
         }
-
-      
 
         public bool UpdateStaff(Staff staff)
         {
