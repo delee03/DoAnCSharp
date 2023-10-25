@@ -19,7 +19,7 @@ namespace Garage_Management.DAO
 
         private DataProvider() { } // không cho phép truy cập từ bên ngoài
 
-        private string connectionSTR = "Data Source=DESKTOP-DTFBKP2\\SQLEXPRESS;Initial Catalog=QuanLyGarage;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DELEE03\PHATPC;Initial Catalog=QuanLyGarage;Integrated Security=True";
 
         // hàm trả về dòng kết quả 
         public DataTable ExecuteQuery(string query, object[] parameter = null)

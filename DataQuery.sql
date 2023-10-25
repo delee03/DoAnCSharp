@@ -101,11 +101,11 @@ CREATE TABLE Staff (
 	id Nvarchar(10) PRIMARY KEY,
    Avatar_image image null,
 	name NVARCHAR(100) NOT NULL,
-	phone CHAR(11) NOT NULL, 
+	phone NvarCHAR(11) NOT NULL, 
 	address nvarchar(100) not null
 )
 GO
-
+drop table Staff
 ALTER TABLE dbo.Car drop CONSTRAINT FK_idDatHang;
 ALTER TABLE dbo.Car ADD CONSTRAINT FK_idSup FOREIGN KEY(idSup) REFERENCES dbo.Suplier(idSup)
 
@@ -121,6 +121,7 @@ values('car01', 'C200', null,1, '2023-03-03', 1000000, 1),
 		('car05', 'CX5', null, 5, '2023-07-03', 750000, 2);
 Insert into dbo.HoaDon(idHoaDon, tenKH,sdt , tenNV, idCar, imageCar, ngayLap)
 values('hd1', 'NGuyen Van A', '0987654321', N'Viet', 'car01', NULL , 10/20/2023)
+
 
 INSERT INTO Account(
 	UserName,

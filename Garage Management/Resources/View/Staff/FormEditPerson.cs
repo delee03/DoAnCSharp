@@ -45,7 +45,7 @@ namespace Garage_Management.Resources.View.Nhân_sự
         {
             staff = query.GetStaffByID(txtMS.Text);
 
-            pbAvatar.Image = context.ByteArrayToImage(staff.Avartar_image);
+            pbAvatar.Image = context.ByteArrayToImage(staff.Avatar_image);
             txtHoVaTen.Text = staff.name;
             txtSĐT.Text = staff.phone;
             txtDiaChi.Text = staff.address;
@@ -74,7 +74,7 @@ namespace Garage_Management.Resources.View.Nhân_sự
         {
             if(DataBinding())
             {
-                staff.Avartar_image   = has_img ? context.ImageToByteArrary(this.pbAvatar) : staff.Avartar_image;
+                staff.Avatar_image   = has_img ? context.ImageToByteArrary(this.pbAvatar) : staff.Avatar_image;
                 staff.name = txtHoVaTen.Text;
                 staff.phone = txtSĐT.Text;
                 staff.address = txtDiaChi.Text;

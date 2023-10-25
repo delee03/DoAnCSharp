@@ -50,9 +50,9 @@
             this.lblDangKiUserName.BackColor = System.Drawing.Color.Transparent;
             this.lblDangKiUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangKiUserName.ForeColor = System.Drawing.Color.White;
-            this.lblDangKiUserName.Location = new System.Drawing.Point(68, 267);
+            this.lblDangKiUserName.Location = new System.Drawing.Point(47, 267);
             this.lblDangKiUserName.Name = "lblDangKiUserName";
-            this.lblDangKiUserName.Size = new System.Drawing.Size(133, 30);
+            this.lblDangKiUserName.Size = new System.Drawing.Size(168, 30);
             this.lblDangKiUserName.TabIndex = 0;
             this.lblDangKiUserName.Text = "Tên Tài Khoản";
             // 
@@ -62,9 +62,9 @@
             this.lblDangKiPassWord.BackColor = System.Drawing.Color.Transparent;
             this.lblDangKiPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDangKiPassWord.ForeColor = System.Drawing.Color.White;
-            this.lblDangKiPassWord.Location = new System.Drawing.Point(68, 314);
+            this.lblDangKiPassWord.Location = new System.Drawing.Point(47, 314);
             this.lblDangKiPassWord.Name = "lblDangKiPassWord";
-            this.lblDangKiPassWord.Size = new System.Drawing.Size(103, 30);
+            this.lblDangKiPassWord.Size = new System.Drawing.Size(138, 30);
             this.lblDangKiPassWord.TabIndex = 0;
             this.lblDangKiPassWord.Text = "Mật Khẩu";
             // 
@@ -74,9 +74,9 @@
             this.lblXacNhanPassWord.BackColor = System.Drawing.Color.Transparent;
             this.lblXacNhanPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXacNhanPassWord.ForeColor = System.Drawing.Color.White;
-            this.lblXacNhanPassWord.Location = new System.Drawing.Point(68, 364);
+            this.lblXacNhanPassWord.Location = new System.Drawing.Point(47, 364);
             this.lblXacNhanPassWord.Name = "lblXacNhanPassWord";
-            this.lblXacNhanPassWord.Size = new System.Drawing.Size(174, 30);
+            this.lblXacNhanPassWord.Size = new System.Drawing.Size(209, 30);
             this.lblXacNhanPassWord.TabIndex = 0;
             this.lblXacNhanPassWord.Text = "Xác Nhận Mật Khẩu";
             // 
@@ -155,9 +155,9 @@
             this.lblEmailDangKi.BackColor = System.Drawing.Color.Transparent;
             this.lblEmailDangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailDangKi.ForeColor = System.Drawing.Color.White;
-            this.lblEmailDangKi.Location = new System.Drawing.Point(68, 410);
+            this.lblEmailDangKi.Location = new System.Drawing.Point(47, 410);
             this.lblEmailDangKi.Name = "lblEmailDangKi";
-            this.lblEmailDangKi.Size = new System.Drawing.Size(117, 30);
+            this.lblEmailDangKi.Size = new System.Drawing.Size(152, 30);
             this.lblEmailDangKi.TabIndex = 0;
             this.lblEmailDangKi.Text = "Tên Email";
             // 
@@ -212,9 +212,9 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(68, 220);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(47, 220);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(154, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(189, 27);
             this.guna2HtmlLabel1.TabIndex = 5;
             this.guna2HtmlLabel1.Text = "Tên Người Dùng";
             // 

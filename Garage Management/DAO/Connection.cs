@@ -9,7 +9,7 @@ namespace Garage_Management.DAO
 {
     public class Connection
     {
-        private string stringConnection = @"Data Source=DESKTOP-DTFBKP2\SQLEXPRESS;Initial Catalog=QuanLyGarage;Integrated Security=True";
+        private string stringConnection = @"Data Source=DELEE03\PHATPC;Initial Catalog=QuanLyGarage;Integrated Security=True";
         public SqlConnection GetSqlConnection()
         {
             return new SqlConnection(stringConnection);

@@ -13,7 +13,7 @@ namespace Garage_Management.DAO.Entities
 
         public int idBill { get; set; }
 
-        public int idCarSuplier { get; set; }
+        public int idSup { get; set; }
 
         public int count { get; set; }
 

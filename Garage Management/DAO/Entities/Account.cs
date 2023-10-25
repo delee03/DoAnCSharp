@@ -7,18 +7,16 @@ namespace Garage_Management.DAO.Entities
     using System.Data.Entity.Spatial;
 
     [Table("Account")]
-    
     public partial class Account
     {
-
-        public Account(string ac)
-        {
+        public Account(string s) { 
+        
         }
 
-        public Account(string userName, string passWord)
+        public Account(string name,  string pass) 
         {
-            this.UserName = userName;
-            this.PassWord = passWord;
+           this.UserName = name;
+            this.PassWord = pass;
         }
 
         [Key]
@@ -33,7 +31,6 @@ namespace Garage_Management.DAO.Entities
         [StringLength(1000)]
         public string PassWord { get; set; }
 
-        [Required]
         [StringLength(100)]
         public string Email { get; set; }
     }

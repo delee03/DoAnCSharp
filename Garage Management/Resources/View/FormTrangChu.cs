@@ -42,11 +42,11 @@ namespace Garage_Management
            // lbAcount.Text = info;
             dgvDashBoard.Rows.Add(4);
 
-            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\1.png");
-            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\2.png");
-            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\3.png");
-            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\4.png");
-            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"D:\Project\Garage Management\mycar\5.png");
+            dgvDashBoard.Rows[0].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\1.png");
+            dgvDashBoard.Rows[1].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\2.png");
+            dgvDashBoard.Rows[2].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\3.png");
+            dgvDashBoard.Rows[3].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\4.png");
+            dgvDashBoard.Rows[4].Cells[0].Value = Image.FromFile(@"D:\Project\Garage-Management\mycar\5.png");
 
             dgvDashBoard.Rows[0].Cells[1].Value = "Mec C200";
             dgvDashBoard.Rows[1].Cells[1].Value = "911 Turbo";
@@ -61,11 +61,11 @@ namespace Garage_Management
             dgvDashBoard.Rows[4].Cells[3].Value = "Mazda";
 
 
-            dgvDashBoard.Rows[0].Cells[4].Value = "4000       1.5       250";
-            dgvDashBoard.Rows[1].Cells[4].Value = "6750       3.0       330";
-            dgvDashBoard.Rows[2].Cells[4].Value = "5200       2.5       176hp";
-            dgvDashBoard.Rows[3].Cells[4].Value = "4500       1.5       176hp";
-            dgvDashBoard.Rows[4].Cells[4].Value = "4000       2.0       154hp";
+            dgvDashBoard.Rows[0].Cells[4].Value = "4000         1.5         250";
+            dgvDashBoard.Rows[1].Cells[4].Value = "6750         3.0         330";
+            dgvDashBoard.Rows[2].Cells[4].Value = "5200         2.5         176hp";
+            dgvDashBoard.Rows[3].Cells[4].Value = "4500         1.5         176hp";
+            dgvDashBoard.Rows[4].Cells[4].Value = "4000         2.0         154hp";
 
 
             dgvDashBoard.Rows[0].Cells[2].Value = "D x R x C \t4.590 x 1.845 x 1.680\nChiều dài cơ sở\t 2865 (mm)\nDung tích công tác 1496 (cc)\nMô-men xoắn cực đại\t 300 Nm tại 1800 – 4000 rpm\nVận tốc tối đa 246 (km/h)"; 
@@ -102,8 +102,8 @@ namespace Garage_Management
                 ratingStar.Value = GetStar();
                 lbThongSo.Text = dgvDashBoard.Rows[cpt - 1].Cells[2].Value.ToString();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt - 1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"D:\Project\Garage Management\mycar\" + cpt.ToString() + cpt.ToString() + ".png");
-                guna2PictureBox_car2.Load(@"D:\Project\Garage Management\mycar\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car1.Load(@"D:\Project\Garage-Management\mycar\" + cpt.ToString() + cpt.ToString() + ".png");
+                guna2PictureBox_car2.Load(@"D:\Project\Garage-Management\mycar\" + cpt.ToString() + cpt.ToString() + cpt.ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
                 
              }
@@ -125,8 +125,8 @@ namespace Garage_Management
                 lbApeal.Text = dgvDashBoard.Rows[cpt - 1].Cells[4].Value.ToString();
                 ratingStar.Value = GetStar();
                 guna2PictureBox_Car.Image = (Image)dgvDashBoard.Rows[cpt - 1].Cells[0].Value;
-                guna2PictureBox_car1.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString() + (cpt).ToString() + ".png");
-                guna2PictureBox_car2.Load(@"D:\Project\Garage Management\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
+                guna2PictureBox_car1.Load(@"D:\Project\Garage-Management\mycar\" + (cpt).ToString() + (cpt).ToString() + ".png");
+                guna2PictureBox_car2.Load(@"D:\Project\Garage-Management\mycar\" + (cpt).ToString() + (cpt).ToString() + (cpt).ToString() + ".png");
                 guna2PictureBox_car3.Image = guna2PictureBox_Car.Image;
 
             }

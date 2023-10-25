@@ -148,40 +148,44 @@ namespace Garage_Management.Resources.View.QuanLyOto
             if (e.ColumnIndex == 10)
             {
                
-                using (var existingFileStream = new FileStream(@"Resources\Template\template.pdf", FileMode.Open))
-                using (var newFileStream = new FileStream("newFile.pdf", FileMode.Create))
+                using (var existingFileStream = new FileStream(@"Resources\Template\invoiceCar.pdf", FileMode.Open))
+                using (var newFileStream = new FileStream("hoadon.pdf", FileMode.Create))
                 {
                     // Open existing PDF
                     var pdfReader = new PdfReader(existingFileStream);
 
                     // PdfStamper, which will create
-                    var stamper = new PdfStamper(pdfReader, newFileStream);
+                    using (var stamper = new PdfStamper(pdfReader, newFileStream))
+                    {
 
-                    var form = stamper.AcroFields;
-                    var fieldKeys = form.Fields.Keys;
+                        var form = stamper.AcroFields;
+                        var fieldKeys = form.Fields.Keys;
 
-                    var row = dgvDonHang.Rows[e.RowIndex];
-                    string txtTenKH = row.Cells[1].Value.ToString();
-                    string txtSDT = row.Cells[2].Value.ToString();
-                    string txtTenNV = row.Cells[3].Value.ToString();
-                    string txtnameCar = row.Cells[4].Value.ToString();
-                    string txtGia = row.Cells[6].Value.ToString();
-                    string txtTong = row.Cells[6].Value.ToString();
+                        var row = dgvDonHang.Rows[e.RowIndex];
+                        string txtTenKH = row.Cells[1].Value.ToString();
+                        string txtSDT = row.Cells[2].Value.ToString();
+                        string txtTenNV = row.Cells[3].Value.ToString();
+                        string txtnameCar = row.Cells[4].Value.ToString();
+                        string txtGia = row.Cells[6].Value.ToString();
+                        string txtTong = row.Cells[6].Value.ToString();
 
-                    // Fill the fields
-                    form.SetField("txtTenKH", txtTenKH);
-                    form.SetField("txtSDT", txtSDT);
-                    form.SetField("txtTenNV", txtTenNV);
-                    form.SetField("txtnameCar", txtnameCar);
-                    form.SetField("txtGia", txtGia);
-                    form.SetField("txtTongTien", txtTong);
-                    stamper.Close();
+                        // Fill the fields
+                        form.SetField("txtTenKH", txtTenKH);
+                        form.SetField("txtSDT", txtSDT);
+                        form.SetField("txtTenNV", txtTenNV);
+                        form.SetField("txtTenXe", txtnameCar);
+                        form.SetField("txtGia", txtGia);
+                        form.SetField("txtTongTien", txtTong);
+                        form.SetField("txtTenKH", txtTenKH);
+                        form.SetField("txtSDT", txtSDT);
+
+                        stamper.Close();
+                    }
+                    pdfReader.Close();
+                    MessageBox.Show("Xuất file hóa đơn thành công !", "Xuất hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            
-            
-            }
-
-            
+                System.Diagnostics.Process.Start("hoadon.pdf");
+            }          
         }
 
         private void dgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -204,12 +208,6 @@ namespace Garage_Management.Resources.View.QuanLyOto
             txtSearch.Text = "";
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-           // gán giá trị tên xe từ cloumn 4 truyền qua QuanLiOto để xóa trong btnLoad;
-            string name = dgvDonHang.SelectedCells[0].OwningRow.Cells["Column4"].Value.ToString();
-            dataform.SetNameValues(name);
-           
-        }
+        
     }
 }

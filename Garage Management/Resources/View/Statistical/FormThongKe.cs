@@ -127,7 +127,7 @@ namespace Garage_Management.Resources.View.Statistical
         {
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-DTFBKP2\SQLEXPRESS;Initial Catalog=QuanLyGarage;Integrated Security=True"))
+            using (SqlConnection conn = new SqlConnection(@"Data Source=DELEE03\PHATPC;Initial Catalog=QuanLyGarage;Integrated Security=True"))
             {
                 conn.Open();
                 string query = "SELECT DATEPART(YEAR, ngayLap) AS Năm, DATEPART(MONTH, ngayLap) AS Tháng, DATEPART(DAY, ngayLap) AS GiáTrị FROM HoaDon";

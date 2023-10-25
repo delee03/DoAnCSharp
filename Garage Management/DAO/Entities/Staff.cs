@@ -13,7 +13,7 @@ namespace Garage_Management.DAO.Entities
         public string id { get; set; }
 
         [Column(TypeName = "image")]
-        public byte[] Avartar_image { get; set; }
+        public byte[] Avatar_image { get; set; }
 
         [Required]
         [StringLength(100)]

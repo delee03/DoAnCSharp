@@ -77,15 +77,9 @@ namespace Garage_Management
                 dgvOto.Rows[index].Cells[5].Value = item.price + "";
             }
         }
-        public void SetNameValues(string value)
-        {
-            txtTemp.Text = value;
-        }
+        
         //sau khi nhấn load xe nằm trong Form Quản lí đơn hàng và xóa nó ở QUản lí oto;
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            DeleteCarAfterAddBill(txtTemp.Text);
-        }
+      
 
         private bool isNumeric(string Nam)
         {

@@ -42,7 +42,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(154, 287);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(96, 287);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 34);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.txtEmailQuenMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmailQuenMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmailQuenMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmailQuenMatKhau.Location = new System.Drawing.Point(302, 287);
+            this.txtEmailQuenMatKhau.Location = new System.Drawing.Point(271, 287);
             this.txtEmailQuenMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailQuenMatKhau.Name = "txtEmailQuenMatKhau";
             this.txtEmailQuenMatKhau.PasswordChar = '\0';

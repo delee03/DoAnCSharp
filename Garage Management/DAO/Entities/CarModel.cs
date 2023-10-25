@@ -48,7 +48,6 @@ namespace Garage_Management.DAO.Entities
             modelBuilder.Entity<Suplier>()
                 .HasMany(e => e.BillInfoes)
                 .WithRequired(e => e.Suplier)
-                .HasForeignKey(e => e.idCarSuplier)
                 .WillCascadeOnDelete(false);
         }
     }

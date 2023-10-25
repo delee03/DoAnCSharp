@@ -275,7 +275,7 @@
     <None Include="Resources\Image\RobotoMono-Italic-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Template\template.pdf">
+    <None Include="Resources\Template\invoiceCar.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -302,6 +302,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Font\print1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font\speedometer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

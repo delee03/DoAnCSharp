@@ -41,7 +41,7 @@ namespace Garage_Management.Resources.View
             foreach (var item in listStaff)
             {
                 int index = dgvStaff.Rows.Add();
-                dgvStaff.Rows[index].Cells[1].Value = item.Avartar_image;
+                dgvStaff.Rows[index].Cells[1].Value = item.Avatar_image;
                 dgvStaff.Rows[index].Cells[2].Value = item.name;
                 if (item.id != null)
                 {
