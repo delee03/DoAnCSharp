@@ -48,7 +48,8 @@
             // 
             this.lblDangKiUserName.AutoSize = false;
             this.lblDangKiUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblDangKiUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKiUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKiUserName.ForeColor = System.Drawing.Color.White;
             this.lblDangKiUserName.Location = new System.Drawing.Point(68, 267);
             this.lblDangKiUserName.Name = "lblDangKiUserName";
             this.lblDangKiUserName.Size = new System.Drawing.Size(133, 30);
@@ -59,7 +60,8 @@
             // 
             this.lblDangKiPassWord.AutoSize = false;
             this.lblDangKiPassWord.BackColor = System.Drawing.Color.Transparent;
-            this.lblDangKiPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKiPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangKiPassWord.ForeColor = System.Drawing.Color.White;
             this.lblDangKiPassWord.Location = new System.Drawing.Point(68, 314);
             this.lblDangKiPassWord.Name = "lblDangKiPassWord";
             this.lblDangKiPassWord.Size = new System.Drawing.Size(103, 30);
@@ -70,7 +72,8 @@
             // 
             this.lblXacNhanPassWord.AutoSize = false;
             this.lblXacNhanPassWord.BackColor = System.Drawing.Color.Transparent;
-            this.lblXacNhanPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXacNhanPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXacNhanPassWord.ForeColor = System.Drawing.Color.White;
             this.lblXacNhanPassWord.Location = new System.Drawing.Point(68, 364);
             this.lblXacNhanPassWord.Name = "lblXacNhanPassWord";
             this.lblXacNhanPassWord.Size = new System.Drawing.Size(174, 30);
@@ -79,6 +82,8 @@
             // 
             // txtDangKiUserName
             // 
+            this.txtDangKiUserName.BackColor = System.Drawing.Color.Transparent;
+            this.txtDangKiUserName.BorderRadius = 13;
             this.txtDangKiUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDangKiUserName.DefaultText = "";
             this.txtDangKiUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -99,6 +104,8 @@
             // 
             // txtDangKiPassWord
             // 
+            this.txtDangKiPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.txtDangKiPassWord.BorderRadius = 13;
             this.txtDangKiPassWord.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDangKiPassWord.DefaultText = "";
             this.txtDangKiPassWord.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -120,6 +127,8 @@
             // 
             // txtXacNhanPassWord
             // 
+            this.txtXacNhanPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.txtXacNhanPassWord.BorderRadius = 13;
             this.txtXacNhanPassWord.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtXacNhanPassWord.DefaultText = "";
             this.txtXacNhanPassWord.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -144,7 +153,8 @@
             // 
             this.lblEmailDangKi.AutoSize = false;
             this.lblEmailDangKi.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmailDangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailDangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailDangKi.ForeColor = System.Drawing.Color.White;
             this.lblEmailDangKi.Location = new System.Drawing.Point(68, 410);
             this.lblEmailDangKi.Name = "lblEmailDangKi";
             this.lblEmailDangKi.Size = new System.Drawing.Size(117, 30);
@@ -153,6 +163,8 @@
             // 
             // txtTenEmailDangKi
             // 
+            this.txtTenEmailDangKi.BackColor = System.Drawing.Color.Transparent;
+            this.txtTenEmailDangKi.BorderRadius = 13;
             this.txtTenEmailDangKi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTenEmailDangKi.DefaultText = "";
             this.txtTenEmailDangKi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -174,6 +186,8 @@
             // 
             // txtDisplayName
             // 
+            this.txtDisplayName.BackColor = System.Drawing.Color.Transparent;
+            this.txtDisplayName.BorderRadius = 13;
             this.txtDisplayName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDisplayName.DefaultText = "";
             this.txtDisplayName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -196,7 +210,8 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(68, 220);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(154, 27);
@@ -213,6 +228,7 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = global::Garage_Management.Properties.Resources.user__1_;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(238, 12);
@@ -224,6 +240,7 @@
             // 
             // btnDangKy
             // 
+            this.btnDangKy.BackColor = System.Drawing.Color.Transparent;
             this.btnDangKy.BorderRadius = 20;
             this.btnDangKy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDangKy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -232,8 +249,11 @@
             this.btnDangKy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDangKy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
             this.btnDangKy.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(175)))), ((int)(((byte)(87)))));
-            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangKy.ForeColor = System.Drawing.Color.White;
+            this.btnDangKy.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnDangKy.HoverState.FillColor2 = System.Drawing.Color.White;
+            this.btnDangKy.HoverState.ForeColor = System.Drawing.Color.Lime;
             this.btnDangKy.Location = new System.Drawing.Point(289, 459);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(167, 60);
@@ -245,6 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu2;
             this.ClientSize = new System.Drawing.Size(724, 561);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.guna2PictureBox1);

@@ -40,19 +40,22 @@
             // 
             this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(154, 287);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 34);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Email Đăng Kí";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtEmailQuenMatKhau
             // 
             this.txtEmailQuenMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmailQuenMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmailQuenMatKhau.BorderRadius = 12;
             this.txtEmailQuenMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmailQuenMatKhau.DefaultText = "";
             this.txtEmailQuenMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -74,7 +77,8 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Image = global::Garage_Management.Properties.Resources.user__1_;
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Garage_Management.Properties.Resources.accounts1;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(196, 12);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -96,7 +100,8 @@
             // 
             // btnLaylaiMK
             // 
-            this.btnLaylaiMK.BorderRadius = 20;
+            this.btnLaylaiMK.BackColor = System.Drawing.Color.Transparent;
+            this.btnLaylaiMK.BorderRadius = 25;
             this.btnLaylaiMK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLaylaiMK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLaylaiMK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -106,7 +111,10 @@
             this.btnLaylaiMK.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnLaylaiMK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLaylaiMK.ForeColor = System.Drawing.Color.White;
-            this.btnLaylaiMK.Location = new System.Drawing.Point(280, 412);
+            this.btnLaylaiMK.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnLaylaiMK.HoverState.FillColor2 = System.Drawing.Color.White;
+            this.btnLaylaiMK.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnLaylaiMK.Location = new System.Drawing.Point(271, 418);
             this.btnLaylaiMK.Name = "btnLaylaiMK";
             this.btnLaylaiMK.Size = new System.Drawing.Size(189, 66);
             this.btnLaylaiMK.TabIndex = 5;
@@ -117,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu1;
             this.ClientSize = new System.Drawing.Size(724, 561);
             this.Controls.Add(this.btnLaylaiMK);
             this.Controls.Add(this.guna2PictureBox1);
@@ -126,6 +135,7 @@
             this.Name = "FormQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên Mật Khẩu";
+            this.Load += new System.EventHandler(this.FormQuenMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 

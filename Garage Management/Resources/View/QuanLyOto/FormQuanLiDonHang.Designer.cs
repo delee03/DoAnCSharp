@@ -306,7 +306,7 @@
             // 
             this.Column10.FillWeight = 25F;
             this.Column10.HeaderText = "";
-            this.Column10.Image = global::Garage_Management.Properties.Resources.trash__1_1;
+            this.Column10.Image = global::Garage_Management.Properties.Resources.trash_1_;
             this.Column10.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
@@ -316,7 +316,7 @@
             // 
             this.Column11.FillWeight = 25F;
             this.Column11.HeaderText = "";
-            this.Column11.Image = global::Garage_Management.Properties.Resources.printer__1_;
+            this.Column11.Image = global::Garage_Management.Properties.Resources.print1;
             this.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";

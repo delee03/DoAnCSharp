@@ -42,5 +42,10 @@ namespace Garage_Management.Resources.View
                 }
             }
         }
+
+        private void FormQuenMatKhau_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
