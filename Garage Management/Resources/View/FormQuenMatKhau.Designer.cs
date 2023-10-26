@@ -28,26 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtEmailQuenMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblKetQua = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnLaylaiMK = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblKetqua = new System.Windows.Forms.Label();
+            this.lbKetQua = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.AutoSize = false;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(96, 287);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 34);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "Email Đăng Kí";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtEmailQuenMatKhau
             // 
@@ -87,17 +75,6 @@
             this.guna2PictureBox1.TabIndex = 3;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // lblKetQua
-            // 
-            this.lblKetQua.AutoSize = false;
-            this.lblKetQua.BackColor = System.Drawing.Color.Transparent;
-            this.lblKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKetQua.Location = new System.Drawing.Point(170, 341);
-            this.lblKetQua.Name = "lblKetQua";
-            this.lblKetQua.Size = new System.Drawing.Size(435, 46);
-            this.lblKetQua.TabIndex = 0;
-            this.lblKetQua.Text = null;
-            // 
             // btnLaylaiMK
             // 
             this.btnLaylaiMK.BackColor = System.Drawing.Color.Transparent;
@@ -121,17 +98,51 @@
             this.btnLaylaiMK.Text = "Lấy lại mật khẩu";
             this.btnLaylaiMK.Click += new System.EventHandler(this.btnLaylaiMK_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(50, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 23);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Nhập Email đăng kí";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblKetqua
+            // 
+            this.lblKetqua.BackColor = System.Drawing.Color.Transparent;
+            this.lblKetqua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKetqua.Location = new System.Drawing.Point(80, 233);
+            this.lblKetqua.Name = "lblKetqua";
+            this.lblKetqua.Size = new System.Drawing.Size(494, 34);
+            this.lblKetqua.TabIndex = 7;
+            this.lblKetqua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbKetQua
+            // 
+            this.lbKetQua.AutoSize = false;
+            this.lbKetQua.BackColor = System.Drawing.Color.Transparent;
+            this.lbKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKetQua.Location = new System.Drawing.Point(96, 347);
+            this.lbKetQua.Name = "lbKetQua";
+            this.lbKetQua.Size = new System.Drawing.Size(490, 38);
+            this.lbKetQua.TabIndex = 8;
+            this.lbKetQua.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbKetQua.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+            // 
             // FormQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Garage_Management.Properties.Resources.trangchu1;
             this.ClientSize = new System.Drawing.Size(724, 561);
+            this.Controls.Add(this.lbKetQua);
+            this.Controls.Add(this.lblKetqua);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLaylaiMK);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.txtEmailQuenMatKhau);
-            this.Controls.Add(this.lblKetQua);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "FormQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên Mật Khẩu";
@@ -142,11 +153,11 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtEmailQuenMatKhau;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblKetQua;
         private Guna.UI2.WinForms.Guna2GradientButton btnLaylaiMK;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblKetqua;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbKetQua;
     }
 }

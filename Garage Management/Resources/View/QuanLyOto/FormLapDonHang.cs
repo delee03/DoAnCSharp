@@ -145,11 +145,11 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 MessageBox.Show("Tên nhân viên chỉ gồm các ký tự chữ cái !");
                 return false;
             }
-           /* if (txtSDT.Text.Length != 10)
+            if (txtSDT.Text.Length != 10)
             {
                 MessageBox.Show("số điện thoại gồm 10 chữ số");
                 return false;
-            }*/
+            }
             if (!isNumberic(txtSDT.Text))
             {
                 txtSDT.Focus();
@@ -222,11 +222,11 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 MessageBox.Show("Tên nhân viên chỉ gồm các ký tự chữ cái !");
                 return false;
             }
-            /* if (txtSDT.Text.Length != 10)
-             {
-                 MessageBox.Show("số điện thoại gồm 10 chữ số");
-                 return false;
-             }*/
+          /*  if (txtSDT.Text.Length != 10)
+            {
+                MessageBox.Show("số điện thoại gồm 10 chữ số");
+                return false;
+            }*/
             if (!isNumberic(txtSDT.Text))
             {
                 txtSDT.Focus();

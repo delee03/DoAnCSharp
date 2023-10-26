@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 using LiveCharts;
 using LiveCharts.Wpf;
 using SeriesCollection = LiveCharts.SeriesCollection;
@@ -27,8 +22,8 @@ namespace Garage_Management.Resources.View.Statistical
             chartThongKe.AxisX.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Tháng",
-                Labels = new[] {"Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-                    "Jul", "Aug", "Seb", "Oct", "Nov", "Dec", }
+                Labels = new[] {"1", "2", "3", "4", "5", "6",
+                    "7", "8", "9", "10", "11", "12", }
             });
             chartThongKe.AxisY.Add(new LiveCharts.Wpf.Axis
             {
@@ -40,30 +35,6 @@ namespace Garage_Management.Resources.View.Statistical
             LoadDuLieuVaoDataGridView();
 
             CapNhatLiveChart();
-
-            //chartThongKe.Series.Clear();
-            //SeriesCollection series = new SeriesCollection();
-            //var years = (from o in revenueBindingSource.DataSource as List<Revenue>
-            //             select new { Year = o.Year }).Distinct();
-            //foreach (var year in years)
-            //{
-            //    List<double> values = new List<double>();
-            //    for (int month = 1; month <= 12; month++)
-            //    {
-            //        double value = 0;
-            //        var data = from o in revenueBindingSource.DataSource as List<Revenue>
-            //                   where o.Year.Equals(year.Year) && o.Month.Equals(month)
-            //                   orderby o.Month ascending
-            //                   select new { o.Value, o.Month };
-            //        if (data.SingleOrDefault() != null)
-            //        {
-            //            value = data.SingleOrDefault().Value;
-            //        }
-            //        values.Add(value);
-            //    }
-            //    series.Add(new LineSeries() { Title = year.Year.ToString(), Values = new ChartValues<double>(values) });
-            //}
-            //chartThongKe.Series = series;
         }
 
         private List<(int Nam, int Thang, double GiaTri)> LayDuLieuTuDataGridView()
@@ -80,6 +51,36 @@ namespace Garage_Management.Resources.View.Statistical
 
             return data;
         }
+
+        private void CapNhatLiveChart()
+        {
+            DataTable dataTable = LayDuLieuTuSQL();
+
+            // Chuyển đổi dữ liệu từ DataTable sang dạng List<(int Nam, int Thang, double GiaTri)>
+            List<(int Nam, int Thang, double GiaTri)> rawData = new List<(int Nam, int Thang, double GiaTri)>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                int nam = int.Parse(row["Năm"].ToString());
+                int thang = int.Parse(row["Tháng"].ToString());
+                double giaTri = double.Parse(row["Doanh_Thu"].ToString());
+
+                rawData.Add((Nam: nam, Thang: thang, GiaTri: giaTri));
+            }
+
+            // Xử lý dữ liệu
+            var dataProcessed = XuLyDuLieuChoLiveChart(rawData);
+
+            chartThongKe.Series.Clear();
+            SeriesCollection series = new SeriesCollection();
+
+            foreach (var data in dataProcessed)
+            {
+                series.Add(new LineSeries() { Title = data.Nam.ToString(), Values = new ChartValues<double>(data.GiaTriThang) });
+            }
+
+            chartThongKe.Series = series;
+        }
+
 
         private List<(int Nam, double[] GiaTriThang)> XuLyDuLieuChoLiveChart(List<(int Nam, int Thang, double GiaTri)> data)
         {
@@ -116,12 +117,12 @@ namespace Garage_Management.Resources.View.Statistical
             chartThongKe.Series = series;
         }
 
-        private void CapNhatLiveChart()
-        {
-            var duLieu = LayDuLieuTuDataGridView();
-            var yearlyData = XuLyDuLieuChoLiveChart(duLieu);
-            HienThiDuLieuLenLiveChart(yearlyData);
-        }
+        //private void CapNhatLiveChart()
+        //{
+        //    var duLieu = LayDuLieuTuDataGridView();
+        //    var yearlyData = XuLyDuLieuChoLiveChart(duLieu);
+        //    HienThiDuLieuLenLiveChart(yearlyData);
+        //}
 
         private DataTable LayDuLieuTuSQL()
         {
@@ -130,7 +131,16 @@ namespace Garage_Management.Resources.View.Statistical
             using (SqlConnection conn = new SqlConnection(@"Data Source=DELEE03\PHATPC;Initial Catalog=QuanLyGarage;Integrated Security=True"))
             {
                 conn.Open();
-                string query = "SELECT DATEPART(YEAR, ngayLap) AS Năm, DATEPART(MONTH, ngayLap) AS Tháng, DATEPART(DAY, ngayLap) AS GiáTrị FROM HoaDon";
+                string query = @"
+            SELECT 
+                DATEPART(YEAR, h.ngayLap) AS Năm, 
+                DATEPART(MONTH, h.ngayLap) AS Tháng, 
+                SUM(c.price) AS Doanh_Thu
+            FROM HoaDon h
+            INNER JOIN Car c ON h.idCar = c.idCar  -- Kết hợp dữ liệu từ bảng HoaDon và Car
+            GROUP BY DATEPART(YEAR, h.ngayLap), DATEPART(MONTH, h.ngayLap)
+            ORDER BY Năm, Tháng";
+
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
                 dataAdapter.Fill(dataTable);
             }

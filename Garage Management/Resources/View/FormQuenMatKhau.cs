@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Garage_Management.Resources.View
 {
@@ -19,6 +20,7 @@ namespace Garage_Management.Resources.View
             InitializeComponent();
         }
         Modify modify = new Modify();
+        
 
         private void btnLaylaiMK_Click(object sender, EventArgs e)
         {
@@ -32,18 +34,25 @@ namespace Garage_Management.Resources.View
                 string query = "Select * from Account where Email = '" + email + "'";
                 if (modify.Accounts(query).Count != 0)
                 {
-                    lblKetQua.ForeColor = Color.Blue;
-                    lblKetQua.Text = "Mật Khẩu: " + modify.Accounts(query)[0].PassWord;
+                    
+                    lbKetQua.ForeColor = Color.Blue;
+                    lbKetQua.Text = "Mật Khẩu: " + modify.Accounts(query)[0].PassWord;
                 }
                 else
                 {
-                    lblKetQua.ForeColor = Color.Red;
-                    lblKetQua.Text = "Email này chưa được đăng kí";
+                    lbKetQua.ForeColor = Color.Red;
+                    lbKetQua.Text = "Email này chưa được đăng kí";
                 }
             }
         }
 
         private void FormQuenMatKhau_Load(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }

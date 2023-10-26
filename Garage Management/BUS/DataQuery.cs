@@ -119,7 +119,7 @@ namespace Garage_Management.BUS
             {
                 using (var dbcontext = new CarModel())
                 {
-                    var capnhathd = context.HoaDons.SingleOrDefault(p=>p.idHoaDon == hd.idHoaDon);
+                    var capnhathd = dbcontext.HoaDons.SingleOrDefault(p=>p.idHoaDon == hd.idHoaDon);
                     if (capnhathd == null)
                     {
                         err = "Không tìm thấy hóa đơn này !";

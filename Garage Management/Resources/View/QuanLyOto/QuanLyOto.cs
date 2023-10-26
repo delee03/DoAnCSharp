@@ -131,13 +131,6 @@ namespace Garage_Management
                 return false;
             }
 
-            if (Regex.IsMatch(txtTen.Text, "^[0-9]*$"))
-            {
-                //txtTenKH.Focus();
-                MessageBox.Show("Tên Oto chỉ gồm các ký tự chữ cái !");
-                return false;
-            }
-
             if (!isNumeric(txtGia.Text))
             {
                 txtGia.Focus();
@@ -221,7 +214,8 @@ namespace Garage_Management
                 context.Cars.Add(newcar);
                 context.SaveChanges();
                 QuanLyOto_Load(sender, e);
-             }
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
            
         }
 
@@ -244,6 +238,7 @@ namespace Garage_Management
                     context.Cars.Add(car);
                     context.SaveChanges();
                     QuanLyOto_Load(sender, e);
+                    MessageBox.Show("Thêm Oto thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
               
             }
@@ -294,6 +289,7 @@ namespace Garage_Management
                     context.Cars.Remove(s);
                     context.SaveChanges();
                     QuanLyOto_Load(sender, e);
+                    MessageBox.Show("Xóa oto thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

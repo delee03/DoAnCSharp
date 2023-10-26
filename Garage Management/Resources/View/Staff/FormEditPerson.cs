@@ -126,7 +126,7 @@ namespace Garage_Management.Resources.View.Nhân_sự
 
         private void txtHoVaTen_TextChanged(object sender, EventArgs e)
         {
-            txtHoVaTen.Text = Regex.Replace(txtHoVaTen.Text, "[^a-z]+", "");
+          //  txtHoVaTen.Text = Regex.Replace(txtHoVaTen.Text, "[^a-z]+", "");
         }
     }
 }
