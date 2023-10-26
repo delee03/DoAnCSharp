@@ -90,11 +90,8 @@ namespace Garage_Management.Resources.View.QuanLyOto
                             ngayLap = Convert.ToDateTime(dtPicker.Text)
                         };
                         query.AddBill(hd);
-                        query.DeleteByIDCar(txtIdCar.Text);
                         MessageBox.Show("Thêm hóa đơn thành công! Bạn vui lòng xem thông tin trong Quản lí đơn hàng nhé! !", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        List<HoaDon> listHoadon = query.GetHoaDons();
-                        mainform.BindGrid(listHoadon);
                         this.Close();
                     }
                 };

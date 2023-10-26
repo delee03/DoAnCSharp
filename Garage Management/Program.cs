@@ -17,7 +17,7 @@ namespace Garage_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogincs());
+            Application.Run(new FormTrangChu());
         }
     }
 }
