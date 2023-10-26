@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,14 +51,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,39 +99,159 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BUS\DataContext.cs" />
+    <Compile Include="BUS\DataQuery.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\Connection.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\Entities\Account.cs" />
+    <Compile Include="DAO\Entities\Bill.cs" />
+    <Compile Include="DAO\Entities\BillInfo.cs" />
+    <Compile Include="DAO\Entities\Car.cs" />
+    <Compile Include="DAO\Entities\CarModel.cs" />
+    <Compile Include="DAO\Entities\Customer.cs" />
+    <Compile Include="DAO\Entities\HoaDon.cs" />
+    <Compile Include="DAO\Entities\Inventory.cs" />
+    <Compile Include="DAO\Entities\Staff.cs" />
+    <Compile Include="DAO\Entities\Suplier.cs" />
+    <Compile Include="DAO\Modify.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Resources\View\FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogincs.cs">
+    <Compile Include="Resources\View\Staff\FormEditPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogincs.Designer.cs">
+    <Compile Include="Resources\View\Staff\FormEditPerson.Designer.cs">
+      <DependentUpon>FormEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Staff\FormInfoPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Staff\FormInfoPerson.Designer.cs">
+      <DependentUpon>FormInfoPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormDangKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormDangKi.Designer.cs">
+      <DependentUpon>FormDangKi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormLogincs.Designer.cs" />
+    <Compile Include="Resources\View\FormLogincs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormLogincs.Designer.cs">
       <DependentUpon>FormLogincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormLogincs1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormLogincs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Staff\FormNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Staff\FormNhanSu.Designer.cs">
+      <DependentUpon>FormNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\QuanLyOto\FormLapDonHang.Designer.cs">
+      <DependentUpon>FormLapDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormQuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormQuenMatKhau.Designer.cs">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\FormTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Resources\View\QuanLyOto\FormQuanLiDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\QuanLyOto\FormQuanLiDonHang.Designer.cs">
+      <DependentUpon>FormQuanLiDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\QuanLyOto\QuanLyOto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\QuanLyOto\QuanLyOto.Designer.cs">
+      <DependentUpon>QuanLyOto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\View\Statistical\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\View\Statistical\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resources\View\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogincs.resx">
+    <EmbeddedResource Include="Resources\View\Staff\FormEditPerson.resx">
+      <DependentUpon>FormEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormDangKi.resx">
+      <DependentUpon>FormDangKi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormLogincs.resx">
       <DependentUpon>FormLogincs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Staff\FormInfoPerson.resx">
+      <DependentUpon>FormInfoPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormLogincs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormLogincs1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Staff\FormNhanSu.resx">
+      <DependentUpon>FormNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\QuanLyOto\FormLapDonHang.resx">
+      <DependentUpon>FormLapDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormQuenMatKhau.resx">
+      <DependentUpon>FormQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Resources\View\QuanLyOto\FormQuanLiDonHang.resx">
+      <DependentUpon>FormQuanLiDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\QuanLyOto\QuanLyOto.resx">
+      <DependentUpon>QuanLyOto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\View\Statistical\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Garage_Management.Resources.View.Statistical.FormThongKe.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,39 +261,55 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuanLyGarageDataSet.xsc">
+      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyGarageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyGarageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyGarageDataSet.xss">
+      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Image\RobotoMono-Italic-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Template\template.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\Font\accounts.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\roundedTXT.png" />
+    <None Include="Resources\Font\car.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-avatar-32.png" />
+    <None Include="Resources\Font\trash.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-lock-50.png" />
+    <None Include="Resources\Font\trangchu.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-user-40.png" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-wave-96.png" />
+    <None Include="Resources\Font\trash%281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\login.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\login.jpg" />
+    <None Include="Resources\Font\print1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

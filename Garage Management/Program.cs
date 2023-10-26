@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Garage_Management.Resources.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Garage_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogincs());
+            Application.Run(new FormTrangChu());
         }
     }
 }
