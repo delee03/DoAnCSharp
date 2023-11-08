@@ -150,6 +150,7 @@
             this.label14.Size = new System.Drawing.Size(114, 38);
             this.label14.TabIndex = 16;
             this.label14.Text = "Đăng xuất";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pictureBox5
             // 

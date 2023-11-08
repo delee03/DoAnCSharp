@@ -46,6 +46,7 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnThem = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChonAnh = new Guna.UI2.WinForms.Guna2Button();
+            this.checkBoxSDT = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.guna2ContainerControl1.SuspendLayout();
@@ -191,7 +192,6 @@
             this.txtHoVaTen.SelectedText = "";
             this.txtHoVaTen.Size = new System.Drawing.Size(338, 34);
             this.txtHoVaTen.TabIndex = 2;
-            this.txtHoVaTen.TextChanged += new System.EventHandler(this.txtHoVaTen_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -210,6 +210,7 @@
             this.guna2ContainerControl3.BackColor = System.Drawing.Color.Transparent;
             this.guna2ContainerControl3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2ContainerControl3.BorderRadius = 20;
+            this.guna2ContainerControl3.Controls.Add(this.checkBoxSDT);
             this.guna2ContainerControl3.Controls.Add(this.txtSĐT);
             this.guna2ContainerControl3.Controls.Add(this.guna2HtmlLabel3);
             this.guna2ContainerControl3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -242,6 +243,7 @@
             this.txtSĐT.SelectedText = "";
             this.txtSĐT.Size = new System.Drawing.Size(338, 34);
             this.txtSĐT.TabIndex = 3;
+            this.txtSĐT.TextChanged += new System.EventHandler(this.txtSĐT_TextChanged);
             // 
             // guna2HtmlLabel3
             // 
@@ -342,6 +344,26 @@
             this.btnChonAnh.Text = "Chọn Ảnh";
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
+            // checkBoxSDT
+            // 
+            this.checkBoxSDT.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxSDT.Checked = true;
+            this.checkBoxSDT.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.checkBoxSDT.CheckedState.BorderRadius = 2;
+            this.checkBoxSDT.CheckedState.BorderThickness = 0;
+            this.checkBoxSDT.CheckedState.FillColor = System.Drawing.Color.Lime;
+            this.checkBoxSDT.Location = new System.Drawing.Point(300, 47);
+            this.checkBoxSDT.Name = "checkBoxSDT";
+            this.checkBoxSDT.Size = new System.Drawing.Size(53, 34);
+            this.checkBoxSDT.TabIndex = 28;
+            this.checkBoxSDT.Text = "guna2CustomCheckBox1";
+            this.checkBoxSDT.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.checkBoxSDT.UncheckedState.BorderRadius = 2;
+            this.checkBoxSDT.UncheckedState.BorderThickness = 0;
+            this.checkBoxSDT.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.checkBoxSDT.UseTransparentBackground = true;
+            this.checkBoxSDT.Visible = false;
+            // 
             // FormInfoPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,5 +417,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2GradientButton btnThem;
         private Guna.UI2.WinForms.Guna2Button btnChonAnh;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox checkBoxSDT;
     }
 }

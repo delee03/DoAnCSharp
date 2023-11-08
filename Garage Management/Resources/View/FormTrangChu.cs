@@ -61,11 +61,11 @@ namespace Garage_Management
             dgvDashBoard.Rows[4].Cells[3].Value = "Mazda";
 
 
-            dgvDashBoard.Rows[0].Cells[4].Value = "4000         1.5         250";
-            dgvDashBoard.Rows[1].Cells[4].Value = "6750         3.0         330";
-            dgvDashBoard.Rows[2].Cells[4].Value = "5200         2.5         176hp";
-            dgvDashBoard.Rows[3].Cells[4].Value = "4500         1.5         176hp";
-            dgvDashBoard.Rows[4].Cells[4].Value = "4000         2.0         154hp";
+            dgvDashBoard.Rows[0].Cells[4].Value = "4000           1.5           250";
+            dgvDashBoard.Rows[1].Cells[4].Value = "6750           3.0           330";
+            dgvDashBoard.Rows[2].Cells[4].Value = "5200           2.5           176hp";
+            dgvDashBoard.Rows[3].Cells[4].Value = "4500           1.5           176hp";
+            dgvDashBoard.Rows[4].Cells[4].Value = "4000           2.0           154hp";
 
 
             dgvDashBoard.Rows[0].Cells[2].Value = "D x R x C \t4.590 x 1.845 x 1.680\nChiều dài cơ sở\t 2865 (mm)\nDung tích công tác 1496 (cc)\nMô-men xoắn cực đại\t 300 Nm tại 1800 – 4000 rpm\nVận tốc tối đa 246 (km/h)"; 
@@ -213,6 +213,14 @@ namespace Garage_Management
         {
             OpenChildForm(new QuanLyOto());
             lbFm.Text = btnOto.Text;
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            if (MessageDialog.Show("Bạn có muốn đăng xuất không", "Thông báo", MessageDialogButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

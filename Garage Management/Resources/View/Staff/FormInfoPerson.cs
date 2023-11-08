@@ -30,6 +30,7 @@ namespace Garage_Management.Resources.View
 
         private void FormInfoPerson_Load(object sender, EventArgs e)
         {
+            checkBoxSDT.Visible = false;
             try
             {
                 var listStaffs = dataQuery.GetStaff();
@@ -156,6 +157,19 @@ namespace Garage_Management.Resources.View
                 return false;
             }
             return true;
+        }
+
+        private void txtSĐT_TextChanged(object sender, EventArgs e)
+        {
+            checkBoxSDT.Visible = true;
+            if (txtSĐT.Text.Length == 10)
+            {
+                checkBoxSDT.Checked = true;
+            }
+            else
+            {
+                checkBoxSDT.Checked = false;
+            }
         }
     }
 }

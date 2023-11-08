@@ -151,10 +151,10 @@ namespace Garage_Management.Resources.View.QuanLyOto
                 using (var existingFileStream = new FileStream(@"Resources\Template\invoiceCar.pdf", FileMode.Open))
                 using (var newFileStream = new FileStream("hoadon.pdf", FileMode.Create))
                 {
-                    // Open existing PDF
+                    // mở file PDF có trong máy để đọc
                     var pdfReader = new PdfReader(existingFileStream);
 
-                    // PdfStamper, which will create
+                    // PdfStampe để chỉnh sửa file 
                     using (var stamper = new PdfStamper(pdfReader, newFileStream))
                     {
 
@@ -169,7 +169,7 @@ namespace Garage_Management.Resources.View.QuanLyOto
                         string txtGia = row.Cells[6].Value.ToString();
                         string txtTong = row.Cells[6].Value.ToString();
 
-                        // Fill the fields
+                        // đổ vào fields
                         form.SetField("txtTenKH", txtTenKH);
                         form.SetField("txtSDT", txtSDT);
                         form.SetField("txtTenNV", txtTenNV);

@@ -53,6 +53,7 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnLoad = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lbThongBao = new System.Windows.Forms.Label();
+            this.checkBoxSDT = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picCar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +133,7 @@
             this.txtSDT.SelectedText = "";
             this.txtSDT.Size = new System.Drawing.Size(229, 30);
             this.txtSDT.TabIndex = 9;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtTenKH
             // 
@@ -383,6 +385,26 @@
             this.lbThongBao.Text = "Bạn nhớ nhấn cập nhật để lưu nhé !";
             this.lbThongBao.Visible = false;
             // 
+            // checkBoxSDT
+            // 
+            this.checkBoxSDT.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxSDT.Checked = true;
+            this.checkBoxSDT.CheckedState.BorderColor = System.Drawing.Color.White;
+            this.checkBoxSDT.CheckedState.BorderRadius = 2;
+            this.checkBoxSDT.CheckedState.BorderThickness = 0;
+            this.checkBoxSDT.CheckedState.FillColor = System.Drawing.Color.Lime;
+            this.checkBoxSDT.Location = new System.Drawing.Point(372, 229);
+            this.checkBoxSDT.Name = "checkBoxSDT";
+            this.checkBoxSDT.Size = new System.Drawing.Size(53, 30);
+            this.checkBoxSDT.TabIndex = 27;
+            this.checkBoxSDT.Text = "guna2CustomCheckBox1";
+            this.checkBoxSDT.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.checkBoxSDT.UncheckedState.BorderRadius = 2;
+            this.checkBoxSDT.UncheckedState.BorderThickness = 0;
+            this.checkBoxSDT.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.checkBoxSDT.UseTransparentBackground = true;
+            this.checkBoxSDT.Visible = false;
+            // 
             // FormLapDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -391,6 +413,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(869, 560);
+            this.Controls.Add(this.checkBoxSDT);
             this.Controls.Add(this.lbThongBao);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnUpdate);
@@ -447,5 +470,6 @@
         public Guna.UI2.WinForms.Guna2Button btnAdd;
         public Guna.UI2.WinForms.Guna2Button btnCancel;
         private System.Windows.Forms.Label lbThongBao;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox checkBoxSDT;
     }
 }

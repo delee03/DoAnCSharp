@@ -52,6 +52,7 @@ namespace Garage_Management.Resources.View.QuanLyOto
             //txtIdCar.Text = newHD.idCar;
             //picCar.Image = ByteArrayToImage(newHD.imageCar);
             //dtPicker.Text = newHD.ngayLap.ToString();
+            checkBoxSDT.Visible = false;
         }
         public Image ByteArrayToImage(byte[] bytes)
         {
@@ -278,6 +279,19 @@ namespace Garage_Management.Resources.View.QuanLyOto
         {
             this.Text = string.Empty;
             this.Close();
+        }
+       
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            checkBoxSDT.Visible = true;
+            if(txtSDT.Text.Length == 10)
+            {
+                checkBoxSDT.Checked = true;
+            }
+            else
+            {
+                checkBoxSDT.Checked = false;
+            }
         }
     }
 }
